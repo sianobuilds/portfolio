@@ -42,6 +42,63 @@
       border-color: #2563EB;
     }
     .cinematic-card:hover .project-title { color: #2563EB; }
+
+    /* WAVE-DOT-LINK ANIMATION ENGINE */
+    .wave-dot-link {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      overflow: hidden;
+      padding-bottom: 6px;
+    }
+    .wave-dot-link span.char {
+      display: inline-block;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+      will-change: transform;
+    }
+    .wave-dot-link:hover span.char {
+      animation: waveJump 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      animation-delay: calc(var(--char-index) * 28ms);
+      color: #2563EB;
+    }
+    @keyframes waveJump {
+      0% { transform: translateY(0px); }
+      40% { transform: translateY(-7px); }
+      70% { transform: translateY(2px); }
+      100% { transform: translateY(0px); }
+    }
+    .wave-dot-link::before {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: #CBD5E1;
+      transition: background 0.3s ease;
+    }
+    .wave-dot-link::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5px;
+      left: -15px;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #2563EB;
+      box-shadow: 0 0 10px #2563EB;
+      opacity: 0;
+      transition: opacity 0.1s ease;
+    }
+    .wave-dot-link:hover::after {
+      opacity: 1;
+      animation: racingDot 0.85s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    }
+    @keyframes racingDot {
+      0% { left: -10%; transform: scale(0.6); }
+      50% { transform: scale(1.3); }
+      100% { left: 108%; transform: scale(0.6); }
+    }
   </style>
 </head>
 <body class="font-sans antialiased selection:bg-accent-light selection:text-accent">
@@ -49,9 +106,9 @@
   <!-- TOP BAR -->
   <header class="sticky top-0 z-50 bg-surface-100/90 backdrop-blur-md border-b border-surface-300">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2.5">
-        <span class="h-2.5 w-2.5 rounded-full bg-accent"></span>
-        <span class="font-mono text-sm tracking-widest font-bold text-ink-900 uppercase">SIANO.LEE</span>
+      <a href="#" class="flex items-center gap-2.5 group">
+        <span class="h-2.5 w-2.5 rounded-full bg-accent group-hover:scale-125 transition"></span>
+        <span class="wave-dot-link font-mono text-sm tracking-widest font-bold text-ink-900 uppercase" data-wave>SIANO.LEE</span>
       </a>
 
       <nav class="hidden md:flex items-center gap-10 text-xs font-mono uppercase tracking-wider text-ink-600">
@@ -62,6 +119,10 @@
       </nav>
 
       <div class="flex items-center gap-3">
+        <a href="https://github.com/sianobuilds" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-medium text-ink-700 hover:text-accent px-3 py-2 rounded-xl border border-surface-300 bg-white shadow-2xs transition">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">GitHub</span>
+        </a>
         <a href="mailto:siano.builds@gmail.com?subject=Inquiry%20for%20AI%20Solutions%20Architecture" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-white bg-accent hover:bg-accent-hover px-4 py-2.5 rounded-xl transition shadow-sm">
           <i data-lucide="mail" class="w-3.5 h-3.5"></i>
           <span>Send Email</span>
@@ -83,11 +144,25 @@
       </div>
 
       <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.15]">
-        Senior AI Solutions Architect & <span class="text-accent">Production Full-Stack Builder</span>.
+        Senior AI Solutions Architect & <span class="wave-dot-link text-ink-900" data-wave>Production Full-Stack Builder</span>.
       </h1>
+      
       <p class="text-lg text-ink-600 leading-relaxed max-w-4xl">
         Ph.D. Candidate (ABD) with 7+ years of institutional R&D. Bridging deep learning breakthroughs, multi-turn LLM pipelines, and computer vision models into highly scalable, secure SaaS applications and mobile client architectures.
       </p>
+
+      <!-- GITHUB DIRECT LINK BUTTON -->
+      <div class="pt-2 flex flex-wrap items-center gap-4">
+        <a href="https://github.com/sianobuilds" target="_blank" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-ink-900 hover:bg-accent text-white font-mono text-sm font-semibold transition shadow-sm">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>Explore GitHub Profile (@sianobuilds)</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+        </a>
+        <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-surface-300 bg-white hover:border-accent hover:text-accent text-ink-800 font-mono text-sm transition shadow-2xs">
+          <span>View Production Systems</span>
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
+        </a>
+      </div>
     </section>
 
     <!-- CORE COMPETENCIES -->
@@ -178,7 +253,7 @@
       </div>
     </section>
 
-    <!-- 8 PROJECT CARDS -->
+    <!-- 9 PRODUCTION ARCHITECTURES -->
     <section id="projects" class="space-y-10">
       <div class="border-b border-surface-300 pb-4">
         <h2 class="text-2xl font-bold text-ink-900">Featured Systems & Technical Specifications</h2>
@@ -187,7 +262,55 @@
 
       <div class="space-y-10">
 
-        <!-- 1. NEIGHBOR-ON -->
+        <!-- NEW 01: ENTERPRISE LLM GATEWAY (2026) -->
+        <a href="https://drive.google.com/file/d/1dQuE_cOHi75cL5j6cgkkK2C05JBz_cN9/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_9.png" alt="Enterprise LLM Gateway Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_9.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">2026 ENTERPRISE ARCHITECTURE</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> llm_gateway_pipeline.py</span>
+                <span class="text-emerald-400">&lt; 50ms LATENCY</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Client App Inbound Request]
+       │
+       ▼ (Zero-Trust Regex Engine: &lt;2ms)
+[In-Flight PII Redaction: SSN/Cards/Emails]
+       │
+       ▼ (Heuristic Threat Scanner > 0.85)
+┌─────────────────────────────────────────┐
+│ • Prompt Injection Firewall: Block 400  │
+│ • Audit Log Telemetry / SIEM Export     │
+└─────────────────────────────────────────┘
+       │
+       ▼ (Entropy-Aware Dynamic Cost Router)
+┌────────────────────┬────────────────────┐
+▼                    ▼                    ▼
+[Primary Tier: 4o]   [Economy: 4o-mini]   [Local SLM]
+       │
+       ▼ (Circuit Breaker: 3 Strikes Trip)
+[Hot-Standby Automatic Failover: Claude 3.5]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python 3.11 · FastAPI · LiteLLM · Redis · Docker</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">01 / ENTERPRISE AI MIDDLEWARE · 2026</span>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">Enterprise LLM Security & Cost-Routing Gateway</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Production-grade AI middleware intercepting LLM traffic for B2B multi-tenant cloud backends. Enforces sub-2ms in-flight PII redaction for compliance (GDPR/HIPAA), active prompt-injection defense firewalls, entropy-driven cost routing saving 35%+ token expenses, and automated hot-standby circuit breakers.
+            </p>
+          </div>
+        </a>
+
+        <!-- 02: NEIGHBOR-ON -->
         <a href="https://drive.google.com/file/d/1QaAoZutujEehTQZxW5TtT26YY4Vf-xVF/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
@@ -224,7 +347,7 @@
 
           <div class="pt-4 border-t border-surface-200 space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">01 / PUBLIC WELFARE AI · 2025</span>
+              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">02 / PUBLIC WELFARE AI · 2025</span>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
             <h3 class="project-title text-2xl font-bold text-ink-900 transition">NeighborOn — LLM AI Care Companion & Incident Prevention Platform</h3>
@@ -234,7 +357,7 @@
           </div>
         </a>
 
-        <!-- 2. TTOTTO-YAK -->
+        <!-- 03: TTOTTO-YAK -->
         <a href="https://drive.google.com/file/d/18Uyvmo7NGo0vb1kThVJXwzbXD-xVR6EQ/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
@@ -270,7 +393,7 @@
 
           <div class="pt-4 border-t border-surface-200 space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">02 / COMPUTER VISION & BIOMETRICS · 2025</span>
+              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">03 / COMPUTER VISION & BIOMETRICS · 2025</span>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
             <h3 class="project-title text-2xl font-bold text-ink-900 transition">TtoTtoYak — Contactless AI Health Monitor & Drug Safety Platform</h3>
@@ -280,7 +403,7 @@
           </div>
         </a>
 
-        <!-- 3. ONHAEUM -->
+        <!-- 04: ONHAEUM -->
         <a href="https://drive.google.com/file/d/1fjDYqcg6UQN3bVMU0kZ1lcPqLC0ZHUD2/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
@@ -314,7 +437,7 @@
 
           <div class="pt-4 border-t border-surface-200 space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">03 / HIGH-SECURITY IOT & SAFETY · 2025</span>
+              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">04 / HIGH-SECURITY IOT & SAFETY · 2025</span>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
             <h3 class="project-title text-2xl font-bold text-ink-900 transition">Onhaeum — Biometric Anomaly Detection & Emergency Defense System</h3>
@@ -324,7 +447,7 @@
           </div>
         </a>
 
-        <!-- 4. ART DIVE -->
+        <!-- 05: ART DIVE -->
         <a href="https://drive.google.com/file/d/181d6GGoq1ICNdRco55ebsuH-oLUSczzP/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
@@ -357,7 +480,7 @@
 
           <div class="pt-4 border-t border-surface-200 space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">04 / PATENTED AI ENGINE · 2021</span>
+              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">05 / PATENTED AI ENGINE · 2021</span>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
             <h3 class="project-title text-2xl font-bold text-ink-900 transition">ArtDive — Synesthetic Classical Music & Artwork Recommender</h3>
@@ -367,7 +490,7 @@
           </div>
         </a>
 
-        <!-- 5. STUDENT RECOMMENDER -->
+        <!-- 06: STUDENT RECOMMENDER -->
         <a href="https://drive.google.com/file/d/1Pg_96aOJcKuIiFq_WgGSn__10zfDyCVe/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
@@ -401,7 +524,7 @@
 
           <div class="pt-4 border-t border-surface-200 space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">05 / UNIVERSITY AI-SAAS · 2020</span>
+              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">06 / UNIVERSITY AI-SAAS · 2020</span>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
             <h3 class="project-title text-2xl font-bold text-ink-900 transition">Academic Course Recommender & Pre-Registration SaaS</h3>
@@ -411,7 +534,7 @@
           </div>
         </a>
 
-        <!-- 6. DEEPFAKE DETECTION -->
+        <!-- 07: DEEPFAKE DETECTION -->
         <a href="https://drive.google.com/file/d/1X8cnmVw9AooisX-Fm3LzU2ByYNeOKeOh/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
@@ -444,7 +567,7 @@
 
           <div class="pt-4 border-t border-surface-200 space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">06 / AI FORENSICS · 2020</span>
+              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">07 / AI FORENSICS · 2020</span>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
             <h3 class="project-title text-2xl font-bold text-ink-900 transition">Deepfake Detection via Spatio-Temporal Hybrid PPG Analysis</h3>
@@ -454,7 +577,7 @@
           </div>
         </a>
 
-        <!-- 7. HOPEPATH -->
+        <!-- 08: HOPEPATH -->
         <a href="https://drive.google.com/file/d/154TPox_Y8hrGYuRok7Jwyp8F3TA7bWNt/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
@@ -488,7 +611,7 @@
 
           <div class="pt-4 border-t border-surface-200 space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">07 / PUBLIC WELFARE AI · 2022</span>
+              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">08 / PUBLIC WELFARE AI · 2022</span>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
             <h3 class="project-title text-2xl font-bold text-ink-900 transition">HopePath — Youth Rehabilitation & Geofencing Platform</h3>
@@ -498,7 +621,7 @@
           </div>
         </a>
 
-        <!-- 8. RT SIMULATION -->
+        <!-- 09: RT SIMULATION -->
         <a href="https://drive.google.com/file/d/18X62-FwErqfO30wL3TffcgJ4L_Mn819k/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
@@ -532,7 +655,7 @@
 
           <div class="pt-4 border-t border-surface-200 space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">08 / SAFETY-CRITICAL SYSTEMS · 2018</span>
+              <span class="text-xs font-mono text-accent font-bold uppercase tracking-wider">09 / SAFETY-CRITICAL SYSTEMS · 2018</span>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
             <h3 class="project-title text-2xl font-bold text-ink-900 transition">Radiation Therapy Simulation Safety & Test Automation</h3>
@@ -550,14 +673,23 @@
       <div class="space-y-2 border-b border-surface-300 pb-4">
         <h2 class="text-xs font-mono uppercase tracking-widest text-ink-500 flex items-center gap-2">
           <i data-lucide="history" class="w-4 h-4 text-accent"></i>
-          Full Institutional R&D Timeline (2018–2025)
+          Full Institutional R&D Timeline (2018–2026)
         </h2>
       </div>
 
       <div class="bg-white border border-surface-300 rounded-2xl p-6 sm:p-8 divide-y divide-surface-200 shadow-2xs">
         
-        <!-- 2025 -->
+        <!-- 2026 -->
         <div class="py-4 first:pt-0 grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div class="font-mono text-accent font-bold text-sm">2026</div>
+          <div class="md:col-span-3 space-y-1">
+            <div class="text-ink-900 font-semibold">Enterprise LLM Security & Cost-Routing Gateway (Zero-Trust PII Redaction & Circuit Breaker)</div>
+            <div class="text-ink-600 text-xs">High-Throughput Asynchronous Python 3.11 / FastAPI B2B Multi-Tenant AI Operations</div>
+          </div>
+        </div>
+
+        <!-- 2025 -->
+        <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="font-mono text-accent font-bold text-sm">2025</div>
           <div class="md:col-span-3 space-y-1">
             <div class="text-ink-900 font-semibold">NeighborOn — Multi-Turn LLM AI Companion Platform for Social Welfare</div>
@@ -652,6 +784,10 @@
       </p>
 
       <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <a href="https://github.com/sianobuilds" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-surface-300 bg-surface-100 hover:bg-surface-200 text-ink-900 font-medium text-sm transition">
+          <i data-lucide="github" class="w-4 h-4 text-ink-600"></i>
+          <span>GitHub: @sianobuilds</span>
+        </a>
         <a href="mailto:siano.builds@gmail.com?subject=Inquiry%20for%20AI%20Solutions%20Architecture" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-accent hover:bg-accent-hover text-white font-semibold text-sm transition shadow-sm">
           <i data-lucide="mail" class="w-4 h-4"></i>
           <span>Send Direct Inquiry</span>
@@ -665,8 +801,21 @@
     <p>© 2026 SIANO LEE. Bridging Rigorous AI Research with Production Full-Stack Execution.</p>
   </footer>
 
+  <!-- DYNAMIC WAVEDOT LINK CHAR SPLIT ENGINE -->
   <script>
     lucide.createIcons();
+
+    document.querySelectorAll('[data-wave]').forEach(el => {
+      const text = el.innerText;
+      el.innerHTML = '';
+      [...text].forEach((char, index) => {
+        const span = document.createElement('span');
+        span.className = 'char';
+        span.style.setProperty('--char-index', index);
+        span.innerText = char === ' ' ? '\u00A0' : char;
+        el.appendChild(span);
+      });
+    });
   </script>
 </body>
 </html>
