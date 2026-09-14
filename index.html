@@ -28,6 +28,7 @@
               400: '#DEE2E6',
             },
             ink: {
+              950: '#0B0F19',
               900: '#0F172A',
               800: '#1E293B',
               700: '#334155',
@@ -56,12 +57,12 @@
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .cinematic-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.07);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08);
       border-color: #CBD5E1;
     }
 
-    /* WAVE-DOT-LINK INTERACTION CSS */
+    /* WAVE-DOT-LINK */
     .wave-dot-link {
       position: relative;
       display: inline-block;
@@ -85,8 +86,6 @@
       70% { transform: translateY(2px); }
       100% { transform: translateY(0px); }
     }
-
-    /* RACING DOT & TRACK */
     .wave-dot-link::before {
       content: '';
       position: absolute;
@@ -106,29 +105,18 @@
       height: 6px;
       border-radius: 9999px;
       background: #2563EB;
-      box-shadow: 0 0 10px #2563EB, 0 0 4px #2563EB;
+      box-shadow: 0 0 10px #2563EB;
       opacity: 0;
       transition: opacity 0.1s ease;
-    }
-    .wave-dot-link:hover::before {
-      background: #CBD5E1;
     }
     .wave-dot-link:hover::after {
       opacity: 1;
       animation: racingDot 0.85s cubic-bezier(0.22, 1, 0.36, 1) infinite;
     }
     @keyframes racingDot {
-      0% {
-        left: -10%;
-        transform: scale(0.6);
-      }
-      50% {
-        transform: scale(1.3);
-      }
-      100% {
-        left: 108%;
-        transform: scale(0.6);
-      }
+      0% { left: -10%; transform: scale(0.6); }
+      50% { transform: scale(1.3); }
+      100% { left: 108%; transform: scale(0.6); }
     }
   </style>
 </head>
@@ -138,7 +126,6 @@
   <header class="sticky top-0 z-50 bg-surface-100/90 backdrop-blur-md border-b border-surface-300">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
       
-      <!-- Brand Logo with WaveDot Effect -->
       <a href="#" class="flex items-center gap-2.5 group">
         <span class="h-2 w-2 rounded-full bg-accent group-hover:scale-125 transition"></span>
         <span class="wave-dot-link font-mono text-sm tracking-widest font-bold text-ink-900 uppercase" data-wave>SIANO.LEE</span>
@@ -147,7 +134,7 @@
       <nav class="hidden md:flex items-center gap-10 text-xs font-mono uppercase tracking-wider text-ink-600">
         <a href="#expertise" class="hover:text-accent transition">Capabilities</a>
         <a href="#credentials" class="hover:text-accent transition">Credentials</a>
-        <a href="#projects" class="hover:text-accent transition">Selected Systems</a>
+        <a href="#projects" class="hover:text-accent transition">Architectures</a>
         <a href="#rd-archive" class="hover:text-accent transition">R&D History</a>
       </nav>
 
@@ -167,8 +154,6 @@
 
     <!-- HERO SECTION -->
     <section id="about" class="space-y-8 max-w-5xl">
-      
-      <!-- Primary Core Tags -->
       <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
         <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-accent font-semibold shadow-2xs">#LLM & Agents</span>
         <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold shadow-2xs">#AI-SaaS Architect</span>
@@ -188,7 +173,7 @@
 
       <div class="flex flex-wrap items-center gap-4 pt-2">
         <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-ink-900 hover:bg-accent text-white font-semibold text-sm transition shadow-sm">
-          <span>Explore 8 Flagship Systems</span>
+          <span>Explore 8 System Pipelines</span>
           <i data-lucide="arrow-down" class="w-4 h-4"></i>
         </a>
         <button onclick="copyPitch()" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-surface-400 bg-white text-ink-800 hover:border-accent hover:text-accent text-sm font-mono transition shadow-2xs">
@@ -286,223 +271,484 @@
       </div>
     </section>
 
-    <!-- CINEMATIC EDITORIAL SHOWCASE (8 FLAGSHIP PROJECTS) -->
+    <!-- 8 FLAGSHIP PROJECTS WITH VISUAL PIPELINE SCHEMAS -->
     <section id="projects" class="space-y-12">
       <div class="space-y-2 border-b border-surface-300 pb-6">
-        <div class="text-xs font-mono uppercase tracking-widest text-accent font-semibold">Featured Architectures</div>
-        <h2 class="text-3xl font-extrabold text-ink-900">Selected Systems & Direct PDF Documentation</h2>
+        <div class="text-xs font-mono uppercase tracking-widest text-accent font-semibold">Flagship Systems</div>
+        <h2 class="text-3xl font-extrabold text-ink-900">Production Architectures & Live Documentation</h2>
         <p class="text-sm text-ink-600">
-          Clean architectural summaries paired with full downloadable technical reports and design artifacts.
+          Interactive pipeline schemas paired with complete technical whitepapers and PDF reports.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="space-y-8">
 
         <!-- 1. NEIGHBOR-ON (LLM CARE) -->
-        <article class="cinematic-card rounded-2xl p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-semibold">01 / PUBLIC WELFARE AI</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2025</span>
+        <article class="cinematic-card rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+          <!-- Left: Visual Pipeline Schema -->
+          <div class="w-full lg:w-5/12 bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+              <span class="flex items-center gap-1.5 text-accent">
+                <i data-lucide="bot" class="w-3.5 h-3.5"></i> neighboron_rag_flow.py
+              </span>
+              <span class="text-emerald-400">ACTIVE LLM</span>
             </div>
-            <h3 class="text-2xl font-bold text-ink-900">Neighbor-On (이웃on) — LLM AI Companion & Welfare Monitoring</h3>
-            <p class="text-sm text-ink-600 leading-relaxed">
-              Empowering frontline social workers by connecting isolated households with conversational AI companions. Analyzes daily interactions using LLMs to detect acute loneliness, meal irregularities, and psychological distress to automate welfare intervention reports.
-            </p>
-            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600">
-              <span class="px-2 py-1 bg-surface-200 rounded">#LLM Pipeline</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Speech Sentiment</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Welfare SaaS</span>
+            <pre class="py-4 text-slate-300 text-[11.5px] leading-relaxed overflow-x-auto">
+[Elderly Voice Input]
+       │
+       ▼ (Whisper STT Telemetry)
+[Text Stream & Temporal Context]
+       │
+       ▼ (Genkit / Gemini Agent)
+┌─────────────────────────────────┐
+│ • Emotional Distress Extraction │
+│ • Nutrition/Meal Irregularity   │
+│ • Health Anomaly Classification │
+└─────────────────────────────────┘
+       │
+       ▼ (P0 - P3 Severity Classifier)
+[Automated Case-Management Alert]
+       │
+       ▼
+[Social Worker Welfare Dashboard]</pre>
+            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex justify-between">
+              <span>Stack: Gemini · Genkit · Node.js</span>
+              <span class="text-slate-400">P0 Severity Realtime</span>
             </div>
           </div>
-          <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
-            <a href="9.portfolio_neighboron.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-accent hover:text-accent-hover transition">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>View PDF Document (12p)</span>
-            </a>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+
+          <!-- Right: Detailed Info -->
+          <div class="w-full lg:w-7/12 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-accent font-semibold uppercase tracking-wider">01 / Public Welfare AI & LLM SaaS</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2025</span>
+              </div>
+              <h3 class="text-2xl font-bold text-ink-900">Neighbor-On (이웃on) — LLM Companion & Welfare Monitoring</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                Empowering frontline social workers by connecting isolated residents with conversational AI companions. Analyzes daily spoken interactions using multi-turn LLMs to detect acute loneliness, meal omissions, and psychological distress, automating welfare intervention casework and triage dashboards.
+              </p>
+              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600 pt-1">
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#LLM Agent</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Speech Sentiment</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Next.js 15</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Welfare SaaS</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
+              <a href="9.portfolio_neighboron.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-accent hover:text-accent-hover transition">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>View Full PDF Document (12p)</span>
+              </a>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+            </div>
           </div>
         </article>
 
         <!-- 2. TTOTTO-YAK (rPPG HEALTHCARE) -->
-        <article class="cinematic-card rounded-2xl p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-semibold">02 / COMPUTER VISION & BIOMETRICS</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2025</span>
+        <article class="cinematic-card rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+          <div class="w-full lg:w-5/12 bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+              <span class="flex items-center gap-1.5 text-accent">
+                <i data-lucide="eye" class="w-3.5 h-3.5"></i> ttottoyak_vision_flow.py
+              </span>
+              <span class="text-emerald-400">30 FPS STREAM</span>
             </div>
-            <h3 class="text-2xl font-bold text-ink-900">TtoTto-Yak — Contactless AI Health Check & Drug Schedule</h3>
-            <p class="text-sm text-ink-600 leading-relaxed">
-              Non-contact vital sign monitoring via smartphone cameras. Uses remote photoplethysmography (rPPG) and Facial Action Unit (AU) detection to measure heart rate, blood flow, and fatigue without external hardware, paired with automated OCR prescription parsing.
-            </p>
-            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600">
-              <span class="px-2 py-1 bg-surface-200 rounded">#rPPG Vision</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Attentional EfficientNet</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Mobile App</span>
+            <pre class="py-4 text-slate-300 text-[11.5px] leading-relaxed overflow-x-auto">
+[RGB Video Frame (30 FPS)]
+       │
+       ▼ (dlib Landmark Tracking)
+[Face ROI: Forehead / Cheeks]
+       │
+       ▼ (EVM Color Magnification)
+[Spatio-Temporal Map (STMap)]
+       │
+       ▼ (Attentional EfficientNet-B4)
+[Biological Pulse (rPPG) Extraction]
+       │
+       ▼ (Temporal LSTM Anomaly Head)
+[Heart Rate (BPM) & FatigueAU Score]
+       │
+       ▼
+[Automated Drug Schedule & OCR Alert]</pre>
+            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex justify-between">
+              <span>Stack: OpenCV · EfficientNet · Flutter</span>
+              <span class="text-slate-400">±2 BPM Tolerance</span>
             </div>
           </div>
-          <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
-            <a href="8.portfolio_ttottoyak.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-accent hover:text-accent-hover transition">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>View PDF Document (12p)</span>
-            </a>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+
+          <div class="w-full lg:w-7/12 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-accent font-semibold uppercase tracking-wider">02 / Edge AI & Biometric Vision</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2025</span>
+              </div>
+              <h3 class="text-2xl font-bold text-ink-900">TtoTto-Yak — Contactless Health Monitor & Drug Safety</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                Non-contact vital sign extraction operating purely on mobile camera feeds. Employs remote photoplethysmography (rPPG) and Facial Action Unit (AU) analytics to quantify heart rate, micro-circulation shifts, and fatigue indices. Integrates an OCR-driven prescription scheduling module for polypharmacy safety.
+              </p>
+              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600 pt-1">
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#rPPG Vision</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Attentional EfficientNet</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Flutter</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#OCR Prescription</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
+              <a href="8.portfolio_ttottoyak.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-accent hover:text-accent-hover transition">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>View Full PDF Document (12p)</span>
+              </a>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+            </div>
           </div>
         </article>
 
-        <!-- 3. ONHAEUM (BLE DEFENSE) -->
-        <article class="cinematic-card rounded-2xl p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-semibold">03 / SECURITY & IOT</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2025</span>
+        <!-- 3. ONHAEUM (BLE SAFETY) -->
+        <article class="cinematic-card rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+          <div class="w-full lg:w-5/12 bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+              <span class="flex items-center gap-1.5 text-accent">
+                <i data-lucide="shield" class="w-3.5 h-3.5"></i> biometric_dispatch.ts
+              </span>
+              <span class="text-emerald-400">SECURITY BY DESIGN</span>
             </div>
-            <h3 class="text-2xl font-bold text-ink-900">Onhaeum — Biometric Anomaly Detection & Stalking Defense</h3>
-            <p class="text-sm text-ink-600 leading-relaxed">
-              High-assurance emergency protection platform pairing BLE wearable sensors with smartphone GPS. Automatically detects acute biometric panic spikes, initiating encrypted evidence audio recording and instant multi-channel dispatch.
-            </p>
-            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600">
-              <span class="px-2 py-1 bg-surface-200 rounded">#BLE 5.0 Wearable</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#LSTM Anomaly Logic</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Instant Dispatch</span>
+            <pre class="py-4 text-slate-300 text-[11.5px] leading-relaxed overflow-x-auto">
+[BLE Biometric Wearable (5.0)]
+       │ (Realtime Heart Rate Telemetry)
+       ▼
+[Edge Mobile Client Validation]
+       │
+       ▼ (Pulse Spike Spike Delta > 35%)
+┌─────────────────────────────────┐
+│ • Trigger Emergency Audio Rec   │
+│ • Lock Encrypted Evidence Chunk │
+│ • High-Precision GPS Geo-stream │
+└─────────────────────────────────┘
+       │
+       ▼ (End-to-End Encrypted Tunnel)
+[Automated Guardian & Police Dispatch]</pre>
+            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex justify-between">
+              <span>Protocol: Low-Latency BLE · AES-256</span>
+              <span class="text-slate-400">&lt; 150ms Dispatch</span>
             </div>
           </div>
-          <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
-            <a href="7.portfolio_onhaeum.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-accent hover:text-accent-hover transition">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>View PDF Document (12p)</span>
-            </a>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+
+          <div class="w-full lg:w-7/12 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-accent font-semibold uppercase tracking-wider">03 / High-Security IoT & Safety Systems</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2025</span>
+              </div>
+              <h3 class="text-2xl font-bold text-ink-900">Onhaeum — Biometric Anomaly Detection & Stalking Defense</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                Emergency protection platform pairing low-latency BLE sensors with on-device risk validation. Real-time telemetry evaluates acute physiological distress spikes, bypassing user interaction to activate forensic audio recording and encrypted emergency geolocation streaming.
+              </p>
+              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600 pt-1">
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#BLE 5.0 Wearable</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Security-First</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Flutter Client</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Automated Dispatch</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
+              <a href="7.portfolio_onhaeum.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-accent hover:text-accent-hover transition">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>View Full PDF Document (12p)</span>
+              </a>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+            </div>
           </div>
         </article>
 
         <!-- 4. ART DIVE (PATENTED RECOMMENDATION) -->
-        <article class="cinematic-card rounded-2xl p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-semibold">04 / PATENTED AI ENGINE</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2021</span>
+        <article class="cinematic-card rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+          <div class="w-full lg:w-5/12 bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+              <span class="flex items-center gap-1.5 text-accent">
+                <i data-lucide="music" class="w-3.5 h-3.5"></i> artdive_clustering.py
+              </span>
+              <span class="text-emerald-400">KR PATENT</span>
             </div>
-            <h3 class="text-2xl font-bold text-ink-900">Art Dive — Synesthetic Classical Music & Artwork Recommender</h3>
-            <p class="text-sm text-ink-600 leading-relaxed">
-              Registered patent algorithm mapping classical acoustic parameters (MFCC, Timbre, Rhythm) to visual artworks. Employs Agglomerative Clustering and XGBoost 18-mood classification to power a full-stack Next.js web service.
-            </p>
-            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600">
-              <span class="px-2 py-1 bg-surface-200 rounded">#KR Patent 10-2755282</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#MFCC Acoustic Logic</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Next.js Full-Stack</span>
+            <pre class="py-4 text-slate-300 text-[11.5px] leading-relaxed overflow-x-auto">
+[Raw Classical Audio Stream]
+       │
+       ▼ (MFCC, Timbre, DWT Subband)
+[High-Dimension Acoustic Vector]
+       │
+       ▼ (Agglomerative Ward Clustering)
+[Optimal Mood Section Boundary]
+       │
+       ▼ (XGBoost 18-Mood Classifier)
+[Synesthetic Emotion Mapping Matrix]
+       │
+       ▼ (Cosine Artwork Embedding Match)
+[Curated Visual Art & Audio Playlist]</pre>
+            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex justify-between">
+              <span>Patent No: 10-2755282</span>
+              <span class="text-slate-400">MDPI Electronics</span>
             </div>
           </div>
-          <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
-            <a href="4.portfolio_playlist_artdive.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-accent hover:text-accent-hover transition">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>View PDF Document (15p)</span>
-            </a>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+
+          <div class="w-full lg:w-7/12 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-accent font-semibold uppercase tracking-wider">04 / Patented AI Engine & Full-Stack Web</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2021</span>
+              </div>
+              <h3 class="text-2xl font-bold text-ink-900">Art Dive — Synesthetic Classical Music & Art Recommender</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                Registered patent algorithm mapping classical acoustic parameters (MFCC, Timbre, Rhythm) to visual fine art collections. Implements hierarchical Ward clustering to partition classical symphonies into emotional chapters, driving a reactive Next.js web application.
+              </p>
+              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600 pt-1">
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#KR Patent 10-2755282</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#MFCC Processing</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#XGBoost</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Next.js Full-Stack</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
+              <a href="4.portfolio_playlist_artdive.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-accent hover:text-accent-hover transition">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>View Full PDF Document (15p)</span>
+              </a>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+            </div>
           </div>
         </article>
 
         <!-- 5. STUDENT RECOMMENDER SAAS -->
-        <article class="cinematic-card rounded-2xl p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-semibold">05 / FULL-STACK SAAS</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2020</span>
+        <article class="cinematic-card rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+          <div class="w-full lg:w-5/12 bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+              <span class="flex items-center gap-1.5 text-accent">
+                <i data-lucide="layout" class="w-3.5 h-3.5"></i> registration_cart_engine.ts
+              </span>
+              <span class="text-emerald-400">NEXT.JS 15 SAAS</span>
             </div>
-            <h3 class="text-2xl font-bold text-ink-900">Student Course Recommender & Pre-Registration SaaS</h3>
-            <p class="text-sm text-ink-600 leading-relaxed">
-              Full-stack university course recommendation portal (Next.js 15, Tailwind, ShadCN UI). Analyzes degree progression, unfulfilled requirements, and historical preferences to eliminate registration bottlenecks via an intelligent course-cart engine.
-            </p>
-            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600">
-              <span class="px-2 py-1 bg-surface-200 rounded">#Next.js 15 App Router</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Genkit AI Flows</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Collaborative Filtering</span>
+            <pre class="py-4 text-slate-300 text-[11.5px] leading-relaxed overflow-x-auto">
+[Student Profile & Major Matrix]
+       │
+       ▼
+[Degree Requirement Verification]
+       │
+       ▼ (Collaborative + Content Filtering)
+┌─────────────────────────────────┐
+│ • Pre-requisite Dependency Tree │
+│ • Historical Grade & Preference │
+│ • Bottleneck Traffic Avoidance  │
+└─────────────────────────────────┘
+       │
+       ▼ (Intelligent Cart Optimizer)
+[Automated 1-Click Schedule Generation]</pre>
+            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex justify-between">
+              <span>Stack: Next.js · ShadCN · Genkit</span>
+              <span class="text-slate-400">IITP Funded</span>
             </div>
           </div>
-          <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
-            <a href="3.portfolio_recommendation_system.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-accent hover:text-accent-hover transition">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>View PDF Document (13p)</span>
-            </a>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+
+          <div class="w-full lg:w-7/12 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-accent font-semibold uppercase tracking-wider">05 / University AI-SaaS & Full-Stack</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2020</span>
+              </div>
+              <h3 class="text-2xl font-bold text-ink-900">Student Course Recommender & Pre-Registration SaaS</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                Full-stack university course recommendation portal (Next.js 15, Tailwind, ShadCN UI). Automatically models graduation requirements, completed credits, and historical student trajectories to eliminate server registration crashes via an intelligent pre-registration cart engine.
+              </p>
+              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600 pt-1">
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Next.js 15 App Router</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Collaborative Filter</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Genkit AI</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Full-Stack SaaS</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
+              <a href="3.portfolio_recommendation_system.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-accent hover:text-accent-hover transition">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>View Full PDF Document (13p)</span>
+              </a>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+            </div>
           </div>
         </article>
 
         <!-- 6. DEEPFAKE DETECTION (IITP) -->
-        <article class="cinematic-card rounded-2xl p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-semibold">06 / FORENSIC VISION AI</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2020</span>
+        <article class="cinematic-card rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+          <div class="w-full lg:w-5/12 bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+              <span class="flex items-center gap-1.5 text-accent">
+                <i data-lucide="lock" class="w-3.5 h-3.5"></i> deepfake_forensic.py
+              </span>
+              <span class="text-emerald-400">BIOLOGICAL PULSE</span>
             </div>
-            <h3 class="text-2xl font-bold text-ink-900">Deepfake Detection via Spatio-Temporal Hybrid PPG Analysis</h3>
-            <p class="text-sm text-ink-600 leading-relaxed">
-              National R&D initiative distinguishing synthetic facial reenactments from real biological videos. Extracts human pulse signals across spatial facial regions using Spatio-Temporal Maps to achieve high-precision discrimination against advanced GAN artifacts.
-            </p>
-            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600">
-              <span class="px-2 py-1 bg-surface-200 rounded">#Forensic Vision</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Biological Pulse (PPG)</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#IITP R&D Project</span>
+            <pre class="py-4 text-slate-300 text-[11.5px] leading-relaxed overflow-x-auto">
+[Video Face Frames (Face2Face / GAN)]
+       │
+       ▼ (Multi-Region Pulse Extraction)
+[Cross-Facial rPPG Phase Telemetry]
+       │
+       ▼ (Fourier / STMap Frequency Map)
+┌─────────────────────────────────┐
+│ Real: Uniform Coherent Pulse    │
+│ Fake: Pixel Phase Discontinuity │
+└─────────────────────────────────┘
+       │
+       ▼ (Attention EfficientNet-3D)
+[Authenticity Score: Forensic Verdict]</pre>
+            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex justify-between">
+              <span>Method: Spatio-Temporal Hybrid PPG</span>
+              <span class="text-slate-400">IITP Security R&D</span>
             </div>
           </div>
-          <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
-            <a href="2.portfolio_deepfakedetection.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-accent hover:text-accent-hover transition">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>View PDF Document (12p)</span>
-            </a>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+
+          <div class="w-full lg:w-7/12 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-accent font-semibold uppercase tracking-wider">06 / AI Forensics & Cybersecurity</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2020</span>
+              </div>
+              <h3 class="text-2xl font-bold text-ink-900">Deepfake Detection via Spatio-Temporal Hybrid PPG Analysis</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                National cybersecurity R&D project discerning synthetic facial reenactments (Face2Face, DeepFakes) from authentic video. Extracts human pulse signals across spatial facial regions using Spatio-Temporal Maps, achieving robust discrimination against GAN artifacts.
+              </p>
+              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600 pt-1">
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Forensic Vision</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Pulse Signature (PPG)</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#IITP R&D</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#GAN Defense</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
+              <a href="2.portfolio_deepfakedetection.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-accent hover:text-accent-hover transition">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>View Full PDF Document (12p)</span>
+              </a>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+            </div>
           </div>
         </article>
 
-        <!-- 7. HOPEPATH (AT-RISK YOUTH MONITORING) -->
-        <article class="cinematic-card rounded-2xl p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-semibold">07 / SOCIAL SUPERVISION AI</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2022</span>
+        <!-- 7. HOPEPATH (GEOFENCING) -->
+        <article class="cinematic-card rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+          <div class="w-full lg:w-5/12 bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+              <span class="flex items-center gap-1.5 text-accent">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> geofence_dispatch.ts
+              </span>
+              <span class="text-emerald-400">REALTIME GPS</span>
             </div>
-            <h3 class="text-2xl font-bold text-ink-900">HopePath — AI Youth Rehabilitation & Geofencing Platform</h3>
-            <p class="text-sm text-ink-600 leading-relaxed">
-              Rehabilitation support system for juvenile protective supervision. Combines background GPS geofencing with natural language emotion tracking to prevent recidivism, provide counseling matching, and notify supervisors during acute boundary violations.
-            </p>
-            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600">
-              <span class="px-2 py-1 bg-surface-200 rounded">#Real-Time Geofencing</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Risk Analytics</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Firebase Realtime</span>
+            <pre class="py-4 text-slate-300 text-[11.5px] leading-relaxed overflow-x-auto">
+[Background Mobile GPS Telemetry]
+       │
+       ▼ (Geofencing Boundary Check)
+[Restricted Zone Proximity Delta]
+       │
+       ▼ (NLP Chat Emotion Evaluation)
+┌─────────────────────────────────┐
+│ • Acute Stress / Hostility Flag │
+│ • Boundary Violation Event      │
+│ • Nighttime Curfew Monitoring   │
+└─────────────────────────────────┘
+       │
+       ▼
+[Supervisor Alert & Counselor Bridge]</pre>
+            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex justify-between">
+              <span>Stack: Flutter · Firebase · Node.js</span>
+              <span class="text-slate-400">Public Welfare</span>
             </div>
           </div>
-          <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
-            <a href="6.portfolio_hopepath.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-accent hover:text-accent-hover transition">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>View PDF Document (12p)</span>
-            </a>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+
+          <div class="w-full lg:w-7/12 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-accent font-semibold uppercase tracking-wider">07 / Public Welfare AI & Mobile Systems</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2022</span>
+              </div>
+              <h3 class="text-2xl font-bold text-ink-900">HopePath — AI Youth Rehabilitation & Geofencing Platform</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                Rehabilitation management platform for juvenile protective supervision. Coordinates background GPS geofencing with natural language emotion tracking to prevent recidivism, provide counseling matching, and notify supervisors during acute boundary violations.
+              </p>
+              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600 pt-1">
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Real-Time Geofence</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Risk Analytics</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Flutter Mobile</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Firebase Realtime</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
+              <a href="6.portfolio_hopepath.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-accent hover:text-accent-hover transition">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>View Full PDF Document (12p)</span>
+              </a>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+            </div>
           </div>
         </article>
 
-        <!-- 8. RT SIMULATION & MEDICAL QA -->
-        <article class="cinematic-card rounded-2xl p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-accent font-semibold">08 / SAFETY-CRITICAL SYSTEMS</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2018</span>
+        <!-- 8. RT SIMULATION (MEDICAL SW SAFETY) -->
+        <article class="cinematic-card rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+          <div class="w-full lg:w-5/12 bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-[11px] text-slate-400">
+              <span class="flex items-center gap-1.5 text-accent">
+                <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> stpa_quality_gate.yaml
+              </span>
+              <span class="text-emerald-400">CRITICAL SAFETY</span>
             </div>
-            <h3 class="text-2xl font-bold text-ink-900">Radiation Therapy (RT) Simulation Safety & Test Automation</h3>
-            <p class="text-sm text-ink-600 leading-relaxed">
-              Lead Infrastructure Architect for medical radiation software safety. Designed automated testing frameworks, SonarQube CI/CD quality gates, and STPA hazard analysis protocols to ensure zero-defect computational reliability in high-risk therapeutic environments.
-            </p>
-            <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600">
-              <span class="px-2 py-1 bg-surface-200 rounded">#STPA Safety Analysis</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#CI/CD (Jenkins, SonarQube)</span>
-              <span class="px-2 py-1 bg-surface-200 rounded">#Medical QA Standards</span>
+            <pre class="py-4 text-slate-300 text-[11.5px] leading-relaxed overflow-x-auto">
+[Radiation Therapy Source Code]
+       │
+       ▼ (Static Analysis Engine)
+[CppCheck · NSIQCollector Validation]
+       │
+       ▼ (STPA Hazard Traceability Gate)
+┌─────────────────────────────────┐
+│ • Unsafe Control Actions (UCA)  │
+│ • Loss of Radiation Dosage Purity│
+│ • Automated Unit Test Assertion │
+└─────────────────────────────────┘
+       │
+       ▼ (Jenkins / SonarQube CI/CD)
+[Production Build Verification Passed]</pre>
+            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-500 flex justify-between">
+              <span>Standard: STPA Hazard Analysis</span>
+              <span class="text-slate-400">Medical Safety QA</span>
             </div>
           </div>
-          <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
-            <a href="1.portfolio_safety_simulation.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-accent hover:text-accent-hover transition">
-              <i data-lucide="file-text" class="w-4 h-4"></i>
-              <span>View PDF Document (11p)</span>
-            </a>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+
+          <div class="w-full lg:w-7/12 flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono text-accent font-semibold uppercase tracking-wider">08 / Safety-Critical Systems & QA</span>
+                <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-200 text-ink-700">2018</span>
+              </div>
+              <h3 class="text-2xl font-bold text-ink-900">Radiation Therapy Simulation Safety & Test Automation</h3>
+              <p class="text-sm text-ink-600 leading-relaxed">
+                Lead Infrastructure Architect for medical radiation software safety. Designed automated testing frameworks, SonarQube CI/CD quality gates, and STPA hazard analysis protocols to ensure zero-defect computational reliability in high-risk therapeutic environments.
+              </p>
+              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-ink-600 pt-1">
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#STPA Safety Analysis</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#CI/CD Infrastructure</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#SonarQube Gate</span>
+                <span class="px-2.5 py-1 bg-surface-200 rounded">#Medical QA</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-surface-200 flex items-center justify-between">
+              <a href="1.portfolio_safety_simulation.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-accent hover:text-accent-hover transition">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>View Full PDF Document (11p)</span>
+              </a>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400"></i>
+            </div>
           </div>
         </article>
 
@@ -616,11 +862,9 @@
     <p>© 2026 SIANO LEE. Bridging Rigorous AI Research with Production Full-Stack Execution.</p>
   </footer>
 
-  <!-- DYNAMIC WAVEDOT INITIALIZATION SCRIPT -->
   <script>
     lucide.createIcons();
 
-    // Auto-split text into character spans with index variables for spring physics wave
     document.querySelectorAll('[data-wave]').forEach(el => {
       const text = el.innerText;
       el.innerHTML = '';
