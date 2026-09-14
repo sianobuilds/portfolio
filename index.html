@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siano Lee — Senior AI Systems Architect & Full-Stack Engineer</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+            },
+            dark: {
+              900: '#090a0f',
+              850: '#0d0f17',
+              800: '#131622',
+              700: '#1e2235',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Tech Matrix & Radial Glow Styling */
+    body {
+      background-color: #08090d;
+      color: #e2e8f0;
+    }
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .glow-radial {
+      background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15), transparent 70%);
+    }
+    .glass-card {
+      background: rgba(19, 22, 34, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-card:hover {
+      border-color: rgba(16, 185, 129, 0.35);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-500/20 selection:text-brand-400 bg-grid min-h-screen relative">
+
+  <!-- Ambient Glow Background -->
+  <div class="fixed inset-0 pointer-events-none glow-radial"></div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 border-b border-white/5 bg-dark-900/80 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <span class="h-2.5 w-2.5 rounded-full bg-brand-400 animate-pulse"></span>
+        <span class="font-mono text-sm tracking-wider font-semibold text-white uppercase">SIANO.LEE</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-slate-400">
+        <a href="#about" class="hover:text-white transition">About</a>
+        <a href="#authority" class="hover:text-white transition">Credentials</a>
+        <a href="#case-studies" class="hover:text-white transition">Architectures</a>
+        <a href="#standards" class="hover:text-white transition">Standards</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="mailto:siano.builds@gmail.com" class="text-xs font-mono text-slate-300 hover:text-white px-3 py-1.5 rounded-lg border border-white/10 glass-card">
+          siano.builds@gmail.com
+        </a>
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono font-medium text-black bg-brand-400 hover:bg-brand-500 px-3.5 py-1.5 rounded-lg transition shadow-lg shadow-brand-500/20">
+          <span>Hire Me</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 pt-16 pb-28 relative z-10 space-y-28">
+
+    <!-- HERO SECTION -->
+    <section id="about" class="pt-10 space-y-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-xs font-mono">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span>Available for Senior Upwork & Global Contracts</span>
+      </div>
+
+      <div class="space-y-6 max-w-4xl">
+        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.12]">
+          Bridging Advanced AI Research with <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-emerald-300 to-teal-200">Production Full-Stack Execution</span>.
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-400 leading-relaxed font-normal">
+          Ph.D. Candidate & Senior Systems Architect. I build high-concurrency 
+          biometric models, non-contact edge analytics, and security-critical software 
+          with production-ready Flutter and Next.js integrations.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center gap-4 pt-2">
+        <a href="#case-studies" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-400 hover:bg-brand-500 text-black font-semibold text-sm transition shadow-xl shadow-brand-500/20">
+          <span>Explore System Architectures</span>
+          <i data-lucide="layers" class="w-4 h-4"></i>
+        </a>
+        <a href="https://linkedin.com/in/siano-lee" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-white/10 glass-card text-white hover:border-white/20 font-medium text-sm transition">
+          <i data-lucide="linkedin" class="w-4 h-4 text-slate-400"></i>
+          <span>LinkedIn</span>
+        </a>
+        <button onclick="copyPitch()" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-white/10 glass-card text-slate-300 hover:text-white text-sm font-mono transition">
+          <i data-lucide="copy" class="w-4 h-4 text-brand-400"></i>
+          <span id="copy-btn-text">Copy Proposal Pitch</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PROOF / AUTHORITY METRICS (BENTO GRID) -->
+    <section id="authority" class="space-y-6">
+      <div class="flex items-center justify-between">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-slate-400 flex items-center gap-2">
+          <i data-lucide="award" class="w-4 h-4 text-brand-400"></i>
+          Institutional Credentials & Rigor
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <!-- Metric 1: Patent -->
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <div class="flex items-center justify-between text-brand-400">
+            <i data-lucide="file-badge" class="w-6 h-6"></i>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-500/10 border border-brand-500/20">IP REG.</span>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-white font-mono">KR-Patent</div>
+            <div class="text-xs text-slate-400 mt-1 leading-snug">
+              Automated AI Test Suite Optimization & Synesthetic Convergence (Reg. No. 10-2755282).
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric 2: Academic Citation -->
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <div class="flex items-center justify-between text-brand-400">
+            <i data-lucide="book-open" class="w-6 h-6"></i>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-500/10 border border-brand-500/20">PEER REVIEWED</span>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-white font-mono">MDPI / SCIE</div>
+            <div class="text-xs text-slate-400 mt-1 leading-snug">
+              Published surveys in recommendation systems & acoustic mood classification algorithms.
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric 3: Gov Initiatives -->
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <div class="flex items-center justify-between text-brand-400">
+            <i data-lucide="building" class="w-6 h-6"></i>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-500/10 border border-brand-500/20">GOV R&D</span>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-white font-mono">IITP / NRF</div>
+            <div class="text-xs text-slate-400 mt-1 leading-snug">
+              Spearheaded national R&D pipelines: Autonomous Mobility, Intrusion AI, Medical Software.
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric 4: Academic Standing -->
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <div class="flex items-center justify-between text-brand-400">
+            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-500/10 border border-brand-500/20">DOCTORATE</span>
+          </div>
+          <div>
+            <div class="text-2xl font-bold text-white font-mono">Ph.D. (ABD)</div>
+            <div class="text-xs text-slate-400 mt-1 leading-snug">
+              Completed coursework in Computer Science, Software Safety, and Machine Intelligence.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED ARCHITECTURES / CASE STUDIES -->
+    <section id="case-studies" class="space-y-10">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-brand-400">
+          <i data-lucide="cpu" class="w-4 h-4"></i> Production Case Studies
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Engineered for High-Stakes Environments</h2>
+        <p class="text-sm text-slate-400 max-w-2xl">
+          Architectural breakdowns solving edge compute latency, real-time physiological signal analysis, and privacy preservation.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+
+        <!-- CASE STUDY 1: TtoTto-Yak -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-brand-500/40 transition">
+          <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            <div class="space-y-4 max-w-2xl">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-2.5 py-1 rounded bg-brand-500/10 border border-brand-500/20 text-brand-400 font-mono text-[11px]">Computer Vision</span>
+                <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-slate-300 font-mono text-[11px]">rPPG Biometrics</span>
+                <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-slate-300 font-mono text-[11px]">Mobile AI</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">TtoTto-Yak — Contactless AI Health Monitoring & Medication Safety</h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Engineered an integrated AI healthcare pipeline measuring vital signs (heart rate, blood flow) 
+                via smartphone camera without wearable contact. Powered by remote photoplethysmography (rPPG) and 
+                Facial Action Unit (AU) anomaly detection.
+              </p>
+              
+              <!-- Metrics Bullet -->
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                <div class="border border-white/5 bg-dark-850/60 p-3 rounded-xl">
+                  <div class="text-xs text-slate-400 font-mono">Architecture</div>
+                  <div class="text-sm font-semibold text-white mt-0.5">Attentional EfficientNet-B4</div>
+                </div>
+                <div class="border border-white/5 bg-dark-850/60 p-3 rounded-xl">
+                  <div class="text-xs text-slate-400 font-mono">Temporal Model</div>
+                  <div class="text-sm font-semibold text-white mt-0.5">LSTM / Transformer</div>
+                </div>
+                <div class="border border-white/5 bg-dark-850/60 p-3 rounded-xl col-span-2 sm:col-span-1">
+                  <div class="text-xs text-slate-400 font-mono">Prescription Logic</div>
+                  <div class="text-sm font-semibold text-white mt-0.5">Auto OCR & Scheduling</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Architecture Terminal Preview -->
+            <div class="w-full lg:w-96 bg-dark-900 border border-white/10 rounded-xl p-4 font-mono text-xs text-slate-300 space-y-2">
+              <div class="flex items-center justify-between text-slate-500 pb-2 border-b border-white/5 text-[11px]">
+                <span>pipeline_flow.py</span>
+                <span class="text-brand-400">OPTIMIZED</span>
+              </div>
+              <pre class="text-[11px] leading-relaxed text-slate-300 overflow-x-auto">
+[Video Frame (dlib ROI)]
+       │
+       ▼ (EVM Color Magnification)
+[Spatio-Temporal Map (T×W×4Hz)]
+       │
+       ▼ (Attention Mechanism)
+[Attentional EfficientNet-B4]
+       │
+       ▼
+[Temporal Anomaly Score: 0-100]
+       │
+       ▼
+[Threshold Decision: Emergency Alert]</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE STUDY 2: Onhaeum -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-brand-500/40 transition">
+          <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            <div class="space-y-4 max-w-2xl">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-2.5 py-1 rounded bg-brand-500/10 border border-brand-500/20 text-brand-400 font-mono text-[11px]">Security by Design</span>
+                <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-slate-300 font-mono text-[11px]">BLE IoT</span>
+                <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-slate-300 font-mono text-[11px]">Emergency Pipeline</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Onhaeum — Real-Time Biometric Spike & Location Defense System</h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Designed a high-reliability protection platform synchronizing wearable BLE sensors (heart rate, GPS) with 
+                on-device preprocessing. Automatically identifies emergency panic spikes, triggering localized evidence audio 
+                recording and instantaneous dispatch pipelines.
+              </p>
+              
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                <div class="border border-white/5 bg-dark-850/60 p-3 rounded-xl">
+                  <div class="text-xs text-slate-400 font-mono">Sync Latency</div>
+                  <div class="text-sm font-semibold text-white mt-0.5">Real-time BLE Sync</div>
+                </div>
+                <div class="border border-white/5 bg-dark-850/60 p-3 rounded-xl">
+                  <div class="text-xs text-slate-400 font-mono">Privacy</div>
+                  <div class="text-sm font-semibold text-white mt-0.5">Zero-leak Anonymization</div>
+                </div>
+                <div class="border border-white/5 bg-dark-850/60 p-3 rounded-xl col-span-2 sm:col-span-1">
+                  <div class="text-xs text-slate-400 font-mono">Fail-Safe</div>
+                  <div class="text-sm font-semibold text-white mt-0.5">Automated Dispatch</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Architecture Terminal Preview -->
+            <div class="w-full lg:w-96 bg-dark-900 border border-white/10 rounded-xl p-4 font-mono text-xs text-slate-300 space-y-2">
+              <div class="flex items-center justify-between text-slate-500 pb-2 border-b border-white/5 text-[11px]">
+                <span>incident_pipeline.json</span>
+                <span class="text-brand-400">FAULT-TOLERANT</span>
+              </div>
+              <pre class="text-[11px] leading-relaxed text-slate-300 overflow-x-auto">
+{
+  "sensor": "BLE_Wearable_HR_GPS",
+  "trigger": "Biometric_Spike_Detected",
+  "inference": "LSTM_Temporal_Engine",
+  "actions": [
+    "Haptic_Warning_Feedback",
+    "Auto_Audio_Capture_Enabled",
+    "Encrypted_Location_Dispatch",
+    "Guardian_Emergency_Bridge"
+  ]
+}</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASE STUDY 3: Art Dive & Recommendation System -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-brand-500/40 transition">
+          <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+            <div class="space-y-4 max-w-2xl">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-2.5 py-1 rounded bg-brand-500/10 border border-brand-500/20 text-brand-400 font-mono text-[11px]">Patented Algorithm</span>
+                <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-slate-300 font-mono text-[11px]">Acoustic Signal AI</span>
+                <span class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-slate-300 font-mono text-[11px]">Next.js Full-Stack</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Art Dive — Synesthetic Cross-Domain AI Recommendation Engine</h3>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Registered patent algorithm mapping classical acoustic frequencies (MFCC, Timbre, BPM) to visual 
+                aesthetic artworks. Built complete microservice dataflow integrating agglomerative segment clustering 
+                and XGBoost mood classification with Next.js web clients.
+              </p>
+              
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                <div class="border border-white/5 bg-dark-850/60 p-3 rounded-xl">
+                  <div class="text-xs text-slate-400 font-mono">Audio Processing</div>
+                  <div class="text-sm font-semibold text-white mt-0.5">MFCC Subband / DWT</div>
+                </div>
+                <div class="border border-white/5 bg-dark-850/60 p-3 rounded-xl">
+                  <div class="text-xs text-slate-400 font-mono">Classification</div>
+                  <div class="text-sm font-semibold text-white mt-0.5">XGBoost 18-Mood Logic</div>
+                </div>
+                <div class="border border-white/5 bg-dark-850/60 p-3 rounded-xl col-span-2 sm:col-span-1">
+                  <div class="text-xs text-slate-400 font-mono">Delivery</div>
+                  <div class="text-sm font-semibold text-white mt-0.5">Next.js & Serverless</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Architecture Terminal Preview -->
+            <div class="w-full lg:w-96 bg-dark-900 border border-white/10 rounded-xl p-4 font-mono text-xs text-slate-300 space-y-2">
+              <div class="flex items-center justify-between text-slate-500 pb-2 border-b border-white/5 text-[11px]">
+                <span>clustering_model.py</span>
+                <span class="text-brand-400">PATENTED</span>
+              </div>
+              <pre class="text-[11px] leading-relaxed text-slate-300 overflow-x-auto">
+def cross_domain_mapping(audio_stream):
+    mfcc_feats = extract_subband(audio_stream)
+    segments = agglomerative_cluster(mfcc_feats, threshold=5.0)
+    mood_vec = xgboost_classifier(segments)
+    
+    matched_art = vector_similarity(
+        mood_vec, art_database.aesthetic_features
+    )
+    return generate_playlist(segments, matched_art)</pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOW I WORK / ENGINEERING STANDARDS -->
+    <section id="standards" class="space-y-6">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-brand-400">
+          <i data-lucide="check-circle" class="w-4 h-4"></i> Engineering Philosophy
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Why High-Growth Startups Choose Me</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <div class="h-10 w-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+            <i data-lucide="shield-alert" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Security-First & STPA Safety</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Trained in medical device software safety and STPA hazard analysis. I architect systems to withstand edge failures, 
+            injection attempts, and concurrent stress loads before writing code.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <div class="h-10 w-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">High-Velocity AI Delivery</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            No research papers that end in a drawer. I bridge high-dimension vector operations directly into clean, responsive 
+            mobile apps (Flutter) and reactive web interfaces (Next.js/React).
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl space-y-3">
+          <div class="h-10 w-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Systematic PRD & Spec-Driven</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Every contract is backed by structured Product Requirements Documents (PRD), explicit OpenAPI schemas, and CI/CD audit setups 
+            (SonarQube, Docker, Jenkins) to eliminate ambiguity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPWORK CTA & DIRECT CONTACT -->
+    <section id="contact" class="glass-card border border-brand-500/30 rounded-3xl p-8 sm:p-12 text-center space-y-6 relative overflow-hidden">
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-500/10 blur-3xl pointer-events-none rounded-full"></div>
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-slate-300">
+        <span>Dubai / GCC / US Remote Compatible</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        Have a complex AI challenge?<br/>
+        <span class="text-brand-400">Let's build the solution.</span>
+      </h2>
+
+      <p class="text-slate-400 max-w-xl mx-auto text-sm sm:text-base">
+        Available for senior consulting, fractional AI engineering, and full-stack system architecture contracts.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <a href="mailto:siano.builds@gmail.com" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-400 hover:bg-brand-500 text-black font-semibold text-sm transition shadow-lg shadow-brand-500/20">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>Send Direct Inquiry</span>
+        </a>
+        <a href="https://linkedin.com/in/siano-lee" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-medium text-sm transition">
+          <i data-lucide="external-link" class="w-4 h-4 text-slate-400"></i>
+          <span>Connect on LinkedIn</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-8 text-center text-xs font-mono text-slate-500">
+    <p>© 2026 SIANO LEE. Rigorous AI Research & Production Full-Stack Architecture.</p>
+  </footer>
+
+  <!-- Lucide Icon Initialization & Dynamic Scripts -->
+  <script>
+    lucide.createIcons();
+
+    function copyPitch() {
+      const pitchText = `Hi there! I reviewed your project requirements. As a Senior AI Solutions Architect (Ph.D. Candidate ABD) with patents and published research, I specialize in bridging complex deep learning models into production-ready full-stack applications (Flutter/Next.js). You can explore my live architectures, patents, and system breakdowns here: [YOUR_PORTFOLIO_URL]. Looking forward to discussing how we can build this with speed and rigor.`;
+      
+      navigator.clipboard.writeText(pitchText).then(() => {
+        const btnText = document.getElementById('copy-btn-text');
+        btnText.innerText = "Pitch Copied to Clipboard!";
+        setTimeout(() => {
+          btnText.innerText = "Copy Proposal Pitch";
+        }, 3000);
+      });
+    }
+  </script>
+</body>
+</html>
