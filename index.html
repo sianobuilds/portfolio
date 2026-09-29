@@ -1,4 +1,272 @@
-<!-- PEER-REVIEWED PUBLICATIONS SECTION (SCIE & INTERNATIONAL CONFERENCES) -->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siano Lee — Senior AI Solutions Architect & Full-Stack Systems Engineer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            surface: { 50: '#FFFFFF', 100: '#F8F9FA', 200: '#F1F3F5', 300: '#E9ECEF', 400: '#DEE2E6' },
+            ink: { 950: '#070A12', 900: '#0F172A', 800: '#1E293B', 700: '#334155', 600: '#475569', 400: '#94A3B8' },
+            accent: { DEFAULT: '#2563EB', hover: '#1D4ED8', light: '#EFF6FF' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #F8F9FA; color: #0F172A; }
+    .cinematic-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .cinematic-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.1);
+      border-color: #2563EB;
+    }
+    .cinematic-card:hover .project-title { color: #2563EB; }
+
+    /* YEAR MILESTONE DIVIDER ANIMATIONS */
+    .year-milestone {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .year-badge-glow {
+      box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+    }
+
+    /* WAVE-DOT-LINK ANIMATION ENGINE */
+    .wave-dot-link {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      overflow: hidden;
+      padding-bottom: 6px;
+    }
+    .wave-dot-link span.char {
+      display: inline-block;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+      will-change: transform;
+    }
+    .wave-dot-link:hover span.char {
+      animation: waveJump 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      animation-delay: calc(var(--char-index) * 28ms);
+      color: #2563EB;
+    }
+    @keyframes waveJump {
+      0% { transform: translateY(0px); }
+      40% { transform: translateY(-7px); }
+      70% { transform: translateY(2px); }
+      100% { transform: translateY(0px); }
+    }
+    .wave-dot-link::before {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: #CBD5E1;
+      transition: background 0.3s ease;
+    }
+    .wave-dot-link::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5px;
+      left: -15px;
+      width: 6px;
+      height: 6px;
+      border-radius: 9999px;
+      background: #2563EB;
+      box-shadow: 0 0 10px #2563EB;
+      opacity: 0;
+      transition: opacity 0.1s ease;
+    }
+    .wave-dot-link:hover::after {
+      opacity: 1;
+      animation: racingDot 0.85s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+    }
+    @keyframes racingDot {
+      0% { left: -10%; transform: scale(0.6); }
+      50% { transform: scale(1.3); }
+      100% { left: 108%; transform: scale(0.6); }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-accent-light selection:text-accent">
+
+  <!-- TOP BAR -->
+  <header class="sticky top-0 z-50 bg-surface-100/90 backdrop-blur-md border-b border-surface-300">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <span class="h-2.5 w-2.5 rounded-full bg-accent group-hover:scale-125 transition"></span>
+        <span class="wave-dot-link font-mono text-sm tracking-widest font-bold text-ink-900 uppercase" data-wave>SIANO.LEE</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-ink-600">
+        <a href="#expertise" class="hover:text-accent transition">Capabilities</a>
+        <a href="#credentials" class="hover:text-accent transition">Credentials</a>
+        <a href="#publications" class="hover:text-accent transition">Publications</a>
+        <a href="#projects" class="hover:text-accent transition">Architectures</a>
+        <a href="#rd-archive" class="hover:text-accent transition">R&D History</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/sianobuilds" target="_blank" class="inline-flex items-center gap-2 text-xs font-mono font-medium text-ink-700 hover:text-accent px-3 py-2 rounded-xl border border-surface-300 bg-white shadow-2xs transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          <span class="hidden sm:inline">GitHub</span>
+        </a>
+        <a href="mailto:siano.builds@gmail.com?subject=Inquiry%20for%20AI%20Solutions%20Architecture" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-white bg-accent hover:bg-accent-hover px-4 py-2.5 rounded-xl transition shadow-sm">
+          <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+          <span>Send Email</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 sm:px-10 pt-16 pb-32 space-y-24">
+
+    <!-- HERO SECTION -->
+    <section class="space-y-6 max-w-5xl">
+      <div class="flex flex-wrap gap-2 font-mono text-xs">
+        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-accent font-semibold">#Hyperscale AI Control</span>
+        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold">#Multi-Agent StateMachines</span>
+        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold">#LangGraph</span>
+        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold">#FastAPI & Celery</span>
+        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold">#Zero-Trust Middleware</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.15]">
+        Senior AI Solutions Architect & <span class="wave-dot-link text-ink-900" data-wave>Production Full-Stack Builder</span>.
+      </h1>
+      
+      <p class="text-lg text-ink-600 leading-relaxed max-w-4xl">
+        Ph.D. Candidate (ABD) with 7+ years of institutional R&D. Specializing in hyperscale AI infrastructure dispatch, event-driven deterministic state machines, and statutory multi-agent compliance systems that eliminate thermal limits, operational penalties, and semantic hallucinations.
+      </p>
+
+      <div class="pt-2">
+        <a href="https://github.com/sianobuilds" target="_blank" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-ink-900 hover:bg-accent text-white font-mono text-sm font-semibold transition shadow-sm group">
+          <svg class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          <span>GitHub: @sianobuilds</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4 text-ink-400 group-hover:text-white transition-colors"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- CORE COMPETENCIES -->
+    <section id="expertise" class="space-y-6">
+      <div class="flex items-center justify-between border-b border-surface-300 pb-4">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-ink-500 flex items-center gap-2">
+          <i data-lucide="layers" class="w-4 h-4 text-accent"></i>
+          Core Engineering Competencies
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-3 shadow-2xs">
+          <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-accent">
+            <i data-lucide="server" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-ink-900">Hyperscale AI Control</h3>
+          <p class="text-xs text-ink-600 leading-relaxed">
+            100Hz telemetry queues, MILP power-capping optimization, and closed-loop BACnet/NVML actuator orchestration for H100/B200 clusters.
+          </p>
+        </div>
+
+        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-3 shadow-2xs">
+          <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-accent">
+            <i data-lucide="bot" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-ink-900">Multi-Agent State Machines</h3>
+          <p class="text-xs text-ink-600 leading-relaxed">
+            Deterministic LangGraph cyclic workflows, automated statutory vector retrieval, and zero-hallucination compliance dispatch consoles.
+          </p>
+        </div>
+
+        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-3 shadow-2xs">
+          <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-accent">
+            <i data-lucide="shield-alert" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-ink-900">Zero-Trust AI Gateways</h3>
+          <p class="text-xs text-ink-600 leading-relaxed">
+            In-flight sub-2ms PII redaction, heuristic prompt-injection firewalls, entropy-aware cost routing, and circuit breaker failovers.
+          </p>
+        </div>
+
+        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-3 shadow-2xs">
+          <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-accent">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-ink-900">Safety & Security by Design</h3>
+          <p class="text-xs text-ink-600 leading-relaxed">
+            KR registered patent test generation, STPA safety-critical hazard analysis gates, and SonarQube automated CI/CD quality pipelines.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS & INTELLECTUAL PROPERTY -->
+    <section id="credentials" class="space-y-6">
+      <div class="flex items-center justify-between border-b border-surface-300 pb-4">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-ink-500 flex items-center gap-2">
+          <i data-lucide="award" class="w-4 h-4 text-accent"></i>
+          Verified Intellectual Property & Research
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-2 shadow-2xs">
+          <div class="text-[11px] font-mono text-accent font-bold uppercase tracking-wider">Registered Patent</div>
+          <div class="text-xl font-bold text-ink-900 font-mono">KR 10-2755282</div>
+          <p class="text-xs text-ink-600 leading-relaxed">
+            Big Data Art Convergence Recommendation System & Automated STPA-based SW Safety Test Generation.
+          </p>
+        </div>
+
+        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-2 shadow-2xs">
+          <div class="text-[11px] font-mono text-accent font-bold uppercase tracking-wider">SCIE Publications</div>
+          <div class="text-xl font-bold text-ink-900 font-mono">MDPI Electronics</div>
+          <p class="text-xs text-ink-600 leading-relaxed">
+            Peer-reviewed papers on Classical Music Emotion Recognition & Recommendation System Survey.
+          </p>
+        </div>
+
+        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-2 shadow-2xs">
+          <div class="text-[11px] font-mono text-accent font-bold uppercase tracking-wider">Institutional R&D</div>
+          <div class="text-xl font-bold text-ink-900 font-mono">IITP / NRF / KAIA</div>
+          <p class="text-xs text-ink-600 leading-relaxed">
+            Spearheaded national projects across Smart Mobility, Deepfake Forensics, and Radiation Simulation Software.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PEER-REVIEWED PUBLICATIONS SECTION (SCIE & INTERNATIONAL CONFERENCES) -->
     <section id="publications" class="space-y-6">
       <div class="flex items-center justify-between border-b border-surface-300 pb-4">
         <div>
@@ -74,3 +342,765 @@
 
       </div>
     </section>
+
+    <!-- 11 PRODUCTION ARCHITECTURES WITH CHRONOLOGICAL TIMELINE MILESTONES -->
+    <section id="projects" class="space-y-12">
+      <div class="border-b border-surface-300 pb-4">
+        <h2 class="text-2xl font-bold text-ink-900">Production Systems & Architecture Archives</h2>
+        <p class="text-xs text-ink-600 font-mono mt-1">Chronological engineering index from 2026 enterprise systems to foundational R&D architectures.</p>
+      </div>
+
+      <div class="space-y-12">
+
+        <!-- ==================== 2026 MILESTONE ==================== -->
+        <div class="year-milestone">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-ink-900 text-white font-mono text-xs font-bold year-badge-glow">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+            </span>
+            <span>2026 FLAGSHIP SYSTEMS</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400">3 SYSTEMS ACTIVE</span>
+        </div>
+
+        <!-- 01: TERAGRID-OPS (2026) -->
+        <a href="https://drive.google.com/file/d/1glWLBiK0-ZQCT8g6apcF67SGNeAC6Keh/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_11.png" alt="TeraGrid-Ops Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_11.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">2026 HYPERSCALE DISPATCH</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="zap" class="w-3.5 h-3.5"></i> teragrid_dispatch.py</span>
+                <span class="text-emerald-400">&lt; 150ms MILP SOLVE</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[ 100Hz Telemetry Ingestion ]
+ │  • Redfish BMC Telemetry (32-Node Chassis Hotspots)
+ │  • CDU Secondary Loop Temperature & Pressure
+ ▼
+[ Redis Streams / Asynchronous Ingestion Buffer ]
+ │  (Traffic Leveling, Zero Dropped Packets, Non-Blocking UI)
+ ▼
+[ Multi-Worker Celery Execution Pool ]
+ │  ├─► MILP Solver: Power Capping vs. Tariff Window vs. Job Priority
+ │  └─► Closed-Loop Actuator Dispatch
+ ▼
+[ Autonomous Tri-Vector Enforcement ]
+ ├─► NVIDIA NVML / Intel RAPL: Hardware Capping (700W ➔ 580W, -6.4 MW)
+ ├─► BESS Dispatch: Synchronized Battery Injection (+4.2 MW)
+ └─► BACnet / Modbus: CDU Coolant Valve Modulation (380 L/min, +58%)</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python 3.11 · Redis Streams · Celery · SciPy MILP · NVML</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-accent font-mono text-xs font-bold">2026</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">01 / AI INFRASTRUCTURE CONTROL</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">TeraGrid-Ops: Hyperscale AI Data Center Power & Thermal Dispatch Engine</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Autonomous, event-driven infrastructure control platform designed for hyperscale AI data centers operating high-density GPU clusters (NVIDIA H100 / B200). Balances real-time power draw, cooling manifold distribution, and battery energy storage to eliminate thermal hotspots and avoid multimillion-dollar utility peak penalties.
+            </p>
+          </div>
+        </a>
+
+        <!-- 02: MINING COMPLIANCE MULTI-AGENT (2026) -->
+        <a href="https://drive.google.com/file/d/15TSb-FfQ1cA3cTAv86JQRW9VRT6faJfH/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_10.png" alt="Mining Multi-Agent Compliance Engine Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_10.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">2026 AUTONOMOUS AGENT STATE MACHINE</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5"></i> mining_compliance_graph.py</span>
+                <span class="text-emerald-400">&lt; 1.8s BREACH DETECT</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Pilbara Basin Real-Time Telemetry Stream]
+(Dewatering GL/yr · Clearing Ha · Scope 1 GHG)
+       │
+       ▼
+[StateNode 1: Statutory Vector Retrieval (ChromaDB)]
+(WA EPA Part IV · EPBC Act 1999 · NGER Act 2007)
+       │
+       ▼
+[StateNode 2: Subterranean Fauna & Hydro Grader]
+       │
+       ├──► [Score &lt; 0.85] ──► [Self-Reflective Query Rewriting] ──┐
+       │                                                          │
+       ▼ [Verified Evidence Grounding]                            │
+[StateNode 3: Directive Synthesizer] ◄────────────────────────────┘
+       │
+       ▼ (Sub-1.8s Statutory Breach Trigger)
+[Industrial Dispatch Console: Automated Work-Stop & Ministerial Directive]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python 3.11 · LangGraph · ChromaDB · FastAPI · Tailwind</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-accent font-mono text-xs font-bold">2026</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">02 / AUTONOMOUS AI AGENTS</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">Autonomous Multi-Agent Compliance Engine for Mining Operations</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Mission-critical, self-reflective multi-agent system built on LangGraph that cross-examines Western Australian open-cut mining telemetry against Commonwealth (EPBC Act) and State (WA EPA) environmental mandates in real time. Features cyclic grading nodes to eliminate semantic hallucination, operating a sub-1.8s industrial dispatch console that issues automated ministerial referral directives and work-stop orders.
+            </p>
+          </div>
+        </a>
+
+        <!-- 03: ENTERPRISE LLM GATEWAY (2026) -->
+        <a href="https://drive.google.com/file/d/1dQuE_cOHi75cL5j6cgkkK2C05JBz_cN9/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_9.png" alt="Enterprise LLM Gateway Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_9.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">2026 ENTERPRISE ARCHITECTURE</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> llm_gateway_pipeline.py</span>
+                <span class="text-emerald-400">&lt; 50ms LATENCY</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Client App Inbound Request]
+       │
+       ▼ (Zero-Trust Regex Engine: &lt;2ms)
+[In-Flight PII Redaction: SSN/Cards/Emails]
+       │
+       ▼ (Heuristic Threat Scanner > 0.85)
+┌─────────────────────────────────────────┐
+│ • Prompt Injection Firewall: Block 400  │
+│ • Audit Log Telemetry / SIEM Export     │
+└─────────────────────────────────────────┘
+       │
+       ▼ (Entropy-Aware Dynamic Cost Router)
+┌────────────────────┬────────────────────┐
+▼                    ▼                    ▼
+[Primary Tier: 4o]   [Economy: 4o-mini]   [Local SLM]
+       │
+       ▼ (Circuit Breaker: 3 Strikes Trip)
+[Hot-Standby Automatic Failover: Claude 3.5]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python 3.11 · FastAPI · LiteLLM · Redis · Docker</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-accent font-mono text-xs font-bold">2026</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">03 / ENTERPRISE AI MIDDLEWARE</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">Enterprise LLM Security & Cost-Routing Gateway</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Production-grade AI middleware intercepting LLM traffic for B2B multi-tenant cloud backends. Enforces sub-2ms in-flight PII redaction for compliance (GDPR/HIPAA), active prompt-injection defense firewalls, entropy-driven cost routing saving 35%+ token expenses, and automated hot-standby circuit breakers.
+            </p>
+          </div>
+        </a>
+
+        <!-- ==================== 2025 MILESTONE ==================== -->
+        <div class="year-milestone pt-8">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
+            <span class="inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+            <span>2025 PRODUCTION RELEASES</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400">3 SYSTEMS</span>
+        </div>
+
+        <!-- 04: NEIGHBOR-ON (2025) -->
+        <a href="https://drive.google.com/file/d/1QaAoZutujEehTQZxW5TtT26YY4Vf-xVF/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_1.png" alt="NeighborOn Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_1.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="bot" class="w-3.5 h-3.5"></i> neighboron_rag_flow.py</span>
+                <span class="text-emerald-400">ACTIVE LLM</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Speech Stream Input]
+       │
+       ▼ (Whisper STT Telemetry)
+[Text Stream & Temporal Context]
+       │
+       ▼ (Genkit / Gemini Agent)
+┌─────────────────────────────────┐
+│ • Emotional Distress Extraction │
+│ • Routine/Meal Anomaly Logic    │
+│ • Incident Classification       │
+└─────────────────────────────────┘
+       │
+       ▼ (P0 - P3 Severity Classifier)
+[Automated Case-Management Alert]
+       │
+       ▼
+[Social Worker Welfare Dashboard]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Gemini · Genkit · Node.js</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold">2025</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">04 / PUBLIC WELFARE AI</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">NeighborOn — LLM AI Care Companion & Incident Prevention Platform</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Empowering frontline social workers by connecting isolated households with conversational AI companions. Analyzes daily spoken interactions using multi-turn LLMs to detect acute distress and lifestyle anomalies, automating welfare intervention reports.
+            </p>
+          </div>
+        </a>
+
+        <!-- 05: TTOTTO-YAK (2025) -->
+        <a href="https://drive.google.com/file/d/18Uyvmo7NGo0vb1kThVJXwzbXD-xVR6EQ/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_2.png" alt="TtoTtoYak Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_2.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="eye" class="w-3.5 h-3.5"></i> ttottoyak_vision_flow.py</span>
+                <span class="text-emerald-400">30 FPS STREAM</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[RGB Video Frame (30 FPS)]
+       │
+       ▼ (dlib Landmark Tracking)
+[Face ROI: Forehead / Cheeks]
+       │
+       ▼ (EVM Color Magnification)
+[Spatio-Temporal Map (STMap)]
+       │
+       ▼ (Attentional EfficientNet-B4)
+[Biological Pulse (rPPG) Extraction]
+       │
+       ▼ (Temporal LSTM Anomaly Head)
+[Heart Rate (BPM) & FatigueAU Score]
+       │
+       ▼
+[Automated Drug Schedule & OCR Alert]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: OpenCV · EfficientNet · Flutter</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold">2025</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">05 / COMPUTER VISION & BIOMETRICS</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">TtoTtoYak — Contactless AI Health Monitor & Drug Safety Platform</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Non-contact vital sign extraction operating directly on mobile camera feeds. Employs remote photoplethysmography (rPPG) and Facial Action Unit (AU) analytics to quantify heart rate, micro-circulation shifts, and fatigue indices.
+            </p>
+          </div>
+        </a>
+
+        <!-- 06: ONHAEUM (2025) -->
+        <a href="https://drive.google.com/file/d/1fjDYqcg6UQN3bVMU0kZ1lcPqLC0ZHUD2/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_3.png" alt="Onhaeum Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_3.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="shield" class="w-3.5 h-3.5"></i> biometric_dispatch.ts</span>
+                <span class="text-emerald-400">SECURITY FIRST</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[BLE Biometric Wearable (5.0)]
+       │ (Realtime Heart Rate Telemetry)
+       ▼
+[Edge Mobile Client Validation]
+       │
+       ▼ (Pulse Spike Delta > 35%)
+┌─────────────────────────────────┐
+│ • Trigger Emergency Audio Rec   │
+│ • Lock Encrypted Evidence Chunk │
+│ • High-Precision GPS Geo-stream │
+└─────────────────────────────────┘
+       │
+       ▼ (End-to-End Encrypted Tunnel)
+[Automated Guardian & Police Dispatch]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Protocol: BLE 5.0 · AES-256</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold">2025</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">06 / HIGH-SECURITY IOT & SAFETY</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">Onhaeum — Biometric Anomaly Detection & Emergency Defense System</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Emergency protection platform pairing low-latency BLE sensors with on-device risk validation. Real-time telemetry evaluates acute physiological distress spikes to activate forensic audio recording and encrypted emergency geolocation streaming.
+            </p>
+          </div>
+        </a>
+
+        <!-- ==================== 2022 MILESTONE ==================== -->
+        <div class="year-milestone pt-8">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
+            <span class="inline-flex rounded-full h-2 w-2 bg-teal-400"></span>
+            <span>2022 REHABILITATION AI</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400">1 SYSTEM</span>
+        </div>
+
+        <!-- 07: HOPEPATH (2022) -->
+        <a href="https://drive.google.com/file/d/154TPox_Y8hrGYuRok7Jwyp8F3TA7bWNt/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_7.png" alt="HopePath Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_7.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> geofence_dispatch.ts</span>
+                <span class="text-emerald-400">REALTIME GPS</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Background Mobile GPS Telemetry]
+       │
+       ▼ (Geofencing Boundary Check)
+[Restricted Zone Proximity Delta]
+       │
+       ▼ (NLP Chat Emotion Evaluation)
+┌─────────────────────────────────┐
+│ • Acute Stress / Hostility Flag │
+│ • Boundary Violation Event      │
+│ • Nighttime Curfew Monitoring   │
+└─────────────────────────────────┘
+       │
+       ▼
+[Supervisor Alert & Counselor Bridge]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Flutter · Firebase</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-teal-50 border border-teal-200 text-teal-700 font-mono text-xs font-bold">2022</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">07 / PUBLIC WELFARE AI</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">HopePath — Youth Rehabilitation & Geofencing Platform</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Rehabilitation management platform for juvenile protective supervision. Coordinates background GPS geofencing with natural language emotion tracking to prevent recidivism and support counselor interventions.
+            </p>
+          </div>
+        </a>
+
+        <!-- ==================== 2021 MILESTONE ==================== -->
+        <div class="year-milestone pt-8">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
+            <span class="inline-flex rounded-full h-2 w-2 bg-purple-400"></span>
+            <span>2021 REGISTERED PATENT</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400">1 SYSTEM</span>
+        </div>
+
+        <!-- 08: ART DIVE (2021) -->
+        <a href="https://drive.google.com/file/d/181d6GGoq1ICNdRco55ebsuH-oLUSczzP/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_4.png" alt="ArtDive Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_4.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="music" class="w-3.5 h-3.5"></i> artdive_clustering.py</span>
+                <span class="text-emerald-400">KR PATENT</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Raw Classical Audio Stream]
+       │
+       ▼ (MFCC, Timbre, DWT Subband)
+[High-Dimension Acoustic Vector]
+       │
+       ▼ (Agglomerative Ward Clustering)
+[Optimal Mood Section Boundary]
+       │
+       ▼ (XGBoost 18-Mood Classifier)
+[Synesthetic Emotion Mapping Matrix]
+       │
+       ▼ (Cosine Artwork Embedding Match)
+[Curated Visual Art & Audio Playlist]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Patent: KR 10-2755282</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 font-mono text-xs font-bold">2021</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">08 / PATENTED AI ENGINE</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">ArtDive — Synesthetic Classical Music & Artwork Recommender</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Registered patent algorithm mapping classical acoustic parameters (MFCC, Timbre, Rhythm) to visual fine art collections. Implements hierarchical Ward clustering to partition classical symphonies into emotional chapters.
+            </p>
+          </div>
+        </a>
+
+        <!-- ==================== 2020 MILESTONE ==================== -->
+        <div class="year-milestone pt-8">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
+            <span class="inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+            <span>2020 NATIONAL R&D (IITP)</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400">2 SYSTEMS</span>
+        </div>
+
+        <!-- 09: STUDENT RECOMMENDER (2020) -->
+        <a href="https://drive.google.com/file/d/1Pg_96aOJcKuIiFq_WgGSn__10zfDyCVe/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_5.png" alt="Student Recommender Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_5.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="layout" class="w-3.5 h-3.5"></i> registration_cart_engine.ts</span>
+                <span class="text-emerald-400">NEXT.JS 15</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Student Profile & Major Matrix]
+       │
+       ▼
+[Degree Requirement Verification]
+       │
+       ▼ (Collaborative + Content Filtering)
+┌─────────────────────────────────┐
+│ • Pre-requisite Dependency Tree │
+│ • Historical Grade & Preference │
+│ • Bottleneck Traffic Avoidance  │
+└─────────────────────────────────┘
+       │
+       ▼ (Intelligent Cart Optimizer)
+[Automated 1-Click Schedule Generation]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Next.js · ShadCN · Genkit</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 font-mono text-xs font-bold">2020</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">09 / UNIVERSITY AI-SAAS</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">Academic Course Recommender & Pre-Registration SaaS</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Full-stack university course recommendation portal (Next.js 15, Tailwind). Automatically models graduation requirements and completed credits to eliminate server registration crashes via an intelligent cart engine.
+            </p>
+          </div>
+        </a>
+
+        <!-- 10: DEEPFAKE DETECTION (2020) -->
+        <a href="https://drive.google.com/file/d/1X8cnmVw9AooisX-Fm3LzU2ByYNeOKeOh/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_6.png" alt="Deepfake Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_6.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="lock" class="w-3.5 h-3.5"></i> deepfake_forensic.py</span>
+                <span class="text-emerald-400">BIOLOGICAL PULSE</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Video Face Frames (Face2Face / GAN)]
+       │
+       ▼ (Multi-Region Pulse Extraction)
+[Cross-Facial rPPG Phase Telemetry]
+       │
+       ▼ (Fourier / STMap Frequency Map)
+┌─────────────────────────────────┐
+│ Real: Uniform Coherent Pulse    │
+│ Fake: Pixel Phase Discontinuity │
+└─────────────────────────────────┘
+       │
+       ▼ (Attention EfficientNet-3D)
+[Authenticity Score: Forensic Verdict]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Method: Spatio-Temporal PPG</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 font-mono text-xs font-bold">2020</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">10 / AI FORENSICS</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">Deepfake Detection via Spatio-Temporal Hybrid PPG Analysis</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              National cybersecurity R&D project discerning synthetic facial reenactments from authentic video. Extracts biological pulse signals across spatial facial regions using Spatio-Temporal Maps.
+            </p>
+          </div>
+        </a>
+
+        <!-- ==================== 2018 MILESTONE ==================== -->
+        <div class="year-milestone pt-8">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
+            <span class="inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+            <span>2018 MEDICAL SAFETY-CRITICAL</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400">1 SYSTEM</span>
+        </div>
+
+        <!-- 11: RT SIMULATION (2018) -->
+        <a href="https://drive.google.com/file/d/18X62-FwErqfO30wL3TffcgJ4L_Mn819k/view?usp=drive_link" target="_blank" class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_8.png" alt="RT Simulation Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_8.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> stpa_quality_gate.yaml</span>
+                <span class="text-emerald-400">CRITICAL SAFETY</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Radiation Therapy Source Code]
+       │
+       ▼ (Static Analysis Engine)
+[CppCheck · NSIQCollector Validation]
+       │
+       ▼ (STPA Hazard Traceability Gate)
+┌─────────────────────────────────┐
+│ • Unsafe Control Actions (UCA)  │
+│ • Loss of Radiation Dosage Purity│
+│ • Automated Unit Test Assertion │
+└─────────────────────────────────┘
+       │
+       ▼ (Jenkins / SonarQube CI/CD)
+[Production Build Verification Passed]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Standard: STPA Hazard Analysis</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold">2018</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider">11 / SAFETY-CRITICAL SYSTEMS</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition">Radiation Therapy Simulation Safety & Test Automation</h3>
+            <p class="text-sm text-ink-600 leading-relaxed">
+              Lead Infrastructure Architect for medical radiation software safety. Designed automated testing frameworks, SonarQube CI/CD quality gates, and STPA hazard analysis protocols to guarantee calculation purity.
+            </p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- COMPLETE R&D ARCHIVE -->
+    <section id="rd-archive" class="space-y-6">
+      <div class="space-y-2 border-b border-surface-300 pb-4">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-ink-500 flex items-center gap-2">
+          <i data-lucide="history" class="w-4 h-4 text-accent"></i>
+          Full Institutional R&D Timeline (2018–2026)
+        </h2>
+      </div>
+
+      <div class="bg-white border border-surface-300 rounded-2xl p-6 sm:p-8 divide-y divide-surface-200 shadow-2xs">
+        
+        <!-- 2026 -->
+        <div class="py-4 first:pt-0 grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div class="font-mono text-accent font-bold text-sm">2026</div>
+          <div class="md:col-span-3 space-y-1">
+            <div class="text-ink-900 font-semibold">TeraGrid-Ops: Hyperscale AI Data Center Power & Thermal Dispatch Engine</div>
+            <div class="text-ink-600 text-xs">Event-Driven 100Hz Telemetry Buffer, MILP Power Capping & Tri-Vector Actuator Control</div>
+            <div class="text-ink-900 font-semibold pt-1">Autonomous Multi-Agent Compliance Engine for Mining Operations (LangGraph & ChromaDB)</div>
+            <div class="text-ink-600 text-xs">Self-Reflective Deterministic State Machine for WA EPA & EPBC Act Statutory Mandates</div>
+            <div class="text-ink-900 font-semibold pt-1">Enterprise LLM Security & Cost-Routing Gateway (Zero-Trust PII Redaction & Circuit Breaker)</div>
+            <div class="text-ink-600 text-xs">High-Throughput Asynchronous Python 3.11 / FastAPI B2B Multi-Tenant AI Operations</div>
+          </div>
+        </div>
+
+        <!-- 2025 -->
+        <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div class="font-mono text-accent font-bold text-sm">2025</div>
+          <div class="md:col-span-3 space-y-1">
+            <div class="text-ink-900 font-semibold">NeighborOn — Multi-Turn LLM AI Companion Platform for Social Welfare</div>
+            <div class="text-ink-900 font-semibold">Onhaeum — Integrated Protection Platform for Domestic Violence & Stalking Victims</div>
+            <div class="text-ink-900 font-semibold">TtoTtoYak — Contactless rPPG Facial Biometric Monitoring Platform</div>
+          </div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div class="font-mono text-accent font-bold text-sm">2024</div>
+          <div class="md:col-span-3 space-y-1">
+            <div class="text-ink-900 font-semibold">XR Spatial Computing Content Pipeline Development (KOCCA)</div>
+            <div class="text-ink-600 text-xs">Experiential XR e-Sports Project & Spatial Computing Tracking Systems</div>
+          </div>
+        </div>
+
+        <!-- 2023 -->
+        <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div class="font-mono text-accent font-bold text-sm">2023</div>
+          <div class="md:col-span-3 space-y-1">
+            <div class="text-ink-900 font-semibold">Ancient Manuscript Character Analysis & Restoration via Generative Adversarial Networks (GANs)</div>
+          </div>
+        </div>
+
+        <!-- 2022 -->
+        <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div class="font-mono text-accent font-bold text-sm">2022</div>
+          <div class="md:col-span-3 space-y-1">
+            <div class="text-ink-900 font-semibold">AI-based Test Suite Generation & STPA-based Safety Validation Engine (NRF)</div>
+            <div class="text-ink-900 font-semibold">HopePath: AI-Powered Rehabilitation Platform with Real-Time Background Geofencing</div>
+            <div class="text-ink-900 font-semibold">Global Atmospheric Anomaly Detection & Air Quality Big Data Pipeline</div>
+          </div>
+        </div>
+
+        <!-- 2021 -->
+        <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div class="font-mono text-accent font-bold text-sm">2021</div>
+          <div class="md:col-span-3 space-y-1">
+            <div class="text-ink-900 font-semibold">ArtDive: Big Data-based Art Convergence AI Service Platform (KAIA)</div>
+            <div class="text-ink-900 font-semibold">MDPI SCIE Publication: Classical Music Specific Mood Automatic Recognition Model</div>
+            <div class="text-ink-900 font-semibold">MITA 2021 Conference: Emotion-Based Art Convergence Playlist Production System</div>
+          </div>
+        </div>
+
+        <!-- 2020 -->
+        <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div class="font-mono text-accent font-bold text-sm">2020</div>
+          <div class="md:col-span-3 space-y-1">
+            <div class="text-ink-900 font-semibold">Deepfake Forensic Detection using Multi-Region Pulse Analysis (IITP)</div>
+            <div class="text-ink-900 font-semibold">Personalized Academic Course Recommender & Pre-Registration Engine (IITP)</div>
+            <div class="text-ink-900 font-semibold">Few-shot Learning for Automated Fashion Style Prediction (IITP)</div>
+            <div class="text-ink-900 font-semibold">Privacy-Preserving Federated Learning Security Architectures (IITP)</div>
+            <div class="text-ink-900 font-semibold">Intelligent Deep Learning Intrusion Detection System (IITP)</div>
+          </div>
+        </div>
+
+        <!-- 2019 -->
+        <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div class="font-mono text-accent font-bold text-sm">2019</div>
+          <div class="md:col-span-3 space-y-1">
+            <div class="text-ink-900 font-semibold">Autonomous Mobility Core Software Validation & Edge Architectures (IITP)</div>
+            <div class="text-ink-900 font-semibold">Software Safety Quality & Test Automation Advanced Curriculum (TTA)</div>
+          </div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="py-4 last:pb-0 grid grid-cols-1 md:grid-cols-4 gap-2">
+          <div class="font-mono text-accent font-bold text-sm">2018</div>
+          <div class="md:col-span-3 space-y-1">
+            <div class="text-ink-900 font-semibold">Software Safety Process Engineering for Radiation Therapy Systems (Cinesol)</div>
+            <div class="text-ink-900 font-semibold">Research on Safety-Critical Software Quality for Medical Devices (IITP)</div>
+            <div class="text-ink-900 font-semibold">Design & Full-Stack Implementation of IoT Embedded Sensor Systems (IITP)</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="bg-white border border-surface-300 rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-sm">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-200 text-xs font-mono text-ink-700">
+        <span>Available for Global Remote Engineering Collaborations</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink-900 tracking-tight">
+        Have a high-assurance AI or SaaS challenge?<br/>
+        <span class="text-accent">Let's build production solutions.</span>
+      </h2>
+
+      <p class="text-ink-600 max-w-xl mx-auto text-sm sm:text-base">
+        Available for senior technical advisory, fractional AI architecture, and full-stack system development contracts.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <a href="https://github.com/sianobuilds" target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-surface-300 bg-surface-100 hover:bg-surface-200 text-ink-900 font-medium text-sm transition">
+          <svg class="w-4 h-4 fill-current text-ink-700" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          <span>GitHub: @sianobuilds</span>
+        </a>
+        <a href="mailto:siano.builds@gmail.com?subject=Inquiry%20for%20AI%20Solutions%20Architecture" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-accent hover:bg-accent-hover text-white font-semibold text-sm transition shadow-sm">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>Send Direct Inquiry</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-surface-300 py-8 text-center text-xs font-mono text-ink-500 bg-surface-100">
+    <p>© 2026 SIANO LEE. Bridging Rigorous AI Research with Production Full-Stack Execution.</p>
+  </footer>
+
+  <!-- DYNAMIC WAVEDOT LINK CHAR SPLIT ENGINE -->
+  <script>
+    lucide.createIcons();
+
+    document.querySelectorAll('[data-wave]').forEach(el => {
+      const text = el.innerText;
+      el.innerHTML = '';
+      [...text].forEach((char, index) => {
+        const span = document.createElement('span');
+        span.className = 'char';
+        span.style.setProperty('--char-index', index);
+        span.innerText = char === ' ' ? '\u00A0' : char;
+        el.appendChild(span);
+      });
+    });
+  </script>
+</body>
+</html>
