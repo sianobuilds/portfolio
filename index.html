@@ -48,6 +48,18 @@
     }
     .cinematic-card:hover .project-title { color: #2563EB; }
 
+    .year-milestone {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .year-badge-glow {
+      box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+    }
+
     .wave-dot-link {
       position: relative;
       display: inline-block;
@@ -345,288 +357,1021 @@
       </div>
     </section>
 
-    <!-- COMPLETE PRODUCTION PORTFOLIO (STANDARDIZED FORMAT APPLIED) -->
-    <section id="projects" class="space-y-10">
+    <!-- COMPLETE PRODUCTION PORTFOLIO (전체 프로젝트 누락 없이 100% 통합) -->
+    <section id="projects" class="space-y-12">
       <div class="border-b border-surface-300 pb-4">
         <h2 class="text-2xl font-bold text-ink-900" data-i18n="sec_architectures">개발 경력 및 포트폴리오</h2>
         <p class="text-xs text-ink-600 font-mono mt-1" data-i18n="sec_architectures_sub">실제 프로덕션 배포 및 비즈니스 현장에서 검증된 엔지니어링 프로젝트 아카이브입니다.</p>
       </div>
 
-      <div class="space-y-8">
+      <div class="space-y-12">
 
-        <!-- ===================================================================== -->
-        <!-- [PROJECT 01] KINETIC-B2B -->
-        <!-- ===================================================================== -->
-        <div class="cinematic-card rounded-2xl p-6 sm:p-8 space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-surface-200 pb-4">
-            <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-md bg-blue-50 text-accent font-mono text-xs font-bold border border-blue-200">[PROJECT 01]</span>
-              <h3 class="project-title text-2xl font-bold text-ink-900 transition">KINETIC-B2B</h3>
+        <!-- ==================== 2026 MILESTONE ==================== -->
+        <div class="year-milestone">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-ink-900 text-white font-mono text-xs font-bold year-badge-glow">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+            </span>
+            <span data-i18n="year_2026">2026 플래그십 시스템</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2026">5개 시스템 가동 중</span>
+        </div>
+
+        <!-- 01: BIOSYNTHETIX (2026) -->
+        <div class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group border-blue-300 ring-1 ring-blue-100">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <div class="w-full h-full bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-6 flex flex-col justify-between text-white font-mono">
+                <div class="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-3">
+                  <span class="text-accent flex items-center gap-1.5 font-bold"><i data-lucide="dna" class="w-4 h-4"></i> BioSynthetix Engine</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">CPU 8ms INFERENCE</span>
+                </div>
+                <div class="space-y-3 py-4">
+                  <div class="text-xs text-slate-400">Target Molecule Parsing:</div>
+                  <div class="bg-black/40 p-2.5 rounded border border-slate-800 text-[11px] text-blue-300 break-all">
+                    CC(=O)Oc1ccccc1C(=O)O ➔ 2048-bit ECFP6 (r=3)
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 text-[10.5px]">
+                    <div class="p-2 rounded bg-slate-800/60 border border-slate-700/60">
+                      <span class="text-slate-400">hERG Channel:</span> <span class="text-rose-400 font-bold">Hazard Detected</span>
+                    </div>
+                    <div class="p-2 rounded bg-slate-800/60 border border-slate-700/60">
+                      <span class="text-slate-400">Bioisostere:</span> <span class="text-emerald-400 font-bold">Mutation Success</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-[10px] text-slate-500 flex items-center justify-between border-t border-slate-800 pt-3">
+                  <span>Zero-GPU Requirement Architecture</span>
+                  <span>HTML5 Canvas 2D Renderer</span>
+                </div>
+              </div>
+              <span class="absolute bottom-3 left-3 bg-amber-500/90 text-slate-950 font-bold text-[10px] font-mono px-2.5 py-1 rounded shadow-sm flex items-center gap-1.5">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-slate-950"></span>
+                </span>
+                <span data-i18n="badge_active_sprint">진행 중 (ACTIVE SPRINT)</span>
+              </span>
             </div>
-            <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-medium" data-i18n="p1_format">■ 형태: B2B Enterprise SaaS (물류 전사 자원 관리 &amp; 자율 의사결정 플랫폼)</span>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5"></i> biosynthetix_pipeline.py</span>
+                <span class="text-emerald-400">SINGLE CPU &lt; 8ms</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Canonical SMILES Ingestion]
+       │
+       ▼ (RDKit Morgan Fingerprint Generator)
+[2048-bit Topological ECFP6 Vectorization]
+       │
+       ▼ (Single-Pass Asynchronous Inference)
+┌──────────────────────────────────────────────┐
+│ • 5-Axis ADMET Pharmacokinetics (A/D/M/E/T) │
+│ • hERG Cardiotoxicity Channel Blockade Flag  │
+└──────────────────────────────────────────────┘
+       │
+       ├──► [Safety Margin Verified: Green ➔ Output]
+       │
+       ▼ [Hazard Triggered: hERG > 0.70]
+[Autonomous Bioisosteric Mutation Engine]
+(Core Scaffold Locked · Side-Chain Functional Group Swap)
+       │
+       ▼ (Cyclic Closed-Loop Re-screening)
+[Target Affinity Preserved + Safety Restored]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python 3.11 · RDKit · FastAPI · ECFP6 · Canvas · Docker</div>
+            </div>
           </div>
 
-          <div class="space-y-2">
-            <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 정의 (Definition)</h4>
-            <p class="text-sm font-semibold text-ink-800 leading-relaxed bg-surface-100 p-4 rounded-xl border border-surface-300" data-i18n="p1_def">
-              비정형 발주서 자동 전표화 및 보안 SQL 파싱 기반 대륙 횡단 화물 물류 관제 시스템
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-accent font-mono text-xs font-bold">2026</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_bio_cat">01 / 화학정보학 &amp; B2B 신약 발굴</span>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-800 font-mono text-xs font-bold">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                </span>
+                <span data-i18n="badge_in_progress">현재 고도화 진행 중 (Active R&D)</span>
+              </span>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_bio_title">BioSynthetix: 초고속 인실리코(In-Silico) 분자 스크리닝 및 폐루프 변이 플랫폼</h3>
+            <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_bio_desc">
+              초기 저분자 신약 개발 스타트업을 위한 엔터프라이즈급 가상 연산 스크리닝 및 생성형 최적화 플랫폼. SMILES 화학식을 2048비트 ECFP6 지문으로 변환하고, 단일 CPU 노드에서 고가 GPU 없이 8ms 만에 5축 ADMET 및 hERG 심장 독성을 추론하며, 타깃 결합력을 유지한 채 안전성을 복원하는 자율 분자 변이를 수행합니다.
             </p>
           </div>
+        </div>
 
-          <div class="space-y-3">
-            <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 주요 기능 (Key Features)</h4>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-ink-700 font-sans leading-relaxed">
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p1_f1"><strong>비정형 발주서 정규화:</strong> 거래처 이메일 발주 텍스트를 상용 ERP 인보이스 규격으로 자동 변환</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p1_f2"><strong>보안 Text-to-SQL 파싱:</strong> SQLGlot AST 파서 기반으로 DDL/DML 조작을 차단해 안전한 분석 쿼리 컴파일</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p1_f3"><strong>실시간 화물 토폴로지 관제:</strong> 물류 거점 및 운송 차량 텔레메트리를 시각화하여 바이어 전용 트래킹 제공</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p1_f4"><strong>자율 결재 라우팅:</strong> LangGraph 상태 머신으로 사내 규정을 검증하고 메신저 승인 웹훅과 연동한 품의 자동화</span>
-              </li>
-            </ul>
+        <!-- 02: KINETIC-B2B (PROJECT 01) -->
+        <div class="cinematic-card rounded-2xl p-6 sm:p-8 space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_11.png" alt="KINETIC-B2B Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=KINETIC-B2B+Preview';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">2026 B2B ENTERPRISE SAAS</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="terminal" class="w-3.5 h-3.5"></i> kinetic_logistics_core.py</span>
+                <span class="text-emerald-400">SQLGlot AST SECURED</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Unstructured Vendor Order Stream (Email / PO)]
+       │
+       ▼ (LLM Pydantic v2 Schema Normalizer)
+[Commercial ERP Invoice Formats Normalized]
+       │
+       ▼ (SQLGlot AST Parsing &amp; Sanitization)
+┌──────────────────────────────────────────────┐
+│ • DDL / DML Mutation Hard Block             │
+│ • Compile Safe Read-Only Analytics Query     │
+└──────────────────────────────────────────────┘
+       │
+       ▼ (Real-Time Cargo Topology Visualizer)
+[Cross-Continental Logistics Hub Tracking]
+       │
+       ▼ (LangGraph State Machine Approval)
+[Automated Webhook Multi-tier Purchase Dispatch]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python · FastAPI · LangGraph · LLM Agent · SQLGlot · PostgreSQL · Docker</div>
+            </div>
           </div>
 
-          <div class="pt-3 border-t border-surface-200">
-            <h4 class="text-[11px] font-mono text-ink-500 font-bold uppercase mb-2">■ 기술 스택 (Tech Stack)</h4>
-            <div class="flex flex-wrap gap-2 font-mono text-xs text-ink-800">
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">FastAPI</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">LangGraph</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">LLM Agent</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">SQLGlot</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Pydantic v2</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">PostgreSQL</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Docker</span>
+          <div class="pt-4 border-t border-surface-200 space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="px-2.5 py-1 rounded-md bg-blue-50 text-accent font-mono text-xs font-bold border border-blue-200">[PROJECT 01]</span>
+                <h3 class="project-title text-2xl font-bold text-ink-900 transition">KINETIC-B2B</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-medium" data-i18n="p1_format">■ 형태: B2B Enterprise SaaS (물류 전사 자원 관리 &amp; 자율 의사결정 플랫폼)</span>
+            </div>
+
+            <div class="space-y-1.5">
+              <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 정의</h4>
+              <p class="text-sm font-semibold text-ink-800 leading-relaxed bg-surface-100 p-3.5 rounded-xl border border-surface-300" data-i18n="p1_def">
+                비정형 발주서 자동 전표화 및 보안 SQL 파싱 기반 대륙 횡단 화물 물류 관제 시스템
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 주요 기능</h4>
+              <ul class="space-y-2 text-xs sm:text-sm text-ink-700 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p1_f1"><strong>비정형 발주서 정규화:</strong> 거래처 이메일 발주 텍스트를 상용 ERP 인보이스 규격으로 자동 변환</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p1_f2"><strong>보안 Text-to-SQL 파싱:</strong> SQLGlot AST 파서 기반으로 DDL/DML 조작을 차단해 안전한 분석 쿼리 컴파일</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p1_f3"><strong>실시간 화물 토폴로지 관제:</strong> 물류 거점 및 운송 차량 텔레메트리를 시각화하여 바이어 전용 트래킹 제공</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p1_f4"><strong>자율 결재 라우팅:</strong> LangGraph 상태 머신으로 사내 규정을 검증하고 메신저 승인 웹훅과 연동한 품의 자동화</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-[11px] font-mono text-ink-500 font-bold uppercase mb-2">■ 기술 스택</h4>
+              <div class="flex flex-wrap gap-2 font-mono text-xs text-ink-800">
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">FastAPI</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">LangGraph</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">LLM Agent</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">SQLGlot</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Pydantic v2</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">PostgreSQL</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Docker</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- ===================================================================== -->
-        <!-- [PROJECT 02] Tto-Tto-Yak (또또약) -->
-        <!-- ===================================================================== -->
+        <!-- 03: VOX-MEDIK (PROJECT 05) -->
         <div class="cinematic-card rounded-2xl p-6 sm:p-8 space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-surface-200 pb-4">
-            <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-md bg-emerald-50 text-emerald-700 font-mono text-xs font-bold border border-emerald-200">[PROJECT 02]</span>
-              <h3 class="project-title text-2xl font-bold text-ink-900 transition">Tto-Tto-Yak (또또약)</h3>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <div class="w-full h-full bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900 p-6 flex flex-col justify-between text-white font-mono">
+                <div class="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-2">
+                  <span class="text-teal-400 flex items-center gap-1.5 font-bold"><i data-lucide="stethoscope" class="w-4 h-4"></i> VOX-MEDIK DiGA Core</span>
+                  <span class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30">HL7 FHIR R4</span>
+                </div>
+                <div class="space-y-2 py-3 text-[11px]">
+                  <div class="flex justify-between border-b border-slate-800 pb-1">
+                    <span class="text-slate-400">Care Grade (Pflegegrad):</span>
+                    <span class="text-emerald-400 font-bold">Grade 3 (SGB XI Verified)</span>
+                  </div>
+                  <div class="flex justify-between border-b border-slate-800 pb-1">
+                    <span class="text-slate-400">Monthly Support (Pflegegeld):</span>
+                    <span class="text-blue-300 font-bold">€573 / Month</span>
+                  </div>
+                  <div class="flex justify-between border-b border-slate-800 pb-1">
+                    <span class="text-slate-400">Doctor Report (Arztbrief):</span>
+                    <span class="text-amber-300 font-bold">1-Click PDF Ready</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-slate-400">Active Triage Cohort:</span>
+                    <span class="text-teal-300 font-bold">128 Households (Tourenplan)</span>
+                  </div>
+                </div>
+                <div class="text-[10px] text-slate-500 border-t border-slate-800 pt-2 flex justify-between">
+                  <span>German BfArM DiGA Standard</span>
+                  <span>Audio Biomarker Extraction</span>
+                </div>
+              </div>
+              <span class="absolute bottom-3 left-3 bg-teal-700/80 text-white text-[10px] font-mono px-2 py-1 rounded">2026 B2G / B2B HEALTHCARE PWA</span>
             </div>
-            <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-medium" data-i18n="p2_format">■ 형태: B2C / B2B Healthcare Mobile Web (AI 시니어 바이탈 모니터링 &amp; 복약 안전 솔루션)</span>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="activity" class="w-3.5 h-3.5"></i> vox_medik_telemetry.py</span>
+                <span class="text-teal-400">SGB XI ENGINE</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Senior Audio Conversation (Web Audio API)]
+       │
+       ▼ (Whisper STT Telemetry Stream)
+[Biomarker Extraction: Nutrition / Meds / Mobility]
+       │
+       ▼ (Stammdaten Master CRUD Sync)
+┌──────────────────────────────────────────────┐
+│ • SGB XI 6-Domain Dynamic Weight Calculator  │
+│ • Deterministic Pflegegrad (1~5) Triage      │
+│ • Automated Pflegegeld Subsidy Yield         │
+└──────────────────────────────────────────────┘
+       │
+       ▼ (Sandboxed PDF Document Pipeline)
+[Official Doctor Report (Arztbrief) 1-Click Issue]
+       │
+       ▼ (Tourenplan Routing Engine)
+[128-Household Field Nurse Dispatch &amp; Check-in]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python · FastAPI · Whisper · Web Audio API · HL7 FHIR R4 · Responsive PWA</div>
+            </div>
           </div>
 
-          <div class="space-y-2">
-            <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 정의 (Definition)</h4>
-            <p class="text-sm font-semibold text-ink-800 leading-relaxed bg-surface-100 p-4 rounded-xl border border-surface-300" data-i18n="p2_def">
-              카메라 기반 비접촉 안면 생체 신호 감지 및 시니어 맞춤형 복약 지도 솔루션
-            </p>
-          </div>
+          <div class="pt-4 border-t border-surface-200 space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="px-2.5 py-1 rounded-md bg-teal-50 text-teal-700 font-mono text-xs font-bold border border-teal-200">[PROJECT 05]</span>
+                <h3 class="project-title text-2xl font-bold text-ink-900 transition">VOX-MEDIK (시니어 케어 다이어리)</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-medium" data-i18n="p5_format">■ 형태: B2G / B2B Healthcare Mobile PWA (독일 DiGA 인증 원격 요양 &amp; 임상 텔레메트리 웹앱)</span>
+            </div>
 
-          <div class="space-y-3">
-            <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 주요 기능 (Key Features)</h4>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-ink-700 font-sans leading-relaxed">
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p2_f1"><strong>비접촉 바이탈 측정:</strong> rPPG 알고리즘 기반 안면 미세 혈류 변화를 분석해 심박수·호흡수 비접촉 측정</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p2_f2"><strong>안면 인식 복약 인증:</strong> 사용자 얼굴 매칭을 통해 개인별 복약 스케줄 확인 및 복용 이력 자동 로깅</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p2_f3"><strong>오복용 방지 검증:</strong> 약물 패키지 시각 정보와 처방 데이터베이스 대조를 통한 중복·누락 복용 방지</span>
-              </li>
-            </ul>
-          </div>
+            <div class="space-y-1.5">
+              <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 정의</h4>
+              <p class="text-sm font-semibold text-ink-800 leading-relaxed bg-surface-100 p-3.5 rounded-xl border border-surface-300" data-i18n="p5_def">
+                독거 어르신 음성 통화 분석 기반 안부 다이어리 생성 및 독일 법정 요양등급·의사 소견서 자동 발행 플랫폼
+              </p>
+            </div>
 
-          <div class="pt-3 border-t border-surface-200">
-            <h4 class="text-[11px] font-mono text-ink-500 font-bold uppercase mb-2">■ 기술 스택 (Tech Stack)</h4>
-            <div class="flex flex-wrap gap-2 font-mono text-xs text-ink-800">
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">OpenCV</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">rPPG Algorithm</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Facial Recognition</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">FastAPI</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">MediaPipe</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">PWA</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Tailwind CSS</span>
+            <div class="space-y-2">
+              <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 주요 기능</h4>
+              <ul class="space-y-2 text-xs sm:text-sm text-ink-700 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p5_f1"><strong>음성 바이오마커 다이어리화:</strong> 어르신 일상 대화 녹취에서 식사, 복약, 관절 통증 지표를 자동 추출해 요약 일기 생성</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p5_f2"><strong>환자 마스터 데이터 CRUD:</strong> 인적사항, 질환, 장기요양등급(Pflegegrad 1~5), 비상연락처 등록·수정 및 실시간 동기화</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p5_f3"><strong>SGB XI 요양등급 실시간 계산:</strong> 독일 장기요양보험 6대 영역 가중치 기반 등급 판정 및 지원금(Pflegegeld) 즉시 산출</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p5_f4"><strong>공식 의사 소견서(Arztbrief) PDF 조판:</strong> 독일 공공의료(BfArM DiGA) 표준 서식을 브라우저 격리 렌더러로 원클릭 발행</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p5_f5"><strong>128가구 Triage &amp; 방문 동선 관제:</strong> 위험군 자동 선별, 방문간호사 순회 경로(Tourenplan) 확인 및 현장 체크인 지원</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-[11px] font-mono text-ink-500 font-bold uppercase mb-2">■ 기술 스택</h4>
+              <div class="flex flex-wrap gap-2 font-mono text-xs text-ink-800">
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">FastAPI</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Whisper (STT)</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Pydantic v2</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Web Audio API</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">HL7 FHIR R4</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Responsive PWA</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Tailwind CSS</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- ===================================================================== -->
-        <!-- [PROJECT 03] CareGrid -->
-        <!-- ===================================================================== -->
-        <div class="cinematic-card rounded-2xl p-6 sm:p-8 space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-surface-200 pb-4">
-            <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-md bg-blue-50 text-accent font-mono text-xs font-bold border border-blue-200">[PROJECT 03]</span>
-              <h3 class="project-title text-2xl font-bold text-ink-900 transition">CareGrid</h3>
+        <!-- 04: MINING COMPLIANCE MULTI-AGENT -->
+        <div class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_10.png" alt="Mining Multi-Agent Compliance Engine Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_10.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">2026 AUTONOMOUS AGENT STATE MACHINE</span>
             </div>
-            <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-medium" data-i18n="p3_format">■ 형태: B2B Healthcare Mobile PWA (독일 요양보호 관리 솔루션)</span>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="cpu" class="w-3.5 h-3.5"></i> mining_compliance_graph.py</span>
+                <span class="text-emerald-400">&lt; 1.8s BREACH DETECT</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Pilbara Basin Real-Time Telemetry Stream]
+(Dewatering GL/yr · Clearing Ha · Scope 1 GHG)
+       │
+       ▼
+[StateNode 1: Statutory Vector Retrieval (ChromaDB)]
+(WA EPA Part IV · EPBC Act 1999 · NGER Act 2007)
+       │
+       ▼
+[StateNode 2: Subterranean Fauna &amp; Hydro Grader]
+       │
+       ├──► [Score &lt; 0.85] ──► [Self-Reflective Query Rewriting] ──┐
+       │                                                          │
+       ▼ [Verified Evidence Grounding]                            │
+[StateNode 3: Directive Synthesizer] ◄────────────────────────────┘
+       │
+       ▼ (Sub-1.8s Statutory Breach Trigger)
+[Industrial Dispatch Console: Automated Work-Stop &amp; Ministerial Directive]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python 3.11 · LangGraph · ChromaDB · FastAPI · Tailwind</div>
+            </div>
           </div>
 
-          <div class="space-y-2">
-            <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 정의 (Definition)</h4>
-            <p class="text-sm font-semibold text-ink-800 leading-relaxed bg-surface-100 p-4 rounded-xl border border-surface-300" data-i18n="p3_def">
-              요양보호사와 사회복지사를 위한 모바일 중심 환자 마스터 데이터(Stammdaten) 관리 웹앱
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-accent font-mono text-xs font-bold">2026</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_3_cat">04 / 자율 AI 에이전트</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_3_title">광산 환경 규제 대응을 위한 자율 멀티에이전트 컴플라이언스 엔진</h3>
+            <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_3_desc">
+              서호주 노천 광산 텔레메트리를 호주 연방(EPBC Act) 및 주(WA EPA) 환경 법령과 실시간 대조하는 LangGraph 기반 자율 다중 에이전트 시스템. 순환 평가 노드를 통해 환각을 차단하고, 1.8초 이내에 자동 작업 중지 및 장관 통보 명령을 발령합니다.
             </p>
           </div>
+        </div>
 
-          <div class="space-y-3">
-            <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 주요 기능 (Key Features)</h4>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-ink-700 font-sans leading-relaxed">
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p3_f1"><strong>환자 마스터 데이터 CRUD:</strong> 인적사항, 질환 이력, 비상연락처 등록·수정 및 전체 화면 실시간 동기화</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p3_f2"><strong>복약 체크 &amp; 인터랙션 모니터링:</strong> 일일 복약 이행 여부 체크 및 약물 간 급성 상호작용 위험 감지</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p3_f3"><strong>현장 최적화 모바일 UI:</strong> 현장 방문 인력을 위한 하단 탭 바 기반 반응형 레이아웃 및 인라인 알림 처리</span>
-              </li>
-            </ul>
+        <!-- 05: ENTERPRISE LLM GATEWAY -->
+        <div class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_9.png" alt="Enterprise LLM Gateway Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_9.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">2026 ENTERPRISE ARCHITECTURE</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> llm_gateway_pipeline.py</span>
+                <span class="text-emerald-400">&lt; 50ms LATENCY</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Client App Inbound Request]
+       │
+       ▼ (Zero-Trust Regex Engine: &lt;2ms)
+[In-Flight PII Redaction: SSN/Cards/Emails]
+       │
+       ▼ (Heuristic Threat Scanner > 0.85)
+┌─────────────────────────────────────────┐
+│ • Prompt Injection Firewall: Block 400  │
+│ • Audit Log Telemetry / SIEM Export     │
+└─────────────────────────────────────────┘
+       │
+       ▼ (Entropy-Aware Dynamic Cost Router)
+┌────────────────────┬────────────────────┐
+▼                    ▼                    ▼
+[Primary Tier: 4o]   [Economy: 4o-mini]   [Local SLM]
+       │
+       ▼ (Circuit Breaker: 3 Strikes Trip)
+[Hot-Standby Automatic Failover: Claude 3.5]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python 3.11 · FastAPI · LiteLLM · Redis · Docker</div>
+            </div>
           </div>
 
-          <div class="pt-3 border-t border-surface-200">
-            <h4 class="text-[11px] font-mono text-ink-500 font-bold uppercase mb-2">■ 기술 스택 (Tech Stack)</h4>
-            <div class="flex flex-wrap gap-2 font-mono text-xs text-ink-800">
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">FastAPI</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">JavaScript (Vanilla ES6)</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">HTML5/CSS3</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Tailwind CSS</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Responsive PWA</span>
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-accent font-mono text-xs font-bold">2026</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_4_cat">05 / 엔터프라이즈 AI 미들웨어</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_4_title">엔터프라이즈 LLM 보안 및 비용 최적화 라우팅 게이트웨이</h3>
+            <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_4_desc">
+              B2B 멀티테넌트 클라우드 백엔드를 위한 상용 AI 보안 미들웨어. 규제 준수를 위한 2ms 이내의 개인정보(PII) 실시간 마스킹, 프롬프트 인젝션 방화벽, 엔트로피 기반 동적 비용 라우팅(토큰 비용 35% 이상 절감) 및 서킷 브레이커 장애 극복 기능을 제공합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- ==================== 2025 MILESTONE ==================== -->
+        <div class="year-milestone pt-8">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
+            <span class="inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+            <span data-i18n="year_2025">2025 프로덕션 릴리즈</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2025">4개 시스템</span>
+        </div>
+
+        <!-- 06: NEIGHBOR-ON (PROJECT 04) -->
+        <div class="cinematic-card rounded-2xl p-6 sm:p-8 space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_1.png" alt="NeighborOn Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=Neighbor-On+Preview';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">2025 B2G WELFARE SAAS</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="bot" class="w-3.5 h-3.5"></i> neighboron_rag_flow.py</span>
+                <span class="text-emerald-400">5-AXIS ENTITY EXTRACT</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[AI Companionship Voice Call Audio Stream]
+       │
+       ▼ (KoBERT / Sentiment Pipeline)
+[5-Axis Lifelog Extraction: Meals / Outings / Sleep]
+       │
+       ▼ (LangChain RAG Processing)
+┌──────────────────────────────────────────────┐
+│ • Vocabulary Diversity Baseline Tracking    │
+│ • Negative Emotion Frequency Trajectory     │
+│ • Caretaker Sentiment Diary Auto-generation │
+└──────────────────────────────────────────────┘
+       │
+       ▼ (Sub-30-day Anomaly Risk Scoring)
+[High-Risk Isolated Household Welfare Alert]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python · FastAPI · RAG · LangChain · Pydantic v2 · KoBERT · Tailwind CSS</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="px-2.5 py-1 rounded-md bg-purple-50 text-purple-700 font-mono text-xs font-bold border border-purple-200">[PROJECT 04]</span>
+                <h3 class="project-title text-2xl font-bold text-ink-900 transition">Neighbor-On (이웃ON)</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-medium" data-i18n="p4_format">■ 형태: B2G Public Welfare SaaS (독거노인 고독사 예방 &amp; 돌봄 다이어리 플랫폼)</span>
+            </div>
+
+            <div class="space-y-1.5">
+              <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 정의</h4>
+              <p class="text-sm font-semibold text-ink-800 leading-relaxed bg-surface-100 p-3.5 rounded-xl border border-surface-300" data-i18n="p4_def">
+                자연어 일상 대화 분석 기반 독거노인 안부 다이어리 자동 생성 및 위험도 관제 시스템
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 주요 기능</h4>
+              <ul class="space-y-2 text-xs sm:text-sm text-ink-700 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p4_f1"><strong>말벗 통화 다이어리화:</strong> AI 음성 대화 로그를 보호자용 감성 일기 및 일상 요약으로 자동 재구성</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p4_f2"><strong>라이프로그 엔터티 추출:</strong> 비정형 발화에서 식사 횟수, 외출 여부, 수면 상태 등 5대 바이오마커 추출</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p4_f3"><strong>고립·우울 위험도 스코어링:</strong> 최근 30일 발화 기저선 대비 어휘 다양성 및 부정 감정 빈도 추적으로 고위험 가구 선별</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-[11px] font-mono text-ink-500 font-bold uppercase mb-2">■ 기술 스택</h4>
+              <div class="flex flex-wrap gap-2 font-mono text-xs text-ink-800">
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">FastAPI</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">RAG</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">LangChain</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Pydantic v2</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">KoBERT / Sentiment Analysis</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Tailwind CSS</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- ===================================================================== -->
-        <!-- [PROJECT 04] Neighbor-On (이웃ON) -->
-        <!-- ===================================================================== -->
+        <!-- 07: CAREGRID (PROJECT 03) -->
         <div class="cinematic-card rounded-2xl p-6 sm:p-8 space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-surface-200 pb-4">
-            <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-md bg-purple-50 text-purple-700 font-mono text-xs font-bold border border-purple-200">[PROJECT 04]</span>
-              <h3 class="project-title text-2xl font-bold text-ink-900 transition">Neighbor-On (이웃ON)</h3>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <div class="w-full h-full bg-slate-900 p-6 flex flex-col justify-between text-white font-mono">
+                <div class="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-2">
+                  <span class="text-accent flex items-center gap-1.5 font-bold"><i data-lucide="heart-pulse" class="w-4 h-4"></i> CareGrid Mobile Shell</span>
+                  <span class="text-emerald-400">STAMMDATEN SYNC</span>
+                </div>
+                <div class="space-y-2 py-3 text-[11px]">
+                  <div class="p-2 rounded bg-slate-950 border border-slate-800">
+                    <span class="text-slate-400">Patient Registry:</span> <span class="text-blue-300 font-bold">Realtime Cross-Tab Synced</span>
+                  </div>
+                  <div class="p-2 rounded bg-slate-950 border border-slate-800">
+                    <span class="text-slate-400">Med Compliance:</span> <span class="text-emerald-400 font-bold">Daily Protocol Validated</span>
+                  </div>
+                  <div class="p-2 rounded bg-slate-950 border border-slate-800">
+                    <span class="text-slate-400">Interaction Risk:</span> <span class="text-rose-400 font-bold">Acute Conflict Guard Active</span>
+                  </div>
+                </div>
+                <div class="text-[10px] text-slate-500 border-t border-slate-800 pt-2 flex justify-between">
+                  <span>Bottom Tab Bar Responsive</span>
+                  <span>Field-worker Inline Banner System</span>
+                </div>
+              </div>
+              <span class="absolute bottom-3 left-3 bg-blue-900/80 text-white text-[10px] font-mono px-2 py-1 rounded">2025 B2B HEALTHCARE PWA</span>
             </div>
-            <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-medium" data-i18n="p4_format">■ 형태: B2G Public Welfare SaaS (독거노인 고독사 예방 &amp; 돌봄 다이어리 플랫폼)</span>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="clipboard-list" class="w-3.5 h-3.5"></i> caregrid_client.js</span>
+                <span class="text-emerald-400">GERMAN CARE PROTOCOL</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Nurse Mobile Client Touch Interface]
+       │
+       ▼ (Mobile Bottom-Tab Responsive PWA Shell)
+[Patient Master Data (Stammdaten) CRUD Engine]
+       │
+       ▼ (Daily Protocol Telemetry Check)
+┌──────────────────────────────────────────────┐
+│ • Realtime Cross-Screen Master Data Sync     │
+│ • Daily Medication Intake Verification       │
+│ • Acute Cross-Drug Adverse Interaction Guard │
+└──────────────────────────────────────────────┘
+       │
+       ▼ (Low-Latency REST Handshake)
+[FastAPI Backend &amp; Local Persistence Buffer]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python · FastAPI · JavaScript (ES6) · HTML5/CSS3 · Tailwind CSS · Responsive PWA</div>
+            </div>
           </div>
 
-          <div class="space-y-2">
-            <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 정의 (Definition)</h4>
-            <p class="text-sm font-semibold text-ink-800 leading-relaxed bg-surface-100 p-4 rounded-xl border border-surface-300" data-i18n="p4_def">
-              자연어 일상 대화 분석 기반 독거노인 안부 다이어리 자동 생성 및 위험도 관제 시스템
-            </p>
-          </div>
+          <div class="pt-4 border-t border-surface-200 space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="px-2.5 py-1 rounded-md bg-blue-50 text-accent font-mono text-xs font-bold border border-blue-200">[PROJECT 03]</span>
+                <h3 class="project-title text-2xl font-bold text-ink-900 transition">CareGrid</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-medium" data-i18n="p3_format">■ 형태: B2B Healthcare Mobile PWA (독일 요양보호 관리 솔루션)</span>
+            </div>
 
-          <div class="space-y-3">
-            <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 주요 기능 (Key Features)</h4>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-ink-700 font-sans leading-relaxed">
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p4_f1"><strong>말벗 통화 다이어리화:</strong> AI 음성 대화 로그를 보호자용 감성 일기 및 일상 요약으로 자동 재구성</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p4_f2"><strong>라이프로그 엔터티 추출:</strong> 비정형 발화에서 식사 횟수, 외출 여부, 수면 상태 등 5대 바이오마커 추출</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p4_f3"><strong>고립·우울 위험도 스코어링:</strong> 최근 30일 발화 기저선 대비 어휘 다양성 및 부정 감정 빈도 추적으로 고위험 가구 선별</span>
-              </li>
-            </ul>
-          </div>
+            <div class="space-y-1.5">
+              <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 정의</h4>
+              <p class="text-sm font-semibold text-ink-800 leading-relaxed bg-surface-100 p-3.5 rounded-xl border border-surface-300" data-i18n="p3_def">
+                요양보호사와 사회복지사를 위한 모바일 중심 환자 마스터 데이터(Stammdaten) 관리 웹앱
+              </p>
+            </div>
 
-          <div class="pt-3 border-t border-surface-200">
-            <h4 class="text-[11px] font-mono text-ink-500 font-bold uppercase mb-2">■ 기술 스택 (Tech Stack)</h4>
-            <div class="flex flex-wrap gap-2 font-mono text-xs text-ink-800">
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">FastAPI</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">RAG</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">LangChain</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Pydantic v2</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">KoBERT / Sentiment Analysis</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Tailwind CSS</span>
+            <div class="space-y-2">
+              <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 주요 기능</h4>
+              <ul class="space-y-2 text-xs sm:text-sm text-ink-700 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p3_f1"><strong>환자 마스터 데이터 CRUD:</strong> 인적사항, 질환 이력, 비상연락처 등록·수정 및 전체 화면 실시간 동기화</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p3_f2"><strong>복약 체크 &amp; 인터랙션 모니터링:</strong> 일일 복약 이행 여부 체크 및 약물 간 급성 상호작용 위험 감지</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p3_f3"><strong>현장 최적화 모바일 UI:</strong> 현장 방문 인력을 위한 하단 탭 바 기반 반응형 레이아웃 및 인라인 알림 처리</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-[11px] font-mono text-ink-500 font-bold uppercase mb-2">■ 기술 스택</h4>
+              <div class="flex flex-wrap gap-2 font-mono text-xs text-ink-800">
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">FastAPI</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">JavaScript (Vanilla ES6)</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">HTML5/CSS3</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Tailwind CSS</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Responsive PWA</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- ===================================================================== -->
-        <!-- [PROJECT 05] VOX-MEDIK (시니어 케어 다이어리) -->
-        <!-- ===================================================================== -->
+        <!-- 08: TTO-TTO-YAK (PROJECT 02) -->
         <div class="cinematic-card rounded-2xl p-6 sm:p-8 space-y-6">
-          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-surface-200 pb-4">
-            <div class="flex items-center gap-3">
-              <span class="px-3 py-1 rounded-md bg-teal-50 text-teal-700 font-mono text-xs font-bold border border-teal-200">[PROJECT 05]</span>
-              <h3 class="project-title text-2xl font-bold text-ink-900 transition">VOX-MEDIK (시니어 케어 다이어리)</h3>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_2.png" alt="TtoTtoYak Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=Tto-Tto-Yak+Preview';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">2025 HEALTHCARE MOBILE WEB</span>
             </div>
-            <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-medium" data-i18n="p5_format">■ 형태: B2G / B2B Healthcare Mobile PWA (독일 DiGA 인증 원격 요양 &amp; 임상 텔레메트리 웹앱)</span>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="eye" class="w-3.5 h-3.5"></i> ttottoyak_vision_flow.py</span>
+                <span class="text-emerald-400">CAMERA rPPG 30 FPS</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Standard Mobile RGB Camera Feed]
+       │
+       ▼ (MediaPipe &amp; OpenCV Landmark Tracking)
+[Facial ROI Micro-Capillary Pulse Monitoring]
+       │
+       ▼ (rPPG Signal Decomposition)
+┌──────────────────────────────────────────────┐
+│ • Non-contact Heart Rate &amp; Respiration Rate │
+│ • Biometric Face Authentication Check        │
+│ • Medication Package Vision Verification     │
+└──────────────────────────────────────────────┘
+       │
+       ▼ (Prescription Database Cross-examination)
+[Automated Medication Logging &amp; Overdose Prevention]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Python · OpenCV · rPPG · Facial Recognition · FastAPI · MediaPipe · PWA</div>
+            </div>
           </div>
 
-          <div class="space-y-2">
-            <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 정의 (Definition)</h4>
-            <p class="text-sm font-semibold text-ink-800 leading-relaxed bg-surface-100 p-4 rounded-xl border border-surface-300" data-i18n="p5_def">
-              독거 어르신 음성 통화 분석 기반 안부 다이어리 생성 및 독일 법정 요양등급·의사 소견서 자동 발행 플랫폼
+          <div class="pt-4 border-t border-surface-200 space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 font-mono text-xs font-bold border border-emerald-200">[PROJECT 02]</span>
+                <h3 class="project-title text-2xl font-bold text-ink-900 transition">Tto-Tto-Yak (또또약)</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-slate-900 text-white font-mono text-xs font-medium" data-i18n="p2_format">■ 형태: B2C / B2B Healthcare Mobile Web (AI 시니어 바이탈 모니터링 &amp; 복약 안전 솔루션)</span>
+            </div>
+
+            <div class="space-y-1.5">
+              <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 정의</h4>
+              <p class="text-sm font-semibold text-ink-800 leading-relaxed bg-surface-100 p-3.5 rounded-xl border border-surface-300" data-i18n="p2_def">
+                카메라 기반 비접촉 안면 생체 신호 감지 및 시니어 맞춤형 복약 지도 솔루션
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 주요 기능</h4>
+              <ul class="space-y-2 text-xs sm:text-sm text-ink-700 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p2_f1"><strong>비접촉 바이탈 측정:</strong> rPPG 알고리즘 기반 안면 미세 혈류 변화를 분석해 심박수·호흡수 비접촉 측정</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p2_f2"><strong>안면 인식 복약 인증:</strong> 사용자 얼굴 매칭을 통해 개인별 복약 스케줄 확인 및 복용 이력 자동 로깅</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent font-bold">•</span>
+                  <span data-i18n="p2_f3"><strong>오복용 방지 검증:</strong> 약물 패키지 시각 정보와 처방 데이터베이스 대조를 통한 중복·누락 복용 방지</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-[11px] font-mono text-ink-500 font-bold uppercase mb-2">■ 기술 스택</h4>
+              <div class="flex flex-wrap gap-2 font-mono text-xs text-ink-800">
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">OpenCV</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">rPPG Algorithm</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Facial Recognition</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">FastAPI</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">MediaPipe</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">PWA</span>
+                <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Tailwind CSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 09: ONHAEUM (2025) -->
+        <div class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_3.png" alt="Onhaeum Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_3.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="shield" class="w-3.5 h-3.5"></i> biometric_dispatch.ts</span>
+                <span class="text-emerald-400">SECURITY FIRST</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[BLE Biometric Wearable (5.0)]
+       │ (Realtime Heart Rate Telemetry)
+       ▼
+[Edge Mobile Client Validation]
+       │
+       ▼ (Pulse Spike Delta > 35%)
+┌─────────────────────────────────┐
+│ • Trigger Emergency Audio Rec   │
+│ • Lock Encrypted Evidence Chunk │
+│ • High-Precision GPS Geo-stream │
+└─────────────────────────────────┘
+       │
+       ▼ (End-to-End Encrypted Tunnel)
+[Automated Guardian &amp; Police Dispatch]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Protocol: BLE 5.0 · AES-256</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold">2025</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_7_cat">09 / 고보안 IOT &amp; 신변 보호</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_7_title">온해움 (Onhaeum) — 생체 이상 징후 감지 및 긴밀 보호 시스템</h3>
+            <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_7_desc">
+              저지연 BLE 웨어러블 센서와 온디바이스 위험 검증을 결합한 신변 보호 플랫폼. 생체 급변 텔레메트리를 감지하여 포렌식 오디오 녹음 및 종단간 암호화된 GPS 긴급 전송을 즉시 트리거합니다.
             </p>
           </div>
+        </div>
 
-          <div class="space-y-3">
-            <h4 class="text-xs font-mono font-bold text-accent uppercase tracking-wider">■ 주요 기능 (Key Features)</h4>
-            <ul class="space-y-2.5 text-xs sm:text-sm text-ink-700 font-sans leading-relaxed">
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p5_f1"><strong>음성 바이오마커 다이어리화:</strong> 어르신 일상 대화 녹취에서 식사, 복약, 관절 통증 지표를 자동 추출해 요약 일기 생성</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p5_f2"><strong>환자 마스터 데이터 CRUD:</strong> 인적사항, 질환, 장기요양등급(Pflegegrad 1~5), 비상연락처 등록·수정 및 실시간 동기화</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p5_f3"><strong>SGB XI 요양등급 실시간 계산:</strong> 독일 장기요양보험 6대 영역 가중치 기반 등급 판정 및 지원금(Pflegegeld) 즉시 산출</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p5_f4"><strong>공식 의사 소견서(Arztbrief) PDF 조판:</strong> 독일 공공의료(BfArM DiGA) 표준 서식을 브라우저 격리 렌더러로 원클릭 발행</span>
-              </li>
-              <li class="flex items-start gap-2.5">
-                <span class="text-accent font-bold mt-0.5">•</span>
-                <span data-i18n="p5_f5"><strong>128가구 Triage &amp; 방문 동선 관제:</strong> 위험군 자동 선별, 방문간호사 순회 경로(Tourenplan) 확인 및 현장 체크인 지원</span>
-              </li>
-            </ul>
+        <!-- ==================== 2022 MILESTONE ==================== -->
+        <div class="year-milestone pt-8">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
+            <span class="inline-flex rounded-full h-2 w-2 bg-teal-400"></span>
+            <span data-i18n="year_2022">2022 재활 지원 AI</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2022">1개 시스템</span>
+        </div>
+
+        <!-- 10: HOPEPATH (2022) -->
+        <div class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_7.png" alt="HopePath Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_7.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> geofence_dispatch.ts</span>
+                <span class="text-emerald-400">REALTIME GPS</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Background Mobile GPS Telemetry]
+       │
+       ▼ (Geofencing Boundary Check)
+[Restricted Zone Proximity Delta]
+       │
+       ▼ (NLP Chat Emotion Evaluation)
+┌─────────────────────────────────┐
+│ • Acute Stress / Hostility Flag │
+│ • Boundary Violation Event      │
+│ • Nighttime Curfew Monitoring   │
+└─────────────────────────────────┘
+       │
+       ▼
+[Supervisor Alert &amp; Counselor Bridge]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Flutter · Firebase</div>
+            </div>
           </div>
 
-          <div class="pt-3 border-t border-surface-200">
-            <h4 class="text-[11px] font-mono text-ink-500 font-bold uppercase mb-2">■ 기술 스택 (Tech Stack)</h4>
-            <div class="flex flex-wrap gap-2 font-mono text-xs text-ink-800">
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Python</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">FastAPI</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Whisper (STT)</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Pydantic v2</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Web Audio API</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">HL7 FHIR R4</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Responsive PWA</span>
-              <span class="px-2.5 py-1 rounded bg-slate-100 border border-slate-200">Tailwind CSS</span>
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-teal-50 border border-teal-200 text-teal-700 font-mono text-xs font-bold">2022</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_8_cat">10 / 청소년 재활 지원</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_8_title">희망길 (HopePath) — 보호관찰 청소년 자율 개선 및 위치 기반 모니터링</h3>
+            <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_8_desc">
+              보호관찰 대상 청소년의 재범 방지를 위한 관리 플랫폼. 백그라운드 GPS 지오펜싱과 대화 감정 분석을 결합하여 야간 외출 제한 준수 확인 및 심리 상담 연계를 지원합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- ==================== 2021 MILESTONE ==================== -->
+        <div class="year-milestone pt-8">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
+            <span class="inline-flex rounded-full h-2 w-2 bg-purple-400"></span>
+            <span data-i18n="year_2021">2021 특허 등록 기술</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2021">1개 시스템</span>
+        </div>
+
+        <!-- 11: ART DIVE (2021) -->
+        <div class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_4.png" alt="ArtDive Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_4.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="music" class="w-3.5 h-3.5"></i> artdive_clustering.py</span>
+                <span class="text-emerald-400">KR PATENT</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Raw Classical Audio Stream]
+       │
+       ▼ (MFCC, Timbre, DWT Subband)
+[High-Dimension Acoustic Vector]
+       │
+       ▼ (Agglomerative Ward Clustering)
+[Optimal Mood Section Boundary]
+       │
+       ▼ (XGBoost 18-Mood Classifier)
+[Synesthetic Emotion Mapping Matrix]
+       │
+       ▼ (Cosine Artwork Embedding Match)
+[Curated Visual Art &amp; Audio Playlist]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Patent: KR 10-2755282</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 font-mono text-xs font-bold">2021</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_9_cat">11 / 특허 등록 AI 엔진</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_9_title">아트다이브 (ArtDive) — 공감각 기반 클래식 음악 &amp; 시각 미술 추천 플랫폼</h3>
+            <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_9_desc">
+              클래식 음향 파라미터(MFCC, 음색, 리듬)를 시각 미술 작품과 매핑하는 특허 등록 알고리즘. 계층적 와드 클러스터링을 적용하여 교향곡을 감정 구간별로 자동 분할합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- ==================== 2020 MILESTONE ==================== -->
+        <div class="year-milestone pt-8">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
+            <span class="inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+            <span data-i18n="year_2020">2020 국가 R&D (IITP)</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2020">2개 시스템</span>
+        </div>
+
+        <!-- 12: STUDENT RECOMMENDER (2020) -->
+        <div class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_5.png" alt="Student Recommender Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_5.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="layout" class="w-3.5 h-3.5"></i> registration_cart_engine.ts</span>
+                <span class="text-emerald-400">NEXT.JS 15</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Student Profile &amp; Major Matrix]
+       │
+       ▼
+[Degree Requirement Verification]
+       │
+       ▼ (Collaborative + Content Filtering)
+┌─────────────────────────────────┐
+│ • Pre-requisite Dependency Tree │
+│ • Historical Grade &amp; Preference │
+│ • Bottleneck Traffic Avoidance  │
+└─────────────────────────────────┘
+       │
+       ▼ (Intelligent Cart Optimizer)
+[Automated 1-Click Schedule Generation]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Stack: Next.js · ShadCN · Genkit</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 font-mono text-xs font-bold">2020</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_10_cat">12 / 대학 AI SAAS</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_10_title">대학 맞춤형 수강 추천 및 수강신청 부하 분산 SaaS</h3>
+            <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_10_desc">
+              Next.js 15 기반 대학 수강 추천 포털. 졸업 요건과 이수 학점을 자동 모델링하고 지능형 예비 장바구니 엔진을 통해 수강신청 서버 다운을 원천 차단합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 13: DEEPFAKE DETECTION (2020) -->
+        <div class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_6.png" alt="Deepfake Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_6.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="lock" class="w-3.5 h-3.5"></i> deepfake_forensic.py</span>
+                <span class="text-emerald-400">BIOLOGICAL PULSE</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Video Face Frames (Face2Face / GAN)]
+       │
+       ▼ (Multi-Region Pulse Extraction)
+[Cross-Facial rPPG Phase Telemetry]
+       │
+       ▼ (Fourier / STMap Frequency Map)
+┌─────────────────────────────────┐
+│ Real: Uniform Coherent Pulse    │
+│ Fake: Pixel Phase Discontinuity │
+└─────────────────────────────────┘
+       │
+       ▼ (Attention EfficientNet-3D)
+[Authenticity Score: Forensic Verdict]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Method: Spatio-Temporal PPG</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 font-mono text-xs font-bold">2020</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_11_cat">13 / AI 사이버 포렌식</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_11_title">시공간 하이브리드 PPG 분석 기반 딥페이크 탐지 시스템</h3>
+            <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_11_desc">
+              합성된 가짜 영상과 실제 영상을 구별하는 국가 사이버 보안 R&D 프로젝트. 안면 부위별 미세 혈류 펄스를 시공간 맵(STMap)으로 추출하여 위변조 여부를 포렌식 검증합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- ==================== 2018 MILESTONE ==================== -->
+        <div class="year-milestone pt-8">
+          <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
+            <span class="inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+            <span data-i18n="year_2018">2018 의료 고신뢰성 시스템</span>
+          </div>
+          <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2018">1개 시스템</span>
+        </div>
+
+        <!-- 14: RT SIMULATION (2018) -->
+        <div class="cinematic-card block rounded-2xl p-6 sm:p-8 space-y-6 group">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <div class="w-full min-h-[300px] rounded-xl overflow-hidden border border-slate-300 bg-slate-100 flex items-center justify-center relative">
+              <img src="thumb_8.png" alt="RT Simulation Preview" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/800x600/f1f5f9/0f172a?text=thumb_8.png+Not+Found';" />
+              <span class="absolute bottom-3 left-3 bg-black/70 text-white text-[10px] font-mono px-2 py-1 rounded">DOCUMENT PREVIEW</span>
+            </div>
+
+            <div class="bg-ink-950 border border-slate-800 rounded-xl p-5 flex flex-col justify-between font-mono text-xs shadow-inner">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-slate-400 text-[11px]">
+                <span class="text-accent flex items-center gap-1.5"><i data-lucide="shield-alert" class="w-3.5 h-3.5"></i> stpa_quality_gate.yaml</span>
+                <span class="text-emerald-400">CRITICAL SAFETY</span>
+              </div>
+              <pre class="py-3 text-slate-300 text-[11px] leading-relaxed overflow-x-auto">
+[Radiation Therapy Source Code]
+       │
+       ▼ (Static Analysis Engine)
+[CppCheck · NSIQCollector Validation]
+       │
+       ▼ (STPA Hazard Traceability Gate)
+┌─────────────────────────────────┐
+│ • Unsafe Control Actions (UCA)  │
+│ • Loss of Radiation Dosage Purity│
+│ • Automated Unit Test Assertion │
+└─────────────────────────────────┘
+       │
+       ▼ (Jenkins / SonarQube CI/CD)
+[Production Build Verification Passed]</pre>
+              <div class="pt-2 border-t border-slate-800 text-slate-500 text-[10.5px]">Standard: STPA Hazard Analysis</div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-surface-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold">2018</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_12_cat">14 / 세이프티 크리티컬 SW</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
+            </div>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_12_title">의료용 방사선 치료 시뮬레이션 SW 안전성 및 테스트 자동화</h3>
+            <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_12_desc">
+              의료 방사선 치료 소프트웨어의 안전 아키텍처 구축. 정적 분석 엔진, SonarQube CI/CD 품질 게이트, STPA 위험 분석 체계를 구축하여 연산 무결성을 검증합니다.
+            </p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- R&D TIMELINE -->
+    <!-- COMPLETE R&D ARCHIVE -->
     <section id="rd-archive" class="space-y-6">
       <div class="space-y-2 border-b border-surface-300 pb-4">
         <h2 class="text-xs font-mono uppercase tracking-widest text-ink-500 flex items-center gap-2">
@@ -640,10 +1385,16 @@
         <div class="py-4 first:pt-0 grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="font-mono text-accent font-bold text-sm">2026</div>
           <div class="md:col-span-3 space-y-1">
-            <div class="text-ink-900 font-semibold">KINETIC-B2B: 물류 전사 자원 관리 &amp; 자율 의사결정 플랫폼</div>
+            <div class="text-ink-900 font-semibold">BioSynthetix: In-Silico ADMET Screening &amp; Molecular Mutator</div>
+            <div class="text-ink-600 text-xs" data-i18n="rd_2026_1">단일 CPU 8ms 추론, 2048비트 ECFP6, 폐루프 바이오이소스테레 변이 엔진 개발</div>
+            <div class="text-ink-900 font-semibold pt-1">KINETIC-B2B: 물류 전사 자원 관리 &amp; 자율 의사결정 플랫폼</div>
             <div class="text-ink-600 text-xs" data-i18n="rd_2026_kinetic">비정형 발주서 정규화, SQLGlot AST 보안 파싱, 화물 토폴로지 관제 및 LangGraph 결재 라우팅</div>
             <div class="text-ink-900 font-semibold pt-1">VOX-MEDIK (시니어 케어 다이어리) — 독일 DiGA 인증 원격 요양 플랫폼</div>
             <div class="text-ink-600 text-xs" data-i18n="rd_2026_vox">음성 바이오마커 다이어리화, SGB XI 법정 요양등급 판정, Arztbrief PDF 조판 및 128가구 Triage</div>
+            <div class="text-ink-900 font-semibold pt-1">광산 환경 규제 대응을 위한 자율 멀티에이전트 컴플라이언스 엔진</div>
+            <div class="text-ink-600 text-xs" data-i18n="rd_2026_3">서호주 EPA 및 호주 연방 환경 법령 대응 자기반성형 결정론적 상태 머신</div>
+            <div class="text-ink-900 font-semibold pt-1">엔터프라이즈 LLM 보안 및 비용 최적화 라우팅 게이트웨이</div>
+            <div class="text-ink-600 text-xs" data-i18n="rd_2026_4">고성능 비동기 Python 3.11 / FastAPI B2B 멀티테넌트 AI 운영 파이프라인</div>
           </div>
         </div>
 
@@ -657,6 +1408,7 @@
             <div class="text-ink-600 text-xs" data-i18n="rd_2025_caregrid">환자 마스터 데이터(Stammdaten) CRUD, 일일 복약 체크 및 약물 간 급성 상호작용 위험 감지</div>
             <div class="text-ink-900 font-semibold pt-1">Neighbor-On (이웃ON) — 독거노인 고독사 예방 &amp; 돌봄 다이어리 플랫폼</div>
             <div class="text-ink-600 text-xs" data-i18n="rd_2025_neighbor">말벗 통화 다이어리화, 5대 라이프로그 엔티티 추출, 고립·우울 위험도 스코어링</div>
+            <div class="text-ink-900 font-semibold pt-1">Onhaeum — 생체 이상 징후 감지 및 신변 보호 IoT 플랫폼</div>
           </div>
         </div>
 
@@ -759,7 +1511,10 @@
         sec_architectures: "Production Systems & Engineering Portfolio",
         sec_architectures_sub: "Chronological engineering index from 2026 enterprise systems to foundational R&D architectures.",
 
-        // PROJECT 01 (KINETIC-B2B)
+        proj_bio_cat: "01 / CHEMINFORMATICS & B2B DRUG DISCOVERY",
+        proj_bio_title: "BioSynthetix: In-Silico ADMET Screening & Closed-Loop Molecular Mutator",
+        proj_bio_desc: "Enterprise-grade in-silico computational screening and generative optimization platform engineered for early-stage small-molecule drug discovery startups. Parses canonical SMILES into 2048-bit topological ECFP6 fingerprints, evaluates 5-axis ADMET pharmacokinetics and hERG cardiotoxicity within 8ms on single-node CPUs (zero GPU required), and executes autonomous bioisosteric side-chain mutations to preserve target binding while restoring statutory safety margins.",
+
         p1_format: "■ Format: B2B Enterprise SaaS (Logistics ERP & Autonomous Decision Platform)",
         p1_def: "Automated unstructured purchase order conversion & secure SQL parsing cross-continental freight dispatch system",
         p1_f1: "<strong>Unstructured PO Normalization:</strong> Automatically converts unstructured vendor email order text into commercial ERP invoice format",
@@ -767,28 +1522,24 @@
         p1_f3: "<strong>Real-Time Cargo Topology:</strong> Visualizes logistics hubs & transport telemetry to deliver buyer self-service freight tracking",
         p1_f4: "<strong>Autonomous Routing:</strong> LangGraph state machine verifies internal purchasing compliance and automates webhook approval workflows",
 
-        // PROJECT 02 (Tto-Tto-Yak)
         p2_format: "■ Format: B2C / B2B Healthcare Mobile Web (AI Senior Vital Monitoring & Medication Safety)",
         p2_def: "Camera-based non-contact facial biometric monitoring and tailored senior medication guidance solution",
         p2_f1: "<strong>Non-Contact Vital Measurement:</strong> Analyzes facial micro-capillary pulse changes via rPPG algorithms to measure heart and respiration rates",
         p2_f2: "<strong>Face ID Medication Verification:</strong> Verifies individual medication schedules and logs intake history through biometric facial matching",
         p2_f3: "<strong>Overdose Prevention Check:</strong> Cross-examines pill package visual cues with prescription databases to prevent duplicate or omitted doses",
 
-        // PROJECT 03 (CareGrid)
         p3_format: "■ Format: B2B Healthcare Mobile PWA (German Nursing Care Management Solution)",
         p3_def: "Mobile-first patient master data (Stammdaten) management webapp engineered for nurses and social workers",
         p3_f1: "<strong>Patient Master Data CRUD:</strong> Registers & updates demographics, diagnosis history, and emergency contacts with realtime fullscreen synchronization",
         p3_f2: "<strong>Med Compliance & Interaction Check:</strong> Verifies daily medication intake and detects acute drug-to-drug adverse interaction risks",
         p3_f3: "<strong>Field-Optimized Mobile UI:</strong> Responsive bottom-tab layout with inline notification toasts designed for mobile nurses on field visits",
 
-        // PROJECT 04 (Neighbor-On)
         p4_format: "■ Format: B2G Public Welfare SaaS (Solitary Senior Incident Prevention & Care Diary Platform)",
         p4_def: "Natural language conversation analysis care diary generator and welfare triage risk control system",
         p4_f1: "<strong>Voice Call Diary Reconstruction:</strong> Reconstructs AI companionship voice logs into compassionate daily summaries for caretakers",
         p4_f2: "<strong>Lifelog Entity Extraction:</strong> Extracts 5 vital biomarkers (meal count, outings, sleep status) from unstructured senior conversations",
         p4_f3: "<strong>Isolation Risk Scoring:</strong> Tracks vocabulary diversity shifts & negative sentiment trajectory against 30-day baselines to identify high-risk seniors",
 
-        // PROJECT 05 (VOX-MEDIK)
         p5_format: "■ Format: B2G / B2B Healthcare Mobile PWA (German DiGA Remote Care & Telemetry WebApp)",
         p5_def: "Senior voice call analysis care diary generator and statutory German care grading & physician report automation platform",
         p5_f1: "<strong>Voice Biomarker Diary:</strong> Extracts meals, medication, and mobility indicators from speech recordings to generate caretaker diaries",
@@ -798,8 +1549,11 @@
         p5_f5: "<strong>128-Household Triage & Routing:</strong> Triage cohort filtering, field nurse route (Tourenplan) tracking, and on-site check-in verification",
 
         sec_archive: "Career Summary & Institutional R&D Timeline (2018–2026)",
+        rd_2026_1: "Single-Node CPU 8ms Inference, 2048-bit ECFP6, Closed-Loop Bioisosteric Mutation",
         rd_2026_kinetic: "Unstructured PO Normalization, SQLGlot AST Parsing, Cargo Topology & LangGraph Approval",
         rd_2026_vox: "Speech Biomarker Diary, SGB XI Pflegegrad Triage, Arztbrief PDF & 128-Household Routing",
+        rd_2026_3: "Self-Reflective Deterministic State Machine for WA EPA & EPBC Act Statutory Mandates",
+        rd_2026_4: "High-Throughput Asynchronous Python 3.11 / FastAPI B2B Multi-Tenant AI Operations",
         rd_2025_ttotto: "rPPG Non-Contact Vitals, Face ID Medication Verification, Overdose Prevention",
         rd_2025_caregrid: "Patient Stammdaten Master CRUD, Daily Med Compliance & Acute Interaction Monitoring",
         rd_2025_neighbor: "Voice Call Diary Reconstruction, 5-Axis Lifelog Extraction, Loneliness Scoring",
@@ -850,7 +1604,10 @@
         sec_architectures: "개발 경력 및 포트폴리오",
         sec_architectures_sub: "실제 프로덕션 배포 및 비즈니스 현장에서 검증된 엔지니어링 프로젝트 아카이브입니다.",
 
-        // PROJECT 01 (KINETIC-B2B)
+        proj_bio_cat: "01 / 화학정보학 & B2B 신약 발굴",
+        proj_bio_title: "BioSynthetix: 초고속 인실리코(In-Silico) 분자 스크리닝 및 폐루프 변이 플랫폼",
+        proj_bio_desc: "초기 저분자 신약 개발 스타트업을 위한 엔터프라이즈급 가상 연산 스크리닝 및 생성형 최적화 플랫폼. SMILES 화학식을 2048비트 ECFP6 지문으로 변환하고, 단일 CPU 노드에서 고가 GPU 없이 8ms 만에 5축 ADMET 및 hERG 심장 독성을 추론하며, 타깃 결합력을 유지한 채 안전성을 복원하는 자율 분자 변이를 수행합니다.",
+
         p1_format: "■ 형태: B2B Enterprise SaaS (물류 전사 자원 관리 & 자율 의사결정 플랫폼)",
         p1_def: "비정형 발주서 자동 전표화 및 보안 SQL 파싱 기반 대륙 횡단 화물 물류 관제 시스템",
         p1_f1: "<strong>비정형 발주서 정규화:</strong> 거래처 이메일 발주 텍스트를 상용 ERP 인보이스 규격으로 자동 변환",
@@ -858,28 +1615,24 @@
         p1_f3: "<strong>실시간 화물 토폴로지 관제:</strong> 물류 거점 및 운송 차량 텔레메트리를 시각화하여 바이어 전용 트래킹 제공",
         p1_f4: "<strong>자율 결재 라우팅:</strong> LangGraph 상태 머신으로 사내 규정을 검증하고 메신저 승인 웹훅과 연동한 품의 자동화",
 
-        // PROJECT 02 (Tto-Tto-Yak)
         p2_format: "■ 형태: B2C / B2B Healthcare Mobile Web (AI 시니어 바이탈 모니터링 & 복약 안전 솔루션)",
         p2_def: "카메라 기반 비접촉 안면 생체 신호 감지 및 시니어 맞춤형 복약 지도 솔루션",
         p2_f1: "<strong>비접촉 바이탈 측정:</strong> rPPG 알고리즘 기반 안면 미세 혈류 변화를 분석해 심박수·호흡수 비접촉 측정",
         p2_f2: "<strong>안면 인식 복약 인증:</strong> 사용자 얼굴 매칭을 통해 개인별 복약 스케줄 확인 및 복용 이력 자동 로깅",
         p2_f3: "<strong>오복용 방지 검증:</strong> 약물 패키지 시각 정보와 처방 데이터베이스 대조를 통한 중복·누락 복용 방지",
 
-        // PROJECT 03 (CareGrid)
         p3_format: "■ 형태: B2B Healthcare Mobile PWA (독일 요양보호 관리 솔루션)",
         p3_def: "요양보호사와 사회복지사를 위한 모바일 중심 환자 마스터 데이터(Stammdaten) 관리 웹앱",
         p3_f1: "<strong>환자 마스터 데이터 CRUD:</strong> 인적사항, 질환 이력, 비상연락처 등록·수정 및 전체 화면 실시간 동기화",
         p3_f2: "<strong>복약 체크 & 인터랙션 모니터링:</strong> 일일 복약 이행 여부 체크 및 약물 간 급성 상호작용 위험 감지",
         p3_f3: "<strong>현장 최적화 모바일 UI:</strong> 현장 방문 인력을 위한 하단 탭 바 기반 반응형 레이아웃 및 인라인 알림 처리",
 
-        // PROJECT 04 (Neighbor-On)
         p4_format: "■ 형태: B2G Public Welfare SaaS (독거노인 고독사 예방 & 돌봄 다이어리 플랫폼)",
         p4_def: "자연어 일상 대화 분석 기반 독거노인 안부 다이어리 자동 생성 및 위험도 관제 시스템",
         p4_f1: "<strong>말벗 통화 다이어리화:</strong> AI 음성 대화 로그를 보호자용 감성 일기 및 일상 요약으로 자동 재구성",
         p4_f2: "<strong>라이프로그 엔터티 추출:</strong> 비정형 발화에서 식사 횟수, 외출 여부, 수면 상태 등 5대 바이오마커 추출",
         p4_f3: "<strong>고립·우울 위험도 스코어링:</strong> 최근 30일 발화 기저선 대비 어휘 다양성 및 부정 감정 빈도 추적으로 고위험 가구 선별",
 
-        // PROJECT 05 (VOX-MEDIK)
         p5_format: "■ 형태: B2G / B2B Healthcare Mobile PWA (독일 DiGA 인증 원격 요양 & 임상 텔레메트리 웹앱)",
         p5_def: "독거 어르신 음성 통화 분석 기반 안부 다이어리 생성 및 독일 법정 요양등급·의사 소견서 자동 발행 플랫폼",
         p5_f1: "<strong>음성 바이오마커 다이어리화:</strong> 어르신 일상 대화 녹취에서 식사, 복약, 관절 통증 지표를 자동 추출해 요약 일기 생성",
@@ -889,8 +1642,11 @@
         p5_f5: "<strong>128가구 Triage & 방문 동선 관제:</strong> 위험군 자동 선별, 방문간호사 순회 경로(Tourenplan) 확인 및 현장 체크인 지원",
 
         sec_archive: "주요 이력 요약 및 연구개발 타임라인 (2018–2026)",
+        rd_2026_1: "단일 CPU 8ms 추론, 2048비트 ECFP6, 폐루프 바이오이소스테레 변이 엔진 개발",
         rd_2026_kinetic: "비정형 발주서 정규화, SQLGlot AST 보안 파싱, 화물 토폴로지 관제 및 LangGraph 결재 라우팅",
         rd_2026_vox: "음성 바이오마커 다이어리화, SGB XI 법정 요양등급 판정, Arztbrief PDF 조판 및 128가구 Triage",
+        rd_2026_3: "서호주 EPA 및 호주 연방 환경 법령 대응 자기반성형 결정론적 상태 머신",
+        rd_2026_4: "고성능 비동기 Python 3.11 / FastAPI B2B 멀티테넌트 AI 운영 파이프라인",
         rd_2025_ttotto: "rPPG 비접촉 바이탈 측정, 안면 인식 복약 인증, 오복용 방지 검증 파이프라인",
         rd_2025_caregrid: "환자 마스터 데이터(Stammdaten) CRUD, 일일 복약 체크 및 약물 간 급성 상호작용 위험 감지",
         rd_2025_neighbor: "말벗 통화 다이어리화, 5대 라이프로그 엔티티 추출, 고립·우울 위험도 스코어링",
