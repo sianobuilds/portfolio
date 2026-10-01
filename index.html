@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="ko" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Siano Lee — Senior AI Solutions Architect & Full-Stack Systems Engineer</title>
+  <title>Siano Lee — AI Architect & Full-Stack Systems Engineer</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -43,7 +43,6 @@
     }
     .cinematic-card:hover .project-title { color: #2563EB; }
 
-    /* YEAR MILESTONE DIVIDER ANIMATIONS */
     .year-milestone {
       position: relative;
       display: flex;
@@ -56,13 +55,12 @@
       box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
     }
 
-    /* WAVE-DOT-LINK ANIMATION ENGINE */
     .wave-dot-link {
       position: relative;
       display: inline-block;
       cursor: pointer;
       overflow: hidden;
-      padding-bottom: 6px;
+      padding-bottom: 4px;
     }
     .wave-dot-link span.char {
       display: inline-block;
@@ -113,8 +111,7 @@
       100% { left: 108%; transform: scale(0.6); }
     }
 
-    /* TOGGLE SWITCH ANIMATION */
-    #toggleHandle {
+    #toggleThumb {
       transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
   </style>
@@ -129,30 +126,29 @@
         <span class="wave-dot-link font-mono text-sm tracking-widest font-bold text-ink-900 uppercase" data-wave>SIANO.LEE</span>
       </a>
 
+      <!-- REORGANIZED NAVIGATION TABS -->
       <nav class="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-ink-600">
-        <a href="#expertise" class="hover:text-accent transition" data-i18n="nav_capabilities">Capabilities</a>
-        <a href="#credentials" class="hover:text-accent transition" data-i18n="nav_credentials">Credentials</a>
-        <a href="#publications" class="hover:text-accent transition" data-i18n="nav_publications">Publications</a>
-        <a href="#projects" class="hover:text-accent transition" data-i18n="nav_architectures">Architectures</a>
-        <a href="#rd-archive" class="hover:text-accent transition" data-i18n="nav_rd_history">R&D History</a>
+        <a href="#expertise" class="hover:text-accent transition" data-i18n="nav_capabilities">핵심 기술</a>
+        <a href="#credentials" class="hover:text-accent transition" data-i18n="nav_credentials">지식재산권</a>
+        <a href="#publications" class="hover:text-accent transition" data-i18n="nav_publications">논문 실적</a>
+        <a href="#projects" class="hover:text-accent transition" data-i18n="nav_architectures">개발 경력</a>
+        <a href="#rd-archive" class="hover:text-accent transition" data-i18n="nav_rd_history">이력 요약</a>
       </nav>
 
       <div class="flex items-center gap-3 sm:gap-4">
-        <!-- PROMINENT PHYSICAL TOGGLE SWITCH WITH 'LANGUAGE' LABEL -->
-        <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-surface-300 bg-white shadow-2xs">
-          <div class="flex items-center gap-1.5 text-ink-500 font-mono text-[11px] font-semibold uppercase tracking-wider">
-            <i data-lucide="globe" class="w-3.5 h-3.5 text-accent"></i>
-            <span class="hidden sm:inline">Language:</span>
+        <!-- PHYSICAL SLIDER TOGGLE SWITCH WITH 'LANGUAGE' LABEL -->
+        <div class="flex items-center gap-2.5 px-3 py-1.5 rounded-xl border border-surface-300 bg-white shadow-2xs">
+          <div class="flex items-center gap-1.5 text-ink-700 font-mono text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="languages" class="w-4 h-4 text-accent"></i>
+            <span>Language</span>
           </div>
-          
-          <button id="toggleTrack" onclick="toggleLanguage()" aria-label="Toggle Language" class="relative flex items-center justify-between w-[78px] h-[28px] px-2 rounded-full bg-slate-900 cursor-pointer select-none transition-colors">
-            <!-- Sliding Circular Knob -->
-            <div id="toggleHandle" class="absolute left-1 w-5 h-5 rounded-full bg-accent shadow-md flex items-center justify-center transform translate-x-0">
+
+          <button id="toggleTrack" onclick="toggleLanguage()" aria-label="Toggle Language" class="relative flex items-center justify-between w-[76px] h-[30px] px-2 rounded-full bg-slate-900 cursor-pointer select-none border border-slate-700 hover:border-accent transition-colors">
+            <div id="toggleThumb" class="absolute left-1 w-5 h-5 rounded-full bg-accent shadow-md flex items-center justify-center transform translate-x-0">
               <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
             </div>
-            <!-- Labels inside Switch -->
-            <span id="labelEn" class="text-[10px] font-mono font-bold pl-5 text-white transition-opacity">EN</span>
-            <span id="labelKo" class="text-[10px] font-mono font-bold pr-1 text-slate-400 transition-opacity">KO</span>
+            <span id="labelEn" class="text-[11px] font-mono font-bold pl-5 text-white transition-opacity">EN</span>
+            <span id="labelKo" class="text-[11px] font-mono font-bold pr-1 text-slate-400 transition-opacity">KO</span>
           </button>
         </div>
 
@@ -164,36 +160,39 @@
         </a>
         <a href="mailto:siano.builds@gmail.com?subject=Inquiry%20for%20AI%20Solutions%20Architecture" class="inline-flex items-center gap-2 text-xs font-mono font-semibold text-white bg-accent hover:bg-accent-hover px-4 py-2.5 rounded-xl transition shadow-sm">
           <i data-lucide="mail" class="w-3.5 h-3.5"></i>
-          <span data-i18n="send_email">Send Email</span>
+          <span data-i18n="send_email">이메일 문의</span>
         </a>
       </div>
     </div>
   </header>
 
-  <main class="max-w-7xl mx-auto px-6 sm:px-10 pt-16 pb-32 space-y-24">
+  <main class="max-w-7xl mx-auto px-6 sm:px-10 pt-12 pb-32 space-y-20">
 
     <!-- HERO SECTION -->
-    <section class="space-y-6 max-w-5xl">
+    <section class="space-y-5 max-w-4xl">
+      <!-- UPDATED TOP TAGS -->
       <div class="flex flex-wrap gap-2 font-mono text-xs">
-        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-accent font-semibold">#Hyperscale AI Control</span>
-        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold">#Cheminformatics</span>
-        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold">#Multi-Agent StateMachines</span>
-        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold">#Zero-Trust Middleware</span>
-        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold">#FastAPI & Single-Node CPU</span>
+        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-accent font-semibold" data-i18n="tag_1">#AI</span>
+        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold" data-i18n="tag_2">#Python</span>
+        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold" data-i18n="tag_3">#풀스택</span>
+        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold" data-i18n="tag_4">#CTO</span>
+        <span class="px-3 py-1 rounded-md bg-white border border-surface-300 text-ink-700 font-semibold" data-i18n="tag_5">#PM</span>
       </div>
 
-      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-ink-900 leading-[1.15]">
-        <span data-i18n="hero_title_prefix">Senior AI Solutions Architect & </span>
-        <span class="wave-dot-link text-ink-900" data-wave data-i18n="hero_title_suffix">Production Full-Stack Builder</span>.
+      <!-- STREAMLINED TITLE & BALANCED SPACING -->
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-ink-900 leading-[1.2]">
+        <span data-i18n="hero_title_prefix">AI 아키텍트 & </span>
+        <span class="wave-dot-link text-ink-900" data-wave data-i18n="hero_title_suffix">풀스택 엔지니어</span>
       </h1>
       
-      <p class="text-lg text-ink-600 leading-relaxed max-w-4xl" data-i18n="hero_desc">
-        Ph.D. Candidate (ABD) with 7+ years of institutional R&D. Specializing in hyperscale AI infrastructure dispatch, in-silico chemical informatics, event-driven deterministic state machines, and statutory multi-agent compliance systems.
+      <!-- UPDATED CANDIDATE PROFILE STATEMENT -->
+      <p class="text-base sm:text-lg text-ink-600 leading-relaxed max-w-3xl" data-i18n="hero_desc">
+        9년 이상 국가 R&D 과제 및 다수의 외국 기업간 외주 프로젝트를 성공적으로 완수한 박사 수료(ABD) AI 개발자입니다. 대규모 AI 개발 및 아키텍처 설계부터 실제 상용화 레벨의 풀스택 시스템 구축까지 전 과정을 책임집니다.
       </p>
 
       <div class="pt-2">
-        <a href="https://github.com/sianobuilds" target="_blank" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-ink-900 hover:bg-accent text-white font-mono text-sm font-semibold transition shadow-sm group">
-          <svg class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" aria-hidden="true">
+        <a href="https://github.com/sianobuilds" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-ink-900 hover:bg-accent text-white font-mono text-sm font-semibold transition shadow-sm group">
+          <svg class="w-4 h-4 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" aria-hidden="true">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
           </svg>
           <span>GitHub: @sianobuilds</span>
@@ -202,89 +201,96 @@
       </div>
     </section>
 
-    <!-- CORE COMPETENCIES -->
+    <!-- CORE COMPETENCIES (ENTIRELY RESTRUCTURED) -->
     <section id="expertise" class="space-y-6">
       <div class="flex items-center justify-between border-b border-surface-300 pb-4">
         <h2 class="text-xs font-mono uppercase tracking-widest text-ink-500 flex items-center gap-2">
-          <i data-lucide="layers" class="w-4 h-4 text-accent"></i>
-          <span data-i18n="sec_capabilities">Core Engineering Competencies</span>
+          <i data-lucide="cpu" class="w-4 h-4 text-accent"></i>
+          <span data-i18n="sec_capabilities">핵심 기술 역량</span>
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- 1) 딥러닝 & 컴퓨터 비전 -->
         <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-3 shadow-2xs">
           <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-accent">
-            <i data-lucide="server" class="w-5 h-5"></i>
+            <i data-lucide="eye" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-base font-bold text-ink-900" data-i18n="cap_1_title">Hyperscale AI Control</h3>
+          <h3 class="text-base font-bold text-ink-900" data-i18n="cap_1_title">딥러닝 & 컴퓨터 비전</h3>
           <p class="text-xs text-ink-600 leading-relaxed" data-i18n="cap_1_desc">
-            100Hz telemetry queues, MILP power-capping optimization, and closed-loop BACnet/NVML actuator orchestration for H100/B200 clusters.
+            영상 프레임 기반 딥러닝 모델링, 비접촉 rPPG 생체 신호 추출, GAN 기반 고문헌 문자 복원 및 실시간 이미지 포렌식 분석 파이프라인 개발.
           </p>
         </div>
 
+        <!-- 2) AI 개발 & 추천 시스템 -->
         <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-3 shadow-2xs">
           <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-accent">
-            <i data-lucide="activity" class="w-5 h-5"></i>
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-base font-bold text-ink-900" data-i18n="cap_2_title">In-Silico Cheminformatics</h3>
+          <h3 class="text-base font-bold text-ink-900" data-i18n="cap_2_title">AI 개발 & 추천 시스템</h3>
           <p class="text-xs text-ink-600 leading-relaxed" data-i18n="cap_2_desc">
-            RDKit ECFP6 topological encoding, 8ms single-pass ADMET/hERG inference on single CPU nodes, and closed-loop bioisosteric mutation.
+            다양한 추천 알고리즘을 체계적으로 비교 분석한 SCIE 논문 보유 및 공감각 예술 융합 추천 시스템 등록 특허를 직접 개발한 전문 엔지니어링 역량.
           </p>
         </div>
 
+        <!-- 3) RAG & LangGraph 멀티에이전트 -->
         <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-3 shadow-2xs">
           <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-accent">
             <i data-lucide="bot" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-base font-bold text-ink-900" data-i18n="cap_3_title">Multi-Agent State Machines</h3>
+          <h3 class="text-base font-bold text-ink-900" data-i18n="cap_3_title">RAG & LangGraph 에이전트</h3>
           <p class="text-xs text-ink-600 leading-relaxed" data-i18n="cap_3_desc">
-            Deterministic LangGraph cyclic workflows, automated statutory vector retrieval, and zero-hallucination compliance dispatch consoles.
+            대규모 법률·기술 문서 RAG 파이프라인, LangGraph 기반의 자기반성형 결정론적 순환 상태 머신 및 환각 없는 산업용 자율 디스패치 콘솔 구축.
           </p>
         </div>
 
+        <!-- 4) 풀스택 개발 (CTO & PM 경력) -->
         <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-3 shadow-2xs">
           <div class="w-10 h-10 rounded-xl bg-accent-light flex items-center justify-center text-accent">
-            <i data-lucide="shield-check" class="w-5 h-5"></i>
+            <i data-lucide="layers" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-base font-bold text-ink-900" data-i18n="cap_4_title">Safety & Security by Design</h3>
+          <h3 class="text-base font-bold text-ink-900" data-i18n="cap_4_title">CTO / PM 리더십 풀스택</h3>
           <p class="text-xs text-ink-600 leading-relaxed" data-i18n="cap_4_desc">
-            KR registered patent test generation, STPA safety-critical hazard analysis gates, and SonarQube automated CI/CD quality pipelines.
+            AI 기술을 접목한 스타트업의 초고속 MVP·PoC 개발 다수 리드. 백엔드(FastAPI)부터 프론트엔드, Docker 배포까지 1인 총괄 가능한 프로덕션 풀스택 역량.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CREDENTIALS & INTELLECTUAL PROPERTY -->
+    <!-- INTELLECTUAL PROPERTY (PATENTS ONLY) -->
     <section id="credentials" class="space-y-6">
       <div class="flex items-center justify-between border-b border-surface-300 pb-4">
-        <h2 class="text-xs font-mono uppercase tracking-widest text-ink-500 flex items-center gap-2">
-          <i data-lucide="award" class="w-4 h-4 text-accent"></i>
-          <span data-i18n="sec_credentials">Verified Intellectual Property & Research</span>
-        </h2>
+        <div>
+          <h2 class="text-xl font-bold text-ink-900 flex items-center gap-2">
+            <i data-lucide="award" class="w-5 h-5 text-accent"></i>
+            <span data-i18n="sec_credentials">지식재산권 (등록 특허)</span>
+          </h2>
+          <p class="text-xs text-ink-600 font-mono mt-0.5" data-i18n="sec_credentials_sub">독자적인 추천 시스템 알고리즘과 소프트웨어 품질 검증 체계로 공식 등록된 지식재산권입니다.</p>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-2 shadow-2xs">
-          <div class="text-[11px] font-mono text-accent font-bold uppercase tracking-wider" data-i18n="cred_1_tag">Registered Patent</div>
-          <div class="text-xl font-bold text-ink-900 font-mono">KR 10-2755282</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-3 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-purple-50 text-purple-700 text-xs font-mono font-bold border border-purple-200" data-i18n="cred_1_tag">대한민국 등록 특허</span>
+            <span class="text-xs font-mono text-ink-400">특허청 등록</span>
+          </div>
+          <div class="text-xl font-bold text-ink-900 font-mono">특허 제 10-2755282 호</div>
+          <h4 class="text-sm font-semibold text-ink-800" data-i18n="patent_title">빅데이터 기반 예술 융합 추천 시스템 및 서비스 제공 플랫폼</h4>
           <p class="text-xs text-ink-600 leading-relaxed" data-i18n="cred_1_desc">
-            Big Data Art Convergence Recommendation System & Automated STPA-based SW Safety Test Generation.
+            음향 빅데이터 파라미터(MFCC, 음색 등)와 시각 예술 작품 간의 공감각적 다차원 벡터 매핑 알고리즘 및 클러스터링 기반 추천 시스템.
           </p>
         </div>
 
-        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-2 shadow-2xs">
-          <div class="text-[11px] font-mono text-accent font-bold uppercase tracking-wider" data-i18n="cred_2_tag">SCIE Publications</div>
-          <div class="text-xl font-bold text-ink-900 font-mono">MDPI Electronics</div>
+        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-3 shadow-2xs">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-md bg-blue-50 text-accent text-xs font-mono font-bold border border-blue-200" data-i18n="cred_2_tag">SW 안전성 검증 특허 기술</span>
+            <span class="text-xs font-mono text-ink-400">연구 검증 완료</span>
+          </div>
+          <div class="text-xl font-bold text-ink-900 font-mono">STPA-based Auto Test Suite</div>
+          <h4 class="text-sm font-semibold text-ink-800" data-i18n="patent_2_title">STPA 위험 분석 기반 소프트웨어 안전성 테스트 케이스 자동 생성</h4>
           <p class="text-xs text-ink-600 leading-relaxed" data-i18n="cred_2_desc">
-            Peer-reviewed papers on Classical Music Emotion Recognition & Recommendation System Survey.
-          </p>
-        </div>
-
-        <div class="bg-white border border-surface-300 p-6 rounded-2xl space-y-2 shadow-2xs">
-          <div class="text-[11px] font-mono text-accent font-bold uppercase tracking-wider" data-i18n="cred_3_tag">Institutional R&D</div>
-          <div class="text-xl font-bold text-ink-900 font-mono">IITP / NRF / KAIA</div>
-          <p class="text-xs text-ink-600 leading-relaxed" data-i18n="cred_3_desc">
-            Spearheaded national projects across Smart Mobility, Deepfake Forensics, and Radiation Simulation Software.
+            의료기기 및 안전 필수(Safety-Critical) 시스템의 비정상 제어 동작(UCA)을 선제 차단하고 테스트 케이스를 자동 구축하는 아키텍처.
           </p>
         </div>
       </div>
@@ -294,11 +300,11 @@
     <section id="publications" class="space-y-6">
       <div class="flex items-center justify-between border-b border-surface-300 pb-4">
         <div>
-          <h2 class="text-2xl font-bold text-ink-900 flex items-center gap-2.5">
-            <i data-lucide="book-open" class="w-6 h-6 text-accent"></i>
-            <span data-i18n="sec_publications">Peer-Reviewed Publications & Research Papers</span>
+          <h2 class="text-xl font-bold text-ink-900 flex items-center gap-2">
+            <i data-lucide="book-open" class="w-5 h-5 text-accent"></i>
+            <span data-i18n="sec_publications">공인 논문 및 학술 연구 실적</span>
           </h2>
-          <p class="text-xs text-ink-600 font-mono mt-1" data-i18n="sec_publications_sub">Verified academic articles published in SCIE journals and international engineering conferences.</p>
+          <p class="text-xs text-ink-600 font-mono mt-0.5" data-i18n="sec_publications_sub">SCIE급 국제 저널 및 국제 학술 대회에 정식 게재된 연구 논문 목록입니다.</p>
         </div>
       </div>
 
@@ -315,12 +321,12 @@
               A Survey of Recommendation Systems: Recommendation Models, Techniques, and Application Fields
             </h3>
             <p class="text-xs text-ink-600 leading-relaxed line-clamp-3" data-i18n="paper_1_desc">
-              Comprehensive taxonomy and survey analyzing collaborative filtering, content-based algorithms, knowledge graphs, and hybrid deep learning architectures applied across modern industrial domains.
+              현대 산업 분야 전반에 적용되는 협업 필터링, 콘텐츠 기반 모델, 지식 그래프 및 하이브리드 딥러닝 추천 아키텍처를 분석한 종합 분류 및 서베이 논문.
             </p>
           </div>
           <div class="pt-3 border-t border-surface-200 flex items-center justify-between text-[11px] font-mono text-ink-500">
             <span>doi.org/10.3390/electronics11010141</span>
-            <span class="text-accent font-semibold flex items-center gap-1"><span data-i18n="view_journal">View Journal</span> <i data-lucide="external-link" class="w-3 h-3"></i></span>
+            <span class="text-accent font-semibold flex items-center gap-1"><span data-i18n="view_journal">저널 원문 보기</span> <i data-lucide="external-link" class="w-3 h-3"></i></span>
           </div>
         </a>
 
@@ -335,12 +341,12 @@
               Classical Music Specific Mood Automatic Recognition Model Proposal
             </h3>
             <p class="text-xs text-ink-600 leading-relaxed line-clamp-3" data-i18n="paper_2_desc">
-              Novel acoustic feature extraction pipeline utilizing Ward hierarchical clustering and machine learning to classify emotional trajectories across long-form symphonic movements.
+              와드 계층적 군집화 및 머신러닝을 활용하여 긴 교향곡 악장의 감정 궤적을 정밀 분류하는 음향 특징 추출 파이프라인 제안 논문.
             </p>
           </div>
           <div class="pt-3 border-t border-surface-200 flex items-center justify-between text-[11px] font-mono text-ink-500">
             <span>doi.org/10.3390/electronics10202489</span>
-            <span class="text-accent font-semibold flex items-center gap-1"><span data-i18n="view_journal">View Journal</span> <i data-lucide="external-link" class="w-3 h-3"></i></span>
+            <span class="text-accent font-semibold flex items-center gap-1"><span data-i18n="view_journal">저널 원문 보기</span> <i data-lucide="external-link" class="w-3 h-3"></i></span>
           </div>
         </a>
 
@@ -355,23 +361,23 @@
               Proposal of the Algorithm for Emotion-Based Art Convergence Playlist Production System Based on Big Data
             </h3>
             <p class="text-xs text-ink-600 leading-relaxed line-clamp-3" data-i18n="paper_3_desc">
-              Algorithms mapping big data acoustic emotional vectors with visual art collections, laying the mathematical foundation for Korean registered patent KR 10-2755282.
+              빅데이터 음향 감정 벡터를 시각 미술 작품과 매핑하는 융합 알고리즘으로, 대한민국 등록 특허 KR 10-2755282의 수학적 기반을 확립한 논문.
             </p>
           </div>
           <div class="pt-3 border-t border-surface-200 flex items-center justify-between text-[11px] font-mono text-ink-500">
-            <span data-i18n="conf_proceeding">Conference Proceedings</span>
-            <span class="text-accent font-semibold flex items-center gap-1"><span data-i18n="read_paper">Read Paper</span> <i data-lucide="external-link" class="w-3 h-3"></i></span>
+            <span data-i18n="conf_proceeding">국제 학술대회 발표</span>
+            <span class="text-accent font-semibold flex items-center gap-1"><span data-i18n="read_paper">논문 확인하기</span> <i data-lucide="external-link" class="w-3 h-3"></i></span>
           </div>
         </a>
 
       </div>
     </section>
 
-    <!-- COMPLETE PRODUCTION ARCHITECTURES -->
+    <!-- COMPLETE PRODUCTION PORTFOLIO (11 PRODUCTION ARCHITECTURES RETAINED) -->
     <section id="projects" class="space-y-12">
       <div class="border-b border-surface-300 pb-4">
-        <h2 class="text-2xl font-bold text-ink-900" data-i18n="sec_architectures">Production Systems & Architecture Archives</h2>
-        <p class="text-xs text-ink-600 font-mono mt-1" data-i18n="sec_architectures_sub">Chronological engineering index from 2026 enterprise systems to foundational R&D architectures.</p>
+        <h2 class="text-2xl font-bold text-ink-900" data-i18n="sec_architectures">개발 경력 및 포트폴리오</h2>
+        <p class="text-xs text-ink-600 font-mono mt-1" data-i18n="sec_architectures_sub">실제 프로덕션 배포 및 국가 연구개발을 통해 완성된 엔지니어링 프로젝트 아카이브입니다.</p>
       </div>
 
       <div class="space-y-12">
@@ -383,10 +389,10 @@
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
-            <span data-i18n="year_2026">2026 FLAGSHIP SYSTEMS</span>
+            <span data-i18n="year_2026">2026 플래그십 시스템</span>
           </div>
           <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
-          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2026">4 SYSTEMS ACTIVE</span>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2026">4개 시스템 가동 중</span>
         </div>
 
         <!-- 01: BIOSYNTHETIX (2026 - IN PROGRESS) -->
@@ -422,7 +428,7 @@
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-950 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2 w-2 bg-slate-950"></span>
                 </span>
-                <span data-i18n="badge_active_sprint">ACTIVE SPRINT / IN DEVELOPMENT</span>
+                <span data-i18n="badge_active_sprint">진행 중 (ACTIVE SPRINT)</span>
               </span>
             </div>
 
@@ -459,19 +465,19 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-accent font-mono text-xs font-bold">2026</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_1_cat">01 / CHEMINFORMATICS & B2B DRUG DISCOVERY</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_1_cat">01 / 화학정보학 & B2B 신약 발굴</span>
               </div>
               <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-800 font-mono text-xs font-bold">
                 <span class="relative flex h-2 w-2">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
                 </span>
-                <span data-i18n="badge_in_progress">In Progress (Active R&D)</span>
+                <span data-i18n="badge_in_progress">현재 고도화 진행 중 (Active R&D)</span>
               </span>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_1_title">BioSynthetix: In-Silico ADMET Screening & Closed-Loop Molecular Mutator</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_1_title">BioSynthetix: 초고속 인실리코(In-Silico) 분자 스크리닝 및 폐루프 변이 플랫폼</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_1_desc">
-              Enterprise-grade in-silico computational screening and generative optimization platform engineered for early-stage small-molecule drug discovery startups. Parses canonical SMILES into 2048-bit topological ECFP6 fingerprints, evaluates 5-axis ADMET pharmacokinetics and hERG cardiotoxicity within 8ms on single-node CPUs (zero GPU required), and executes autonomous bioisosteric side-chain mutations to preserve target binding while restoring statutory safety margins.
+              초기 저분자 신약 개발 스타트업을 위한 엔터프라이즈급 가상 연산 스크리닝 및 생성형 최적화 플랫폼. SMILES 화학식을 2048비트 ECFP6 지문으로 변환하고, 단일 CPU 노드에서 고가 GPU 없이 8ms 만에 5축 ADMET 및 hERG 심장 독성을 추론하며, 타깃 결합력을 유지한 채 안전성을 복원하는 자율 분자 변이를 수행합니다.
             </p>
           </div>
         </div>
@@ -513,13 +519,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-accent font-mono text-xs font-bold">2026</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_2_cat">02 / AI INFRASTRUCTURE CONTROL</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_2_cat">02 / AI 인프라 제어</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_2_title">TeraGrid-Ops: Hyperscale AI Data Center Power & Thermal Dispatch Engine</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_2_title">TeraGrid-Ops: 하이퍼스케일 AI 데이터센터 전력·냉각 디스패치 엔진</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_2_desc">
-              Autonomous, event-driven infrastructure control platform designed for hyperscale AI data centers operating high-density GPU clusters (NVIDIA H100 / B200). Balances real-time power draw, cooling manifold distribution, and battery energy storage to eliminate thermal hotspots and avoid multimillion-dollar utility peak penalties.
+              NVIDIA H100 / B200 고밀도 GPU 클러스터를 운영하는 하이퍼스케일 AI 데이터센터를 위한 이벤트 기반 제어 플랫폼. 실시간 전력 소모, 냉각 분배, BESS 배터리 방전을 조율하여 열적 핫스팟을 제거하고 전력 피크 위약금을 원천 방지합니다.
             </p>
           </div>
         </a>
@@ -563,13 +569,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-accent font-mono text-xs font-bold">2026</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_3_cat">03 / AUTONOMOUS AI AGENTS</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_3_cat">03 / 자율 AI 에이전트</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_3_title">Autonomous Multi-Agent Compliance Engine for Mining Operations</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_3_title">광산 환경 규제 대응을 위한 자율 멀티에이전트 컴플라이언스 엔진</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_3_desc">
-              Mission-critical, self-reflective multi-agent system built on LangGraph that cross-examines Western Australian open-cut mining telemetry against Commonwealth (EPBC Act) and State (WA EPA) environmental mandates in real time. Features cyclic grading nodes to eliminate semantic hallucination, operating a sub-1.8s industrial dispatch console that issues automated ministerial referral directives and work-stop orders.
+              서호주 노천 광산 텔레메트리를 호주 연방(EPBC Act) 및 주(WA EPA) 환경 법령과 실시간 대조하는 LangGraph 기반 자율 다중 에이전트 시스템. 순환 평가 노드를 통해 환각을 차단하고, 1.8초 이내에 자동 작업 중지 및 장관 통보 명령을 발령합니다.
             </p>
           </div>
         </a>
@@ -614,13 +620,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-accent font-mono text-xs font-bold">2026</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_4_cat">04 / ENTERPRISE AI MIDDLEWARE</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_4_cat">04 / 엔터프라이즈 AI 미들웨어</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_4_title">Enterprise LLM Security & Cost-Routing Gateway</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_4_title">엔터프라이즈 LLM 보안 및 비용 최적화 라우팅 게이트웨이</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_4_desc">
-              Production-grade AI middleware intercepting LLM traffic for B2B multi-tenant cloud backends. Enforces sub-2ms in-flight PII redaction for compliance (GDPR/HIPAA), active prompt-injection defense firewalls, entropy-driven cost routing saving 35%+ token expenses, and automated hot-standby circuit breakers.
+              B2B 멀티테넌트 클라우드 백엔드를 위한 상용 AI 보안 미들웨어. 규제 준수를 위한 2ms 이내의 개인정보(PII) 실시간 마스킹, 프롬프트 인젝션 방화벽, 엔트로피 기반 동적 비용 라우팅(토큰 비용 35% 이상 절감) 및 서킷 브레이커 장애 극복 기능을 제공합니다.
             </p>
           </div>
         </a>
@@ -629,10 +635,10 @@
         <div class="year-milestone pt-8">
           <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
             <span class="inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-            <span data-i18n="year_2025">2025 PRODUCTION RELEASES</span>
+            <span data-i18n="year_2025">2025 프로덕션 릴리즈</span>
           </div>
           <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
-          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2025">3 SYSTEMS</span>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2025">3개 시스템</span>
         </div>
 
         <!-- 05: NEIGHBOR-ON (2025) -->
@@ -674,13 +680,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold">2025</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_5_cat">05 / PUBLIC WELFARE AI</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_5_cat">05 / 공공 복지 AI</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_5_title">NeighborOn — LLM AI Care Companion & Incident Prevention Platform</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_5_title">이웃On (NeighborOn) — 복지 사각지대 위기 예방 LLM AI 돌봄 플랫폼</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_5_desc">
-              Empowering frontline social workers by connecting isolated households with conversational AI companions. Analyzes daily spoken interactions using multi-turn LLMs to detect acute distress and lifestyle anomalies, automating welfare intervention reports.
+              고립 가구와 AI 말벗을 연결하여 현장 사회복지사를 지원하는 복지 플랫폼. 다회차 대화를 분석하여 급성 위기 신호 및 생활 패턴 이상을 감지하고 복지 개입 리포트를 자동 발행합니다.
             </p>
           </div>
         </a>
@@ -723,13 +729,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold">2025</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_6_cat">06 / COMPUTER VISION & BIOMETRICS</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_6_cat">06 / 컴퓨터 비전 & 생체 분석</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_6_title">TtoTtoYak — Contactless AI Health Monitor & Drug Safety Platform</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_6_title">또또약 (TtoTtoYak) — 비접촉 생체신호 모니터링 및 복약 안전 플랫폼</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_6_desc">
-              Non-contact vital sign extraction operating directly on mobile camera feeds. Employs remote photoplethysmography (rPPG) and Facial Action Unit (AU) analytics to quantify heart rate, micro-circulation shifts, and fatigue indices.
+              모바일 카메라 영상에서 원격 광혈류측정(rPPG) 및 얼굴 안면 근육(AU) 분석을 통해 비접촉으로 심박수, 미세 혈류 변화, 피로도 지수를 실시간 추출하고 복약 안전을 관리합니다.
             </p>
           </div>
         </a>
@@ -770,13 +776,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-mono text-xs font-bold">2025</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_7_cat">07 / HIGH-SECURITY IOT & SAFETY</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_7_cat">07 / 고보안 IoT & 신변 보호</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_7_title">Onhaeum — Biometric Anomaly Detection & Emergency Defense System</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_7_title">온해움 (Onhaeum) — 생체 이상 징후 감지 및 긴밀 보호 시스템</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_7_desc">
-              Emergency protection platform pairing low-latency BLE sensors with on-device risk validation. Real-time telemetry evaluates acute physiological distress spikes to activate forensic audio recording and encrypted emergency geolocation streaming.
+              저지연 BLE 웨어러블 센서와 온디바이스 위험 검증을 결합한 신변 보호 플랫폼. 생체 급변 텔레메트리를 감지하여 포렌식 오디오 녹음 및 종단간 암호화된 GPS 긴급 전송을 즉시 트리거합니다.
             </p>
           </div>
         </a>
@@ -785,10 +791,10 @@
         <div class="year-milestone pt-8">
           <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
             <span class="inline-flex rounded-full h-2 w-2 bg-teal-400"></span>
-            <span data-i18n="year_2022">2022 REHABILITATION AI</span>
+            <span data-i18n="year_2022">2022 재활 지원 AI</span>
           </div>
           <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
-          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2022">1 SYSTEM</span>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2022">1개 시스템</span>
         </div>
 
         <!-- 08: HOPEPATH (2022) -->
@@ -827,13 +833,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-teal-50 border border-teal-200 text-teal-700 font-mono text-xs font-bold">2022</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_8_cat">08 / PUBLIC WELFARE AI</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_8_cat">08 / 청소년 재활 지원</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_8_title">HopePath — Youth Rehabilitation & Geofencing Platform</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_8_title">희망길 (HopePath) — 보호관찰 청소년 자율 개선 및 위치 기반 모니터링</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_8_desc">
-              Rehabilitation management platform for juvenile protective supervision. Coordinates background GPS geofencing with natural language emotion tracking to prevent recidivism and support counselor interventions.
+              보호관찰 대상 청소년의 재범 방지를 위한 관리 플랫폼. 백그라운드 GPS 지오펜싱과 대화 감정 분석을 결합하여 야간 외출 제한 준수 확인 및 심리 상담 연계를 지원합니다.
             </p>
           </div>
         </a>
@@ -842,10 +848,10 @@
         <div class="year-milestone pt-8">
           <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
             <span class="inline-flex rounded-full h-2 w-2 bg-purple-400"></span>
-            <span data-i18n="year_2021">2021 REGISTERED PATENT</span>
+            <span data-i18n="year_2021">2021 특허 등록 기술</span>
           </div>
           <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
-          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2021">1 SYSTEM</span>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2021">1개 시스템</span>
         </div>
 
         <!-- 09: ART DIVE (2021) -->
@@ -883,13 +889,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-purple-50 border border-purple-200 text-purple-700 font-mono text-xs font-bold">2021</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_9_cat">09 / PATENTED AI ENGINE</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_9_cat">09 / 특허 등록 AI 엔진</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_9_title">ArtDive — Synesthetic Classical Music & Artwork Recommender</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_9_title">아트다이브 (ArtDive) — 공감각 기반 클래식 음악 & 시각 미술 추천 플랫폼</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_9_desc">
-              Registered patent algorithm mapping classical acoustic parameters (MFCC, Timbre, Rhythm) to visual fine art collections. Implements hierarchical Ward clustering to partition classical symphonies into emotional chapters.
+              클래식 음향 파라미터(MFCC, 음색, 리듬)를 시각 미술 작품과 매핑하는 특허 등록 알고리즘. 계층적 와드 클러스터링을 적용하여 교향곡을 감정 구간별로 자동 분할합니다.
             </p>
           </div>
         </a>
@@ -898,10 +904,10 @@
         <div class="year-milestone pt-8">
           <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
             <span class="inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
-            <span data-i18n="year_2020">2020 NATIONAL R&D (IITP)</span>
+            <span data-i18n="year_2020">2020 국가 R&D (IITP)</span>
           </div>
           <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
-          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2020">2 SYSTEMS</span>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2020">2개 시스템</span>
         </div>
 
         <!-- 10: STUDENT RECOMMENDER (2020) -->
@@ -940,13 +946,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 font-mono text-xs font-bold">2020</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_10_cat">10 / UNIVERSITY AI-SAAS</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_10_cat">10 / 대학 AI SaaS</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_10_title">Academic Course Recommender & Pre-Registration SaaS</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_10_title">대학 맞춤형 수강 추천 및 수강신청 부하 분산 SaaS</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_10_desc">
-              Full-stack university course recommendation portal (Next.js 15, Tailwind). Automatically models graduation requirements and completed credits to eliminate server registration crashes via an intelligent cart engine.
+              Next.js 15 기반 대학 수강 추천 포털. 졸업 요건과 이수 학점을 자동 모델링하고 지능형 예비 장바구니 엔진을 통해 수강신청 서버 다운을 원천 차단합니다.
             </p>
           </div>
         </a>
@@ -986,13 +992,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-700 font-mono text-xs font-bold">2020</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_11_cat">11 / AI FORENSICS</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_11_cat">11 / AI 사이버 포렌식</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_11_title">Deepfake Detection via Spatio-Temporal Hybrid PPG Analysis</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_11_title">시공간 하이브리드 PPG 분석 기반 딥페이크 탐지 시스템</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_11_desc">
-              National cybersecurity R&D project discerning synthetic facial reenactments from authentic video. Extracts biological pulse signals across spatial facial regions using Spatio-Temporal Maps.
+              합성된 가짜 영상과 실제 영상을 구별하는 국가 사이버 보안 R&D 프로젝트. 안면 부위별 미세 혈류 펄스를 시공간 맵(STMap)으로 추출하여 위변조 여부를 포렌식 검증합니다.
             </p>
           </div>
         </a>
@@ -1001,10 +1007,10 @@
         <div class="year-milestone pt-8">
           <div class="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-800 text-white font-mono text-xs font-bold">
             <span class="inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
-            <span data-i18n="year_2018">2018 MEDICAL SAFETY-CRITICAL</span>
+            <span data-i18n="year_2018">2018 의료 고신뢰성 시스템</span>
           </div>
           <div class="h-px flex-1 bg-gradient-to-r from-surface-400 via-surface-300 to-transparent"></div>
-          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2018">1 SYSTEM</span>
+          <span class="text-[11px] font-mono text-ink-400" data-i18n="active_count_2018">1개 시스템</span>
         </div>
 
         <!-- 12: RT SIMULATION (2018) -->
@@ -1043,13 +1049,13 @@
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
                 <span class="px-2.5 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 font-mono text-xs font-bold">2018</span>
-                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_12_cat">12 / SAFETY-CRITICAL SYSTEMS</span>
+                <span class="text-xs font-mono text-ink-600 font-semibold uppercase tracking-wider" data-i18n="proj_12_cat">12 / 세이프티 크리티컬 SW</span>
               </div>
               <i data-lucide="arrow-up-right" class="w-5 h-5 text-ink-400"></i>
             </div>
-            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_12_title">Radiation Therapy Simulation Safety & Test Automation</h3>
+            <h3 class="project-title text-2xl font-bold text-ink-900 transition" data-i18n="proj_12_title">의료용 방사선 치료 시뮬레이션 SW 안전성 및 테스트 자동화</h3>
             <p class="text-sm text-ink-600 leading-relaxed" data-i18n="proj_12_desc">
-              Lead Infrastructure Architect for medical radiation software safety. Designed automated testing frameworks, SonarQube CI/CD quality gates, and STPA hazard analysis protocols to guarantee calculation purity.
+              의료 방사선 치료 소프트웨어의 안전 아키텍처 구축. 정적 분석 엔진, SonarQube CI/CD 품질 게이트, STPA 위험 분석 체계를 구축하여 연산 무결성을 검증합니다.
             </p>
           </div>
         </a>
@@ -1057,12 +1063,12 @@
       </div>
     </section>
 
-    <!-- COMPLETE R&D ARCHIVE -->
+    <!-- COMPLETE R&D ARCHIVE (REORGANIZED TO CAREER HISTORY SUMMARY) -->
     <section id="rd-archive" class="space-y-6">
       <div class="space-y-2 border-b border-surface-300 pb-4">
         <h2 class="text-xs font-mono uppercase tracking-widest text-ink-500 flex items-center gap-2">
           <i data-lucide="history" class="w-4 h-4 text-accent"></i>
-          <span data-i18n="sec_archive">Full Institutional R&D Timeline (2018–2026)</span>
+          <span data-i18n="sec_archive">주요 이력 요약 및 연구개발 타임라인 (2018–2026)</span>
         </h2>
       </div>
 
@@ -1073,13 +1079,13 @@
           <div class="font-mono text-accent font-bold text-sm">2026</div>
           <div class="md:col-span-3 space-y-1">
             <div class="text-ink-900 font-semibold">BioSynthetix: In-Silico ADMET Screening & Molecular Mutator</div>
-            <div class="text-ink-600 text-xs" data-i18n="rd_2026_1">Single-Node CPU 8ms Inference, 2048-bit ECFP6, Closed-Loop Bioisosteric Mutation</div>
-            <div class="text-ink-900 font-semibold pt-1">TeraGrid-Ops: Hyperscale AI Data Center Power & Thermal Dispatch Engine</div>
-            <div class="text-ink-600 text-xs" data-i18n="rd_2026_2">Event-Driven 100Hz Telemetry Buffer, MILP Power Capping & Tri-Vector Actuator Control</div>
-            <div class="text-ink-900 font-semibold pt-1">Autonomous Multi-Agent Compliance Engine for Mining Operations (LangGraph & ChromaDB)</div>
-            <div class="text-ink-600 text-xs" data-i18n="rd_2026_3">Self-Reflective Deterministic State Machine for WA EPA & EPBC Act Statutory Mandates</div>
-            <div class="text-ink-900 font-semibold pt-1">Enterprise LLM Security & Cost-Routing Gateway (Zero-Trust PII Redaction & Circuit Breaker)</div>
-            <div class="text-ink-600 text-xs" data-i18n="rd_2026_4">High-Throughput Asynchronous Python 3.11 / FastAPI B2B Multi-Tenant AI Operations</div>
+            <div class="text-ink-600 text-xs" data-i18n="rd_2026_1">단일 CPU 8ms 추론, 2048비트 ECFP6, 폐루프 바이오이소스테레 변이 엔진 개발</div>
+            <div class="text-ink-900 font-semibold pt-1">TeraGrid-Ops: 하이퍼스케일 AI 데이터센터 전력·냉각 디스패치 엔진</div>
+            <div class="text-ink-600 text-xs" data-i18n="rd_2026_2">이벤트 기반 100Hz 텔레메트리 버퍼, MILP 전력 캡핑 및 3대 액추에이터 제어</div>
+            <div class="text-ink-900 font-semibold pt-1">광산 환경 규제 대응을 위한 자율 멀티에이전트 컴플라이언스 엔진</div>
+            <div class="text-ink-600 text-xs" data-i18n="rd_2026_3">서호주 EPA 및 호주 연방 환경 법령 대응 자기반성형 결정론적 상태 머신</div>
+            <div class="text-ink-900 font-semibold pt-1">엔터프라이즈 LLM 보안 및 비용 최적화 라우팅 게이트웨이</div>
+            <div class="text-ink-600 text-xs" data-i18n="rd_2026_4">고성능 비동기 Python 3.11 / FastAPI B2B 멀티테넌트 AI 운영 파이프라인</div>
           </div>
         </div>
 
@@ -1087,9 +1093,9 @@
         <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="font-mono text-accent font-bold text-sm">2025</div>
           <div class="md:col-span-3 space-y-1">
-            <div class="text-ink-900 font-semibold">NeighborOn — Multi-Turn LLM AI Companion Platform for Social Welfare</div>
-            <div class="text-ink-900 font-semibold">Onhaeum — Integrated Protection Platform for Domestic Violence & Stalking Victims</div>
-            <div class="text-ink-900 font-semibold">TtoTtoYak — Contactless rPPG Facial Biometric Monitoring Platform</div>
+            <div class="text-ink-900 font-semibold">NeighborOn — 복지 사각지대 위기 예방 LLM AI 돌봄 플랫폼</div>
+            <div class="text-ink-900 font-semibold">Onhaeum — 생체 이상 징후 감지 및 신변 보호 IoT 플랫폼</div>
+            <div class="text-ink-900 font-semibold">TtoTtoYak — 비접촉 rPPG 안면 생체 신호 모니터링 플랫폼</div>
           </div>
         </div>
 
@@ -1097,8 +1103,8 @@
         <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="font-mono text-accent font-bold text-sm">2024</div>
           <div class="md:col-span-3 space-y-1">
-            <div class="text-ink-900 font-semibold">XR Spatial Computing Content Pipeline Development (KOCCA)</div>
-            <div class="text-ink-600 text-xs" data-i18n="rd_2024">Experiential XR e-Sports Project & Spatial Computing Tracking Systems</div>
+            <div class="text-ink-900 font-semibold">XR 공간 컴퓨팅 콘텐츠 파이프라인 개발 (KOCCA)</div>
+            <div class="text-ink-600 text-xs" data-i18n="rd_2024">체감형 XR e스포츠 프로젝트 및 공간 컴퓨팅 트래킹 파이프라인 구축</div>
           </div>
         </div>
 
@@ -1106,7 +1112,7 @@
         <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="font-mono text-accent font-bold text-sm">2023</div>
           <div class="md:col-span-3 space-y-1">
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2023">Ancient Manuscript Character Analysis & Restoration via Generative Adversarial Networks (GANs)</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2023">생성형 적대 신경망(GAN) 기반 고문헌 훼손 문자 분석 및 디지털 복원</div>
           </div>
         </div>
 
@@ -1114,9 +1120,9 @@
         <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="font-mono text-accent font-bold text-sm">2022</div>
           <div class="md:col-span-3 space-y-1">
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2022_1">AI-based Test Suite Generation & STPA-based Safety Validation Engine (NRF)</div>
-            <div class="text-ink-900 font-semibold">HopePath: AI-Powered Rehabilitation Platform with Real-Time Background Geofencing</div>
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2022_2">Global Atmospheric Anomaly Detection & Air Quality Big Data Pipeline</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2022_1">AI 기반 테스트 스위트 생성 및 STPA 기반 SW 안전성 검증 엔진 (NRF)</div>
+            <div class="text-ink-900 font-semibold">HopePath: 보호관찰 청소년 자율 개선 및 실시간 지오펜싱 모니터링</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2022_2">글로벌 대기질 이상치 탐지 및 환경 빅데이터 분석 파이프라인</div>
           </div>
         </div>
 
@@ -1124,9 +1130,9 @@
         <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="font-mono text-accent font-bold text-sm">2021</div>
           <div class="md:col-span-3 space-y-1">
-            <div class="text-ink-900 font-semibold">ArtDive: Big Data-based Art Convergence AI Service Platform (KAIA)</div>
-            <div class="text-ink-900 font-semibold">MDPI SCIE Publication: Classical Music Specific Mood Automatic Recognition Model</div>
-            <div class="text-ink-900 font-semibold">MITA 2021 Conference: Emotion-Based Art Convergence Playlist Production System</div>
+            <div class="text-ink-900 font-semibold">ArtDive: 빅데이터 기반 예술 융합 AI 추천 플랫폼 개발 (국토교통과학기술진흥원)</div>
+            <div class="text-ink-900 font-semibold">MDPI SCIE 논문 게재: 클래식 음악 감정 자동 인식 모델</div>
+            <div class="text-ink-900 font-semibold">MITA 2021 국제 학술대회: 빅데이터 기반 감정 아트 플레이리스트 추천 알고리즘</div>
           </div>
         </div>
 
@@ -1134,11 +1140,11 @@
         <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="font-mono text-accent font-bold text-sm">2020</div>
           <div class="md:col-span-3 space-y-1">
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2020_1">Deepfake Forensic Detection using Multi-Region Pulse Analysis (IITP)</div>
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2020_2">Personalized Academic Course Recommender & Pre-Registration Engine (IITP)</div>
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2020_3">Few-shot Learning for Automated Fashion Style Prediction (IITP)</div>
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2020_4">Privacy-Preserving Federated Learning Security Architectures (IITP)</div>
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2020_5">Intelligent Deep Learning Intrusion Detection System (IITP)</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2020_1">안면 다중 영역 펄스 분석 기반 딥페이크 포렌식 탐지 엔진 (IITP)</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2020_2">개인화 학업 코스 추천 및 수강신청 트래픽 분산 엔진 (IITP)</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2020_3">퓨샷 러닝 기반 패션 스타일 자동 예측 분류기 (IITP)</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2020_4">프라이버시 보존 연합학습(Federated Learning) 보안 아키텍처 (IITP)</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2020_5">지능형 딥러닝 기반 네트워크 침입 탐지 시스템 (IITP)</div>
           </div>
         </div>
 
@@ -1146,8 +1152,8 @@
         <div class="py-4 grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="font-mono text-accent font-bold text-sm">2019</div>
           <div class="md:col-span-3 space-y-1">
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2019_1">Autonomous Mobility Core Software Validation & Edge Architectures (IITP)</div>
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2019_2">Software Safety Quality & Test Automation Advanced Curriculum (TTA)</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2019_1">자율주행 코어 소프트웨어 검증 및 엣지 컴퓨팅 아키텍처 (IITP)</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2019_2">소프트웨어 안전 품질 및 테스트 자동화 심화 과정 이수 (TTA)</div>
           </div>
         </div>
 
@@ -1155,9 +1161,9 @@
         <div class="py-4 last:pb-0 grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="font-mono text-accent font-bold text-sm">2018</div>
           <div class="md:col-span-3 space-y-1">
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2018_1">Software Safety Process Engineering for Radiation Therapy Systems (Cinesol)</div>
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2018_2">Research on Safety-Critical Software Quality for Medical Devices (IITP)</div>
-            <div class="text-ink-900 font-semibold" data-i18n="rd_2018_3">Design & Full-Stack Implementation of IoT Embedded Sensor Systems (IITP)</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2018_1">방사선 치료 시스템을 위한 소프트웨어 안전 프로세스 엔지니어링</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2018_2">의료기기용 세이프티 크리티컬 소프트웨어 품질 고도화 연구 (IITP)</div>
+            <div class="text-ink-900 font-semibold" data-i18n="rd_2018_3">IoT 임베디드 센서 시스템 풀스택 설계 및 구현 (IITP)</div>
           </div>
         </div>
 
@@ -1167,16 +1173,16 @@
     <!-- CONTACT SECTION -->
     <section id="contact" class="bg-white border border-surface-300 rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-sm">
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-200 text-xs font-mono text-ink-700">
-        <span data-i18n="contact_status">Available for Global Remote Engineering Collaborations</span>
+        <span data-i18n="contact_status">국내외 기업 협업 및 원격 프로젝트 수주 가능</span>
       </div>
 
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink-900 tracking-tight" data-i18n="contact_title">
-        Have a high-assurance AI or SaaS challenge?<br/>
-        <span class="text-accent">Let's build production solutions.</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-ink-900 tracking-tight" data-i18n="contact_title">
+        AI 아키텍처 설계 또는 상용화 풀스택 개발이 필요하신가요?<br/>
+        <span class="text-accent">실제 상용화 레벨의 솔루션을 구현합니다.</span>
       </h2>
 
       <p class="text-ink-600 max-w-xl mx-auto text-sm sm:text-base" data-i18n="contact_desc">
-        Available for senior technical advisory, fractional AI architecture, and full-stack system development contracts.
+        시니어 AI 기술 자문, 프랙셔널 AI 아키텍트, 스타트업 MVP·PoC 개발 및 프로덕션 풀스택 시스템 구축 프로젝트 문의를 환영합니다.
       </p>
 
       <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -1188,7 +1194,7 @@
         </a>
         <a href="mailto:siano.builds@gmail.com?subject=Inquiry%20for%20AI%20Solutions%20Architecture" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-accent hover:bg-accent-hover text-white font-semibold text-sm transition shadow-sm">
           <i data-lucide="mail" class="w-4 h-4"></i>
-          <span data-i18n="send_inquiry">Send Direct Inquiry</span>
+          <span data-i18n="send_inquiry">직접 문의하기</span>
         </a>
       </div>
     </section>
@@ -1196,47 +1202,53 @@
   </main>
 
   <footer class="border-t border-surface-300 py-8 text-center text-xs font-mono text-ink-500 bg-surface-100">
-    <p data-i18n="footer_copy">© 2026 SIANO LEE. Bridging Rigorous AI Research with Production Full-Stack Execution.</p>
+    <p data-i18n="footer_copy">© 2026 SIANO LEE. 깊이 있는 R&D와 실질적인 프로덕션 풀스택 구현을 연결합니다.</p>
   </footer>
 
   <!-- MULTILINGUAL DICTIONARY & PHYSICAL SWITCH LOGIC -->
   <script>
     const translations = {
       en: {
-        nav_capabilities: "Capabilities",
-        nav_credentials: "Credentials",
+        nav_capabilities: "Core Tech",
+        nav_credentials: "IP & Patents",
         nav_publications: "Publications",
-        nav_architectures: "Architectures",
-        nav_rd_history: "R&D History",
+        nav_architectures: "Portfolio",
+        nav_rd_history: "Career History",
         send_email: "Send Email",
-        hero_title_prefix: "Senior AI Solutions Architect & ",
-        hero_title_suffix: "Production Full-Stack Builder",
-        hero_desc: "Ph.D. Candidate (ABD) with 7+ years of institutional R&D. Specializing in hyperscale AI infrastructure dispatch, in-silico chemical informatics, event-driven deterministic state machines, and statutory multi-agent compliance systems.",
+        tag_1: "#AI",
+        tag_2: "#Python",
+        tag_3: "#FullStack",
+        tag_4: "#CTO",
+        tag_5: "#PM",
+        hero_title_prefix: "AI Architect & ",
+        hero_title_suffix: "Full-Stack Engineer",
+        hero_desc: "Ph.D. Candidate (ABD) AI Engineer with 9+ years of institutional R&D and international freelance delivery track record. Experienced in end-to-end AI engineering, high-level architecture design, and production-grade full-stack implementations.",
         sec_capabilities: "Core Engineering Competencies",
-        cap_1_title: "Hyperscale AI Control",
-        cap_1_desc: "100Hz telemetry queues, MILP power-capping optimization, and closed-loop BACnet/NVML actuator orchestration for H100/B200 clusters.",
-        cap_2_title: "In-Silico Cheminformatics",
-        cap_2_desc: "RDKit ECFP6 topological encoding, 8ms single-pass ADMET/hERG inference on single CPU nodes, and closed-loop bioisosteric mutation.",
-        cap_3_title: "Multi-Agent State Machines",
-        cap_3_desc: "Deterministic LangGraph cyclic workflows, automated statutory vector retrieval, and zero-hallucination compliance dispatch consoles.",
-        cap_4_title: "Safety & Security by Design",
-        cap_4_desc: "KR registered patent test generation, STPA safety-critical hazard analysis gates, and SonarQube automated CI/CD quality pipelines.",
-        sec_credentials: "Verified Intellectual Property & Research",
-        cred_1_tag: "Registered Patent",
-        cred_1_desc: "Big Data Art Convergence Recommendation System & Automated STPA-based SW Safety Test Generation.",
-        cred_2_tag: "SCIE Publications",
-        cred_2_desc: "Peer-reviewed papers on Classical Music Emotion Recognition & Recommendation System Survey.",
-        cred_3_tag: "Institutional R&D",
-        cred_3_desc: "Spearheaded national projects across Smart Mobility, Deepfake Forensics, and Radiation Simulation Software.",
+        cap_1_title: "Deep Learning & Vision",
+        cap_1_desc: "Deep learning vision modeling, remote rPPG biological pulse extraction, GAN-based ancient script reconstruction, and real-time image forensic pipelines.",
+        cap_2_title: "AI & Recommender Systems",
+        cap_2_desc: "Published SCIE survey benchmarking comprehensive recommendation algorithms, holding registered patents in synesthetic convergence recommender systems.",
+        cap_3_title: "RAG & LangGraph Agents",
+        cap_3_desc: "Regulatory and legal vector RAG pipelines, cyclic deterministic LangGraph state machines, and zero-hallucination industrial control dispatch engines.",
+        cap_4_title: "CTO / PM Leadership Full-Stack",
+        cap_4_desc: "Spearheaded rapid MVP & PoC builds for early startups. Versatile full-stack engineer leading Python FastAPI backends, reactive frontends, and Docker environments.",
+        sec_credentials: "Intellectual Property (Registered Patents)",
+        sec_credentials_sub: "Verified patents developed for algorithmic recommendation systems and software quality assurance.",
+        cred_1_tag: "Registered Patent (KR)",
+        patent_title: "Big Data Art Convergence Recommender System & Platform",
+        cred_1_desc: "Synesthetic multi-dimensional vector mapping algorithm and clustering recommendation platform linking musical timbre parameters with fine visual arts.",
+        cred_2_tag: "Safety-Critical Patent Technology",
+        patent_2_title: "Automated Software Safety Test Generation via STPA Analysis",
+        cred_2_desc: "Safety architecture eliminating Unsafe Control Actions (UCAs) in medical radiation and mission-critical systems via automated test suite generation.",
         sec_publications: "Peer-Reviewed Publications & Research Papers",
         sec_publications_sub: "Verified academic articles published in SCIE journals and international engineering conferences.",
-        paper_1_desc: "Comprehensive taxonomy and survey analyzing collaborative filtering, content-based algorithms, knowledge graphs, and hybrid deep learning architectures applied across modern industrial domains.",
+        paper_1_desc: "Comprehensive taxonomy and survey analyzing collaborative filtering, content-based algorithms, knowledge graphs, and hybrid deep learning recommendation architectures.",
         paper_2_desc: "Novel acoustic feature extraction pipeline utilizing Ward hierarchical clustering and machine learning to classify emotional trajectories across long-form symphonic movements.",
         paper_3_desc: "Algorithms mapping big data acoustic emotional vectors with visual art collections, laying the mathematical foundation for Korean registered patent KR 10-2755282.",
         view_journal: "View Journal",
         read_paper: "Read Paper",
         conf_proceeding: "Conference Proceedings",
-        sec_architectures: "Production Systems & Architecture Archives",
+        sec_architectures: "Production Systems & Engineering Portfolio",
         sec_architectures_sub: "Chronological engineering index from 2026 enterprise systems to foundational R&D architectures.",
         year_2026: "2026 FLAGSHIP SYSTEMS",
         active_count_2026: "4 SYSTEMS ACTIVE",
@@ -1288,7 +1300,7 @@
         proj_12_cat: "12 / SAFETY-CRITICAL SYSTEMS",
         proj_12_title: "Radiation Therapy Simulation Safety & Test Automation",
         proj_12_desc: "Lead Infrastructure Architect for medical radiation software safety. Designed automated testing frameworks, SonarQube CI/CD quality gates, and STPA hazard analysis protocols to guarantee calculation purity.",
-        sec_archive: "Full Institutional R&D Timeline (2018–2026)",
+        sec_archive: "Career Summary & Institutional R&D Timeline (2018–2026)",
         rd_2026_1: "Single-Node CPU 8ms Inference, 2048-bit ECFP6, Closed-Loop Bioisosteric Mutation",
         rd_2026_2: "Event-Driven 100Hz Telemetry Buffer, MILP Power Capping & Tri-Vector Actuator Control",
         rd_2026_3: "Self-Reflective Deterministic State Machine for WA EPA & EPBC Act Statutory Mandates",
@@ -1308,37 +1320,43 @@
         rd_2018_2: "Research on Safety-Critical Software Quality for Medical Devices (IITP)",
         rd_2018_3: "Design & Full-Stack Implementation of IoT Embedded Sensor Systems (IITP)",
         contact_status: "Available for Global Remote Engineering Collaborations",
-        contact_title: "Have a high-assurance AI or SaaS challenge?<br/><span class=\"text-accent\">Let's build production solutions.</span>",
-        contact_desc: "Available for senior technical advisory, fractional AI architecture, and full-stack system development contracts.",
+        contact_title: "Need AI Architecture Design or Full-Stack Execution?<br/><span class=\"text-accent\">Delivering verified production-ready solutions.</span>",
+        contact_desc: "Open for senior AI technical advisory, fractional architect roles, startup MVP/PoC builds, and full-stack software contracts.",
         send_inquiry: "Send Direct Inquiry",
-        footer_copy: "© 2026 SIANO LEE. Bridging Rigorous AI Research with Production Full-Stack Execution."
+        footer_copy: "© 2026 SIANO LEE. Bridging Rigorous R&D with Production Full-Stack Execution."
       },
       ko: {
-        nav_capabilities: "핵심 역량",
-        nav_credentials: "연구·특허 실적",
+        nav_capabilities: "핵심 기술",
+        nav_credentials: "지식재산권",
         nav_publications: "논문 실적",
-        nav_architectures: "프로덕션 아키텍처",
-        nav_rd_history: "R&D 이력",
+        nav_architectures: "개발 경력",
+        nav_rd_history: "이력 요약",
         send_email: "이메일 문의",
-        hero_title_prefix: "시니어 AI 솔루션 아키텍트 & ",
-        hero_title_suffix: "프로덕션 풀스택 엔지니어",
-        hero_desc: "7년 이상의 국가 연구개발(R&D) 이력을 보유한 박사 수료(ABD) AI 아키텍트입니다. 하이퍼스케일 AI 인프라 제어, 화학정보학 가상 스크리닝, 이벤트 기반 결정론적 상태 머신, 법률·규제 준수 멀티에이전트 시스템을 직접 설계 및 구축합니다.",
-        sec_capabilities: "핵심 엔지니어링 역량",
-        cap_1_title: "하이퍼스케일 AI 제어",
-        cap_1_desc: "100Hz 텔레메트리 큐, MILP 전력 캡핑 최적화, H100/B200 클러스터를 위한 BACnet/NVML 폐루프 액추에이터 제어.",
-        cap_2_title: "인실리코 화학정보학",
-        cap_2_desc: "RDKit ECFP6 위상 임베딩, 단일 CPU 노드 기준 8ms 단일 패스 ADMET/hERG 추론 및 폐루프 생물학적 등가체 변이.",
-        cap_3_title: "멀티에이전트 상태 머신",
-        cap_3_desc: "결정론적 LangGraph 순환 워크플로우, 법률 벡터 자동 검색 및 환각 제로(Zero-Hallucination) 산업용 관제 콘솔.",
-        cap_4_title: "설계 기반 안전·보안 (Security by Design)",
-        cap_4_desc: "국내 등록 특허 기반 테스트 케이스 자동 생성, STPA 안전 필수 위험 분석 게이트 및 SonarQube CI/CD 품질 파이프라인.",
-        sec_credentials: "공인 지식재산권 및 연구 실적",
+        tag_1: "#AI",
+        tag_2: "#Python",
+        tag_3: "#풀스택",
+        tag_4: "#CTO",
+        tag_5: "#PM",
+        hero_title_prefix: "AI 아키텍트 & ",
+        hero_title_suffix: "풀스택 엔지니어",
+        hero_desc: "9년 이상 국가 R&D 과제 및 다수의 외국 기업간 외주 프로젝트를 성공적으로 완수한 박사 수료(ABD) AI 개발자입니다. 대규모 AI 개발 및 아키텍처 설계부터 실제 상용화 레벨의 풀스택 시스템 구축까지 전 과정을 책임집니다.",
+        sec_capabilities: "핵심 기술 역량",
+        cap_1_title: "딥러닝 & 컴퓨터 비전",
+        cap_1_desc: "영상 프레임 기반 딥러닝 모델링, 비접촉 rPPG 생체 신호 추출, GAN 기반 고문헌 문자 복원 및 실시간 이미지 포렌식 분석 파이프라인 개발.",
+        cap_2_title: "AI 개발 & 추천 시스템",
+        cap_2_desc: "다양한 추천 알고리즘을 체계적으로 비교 분석한 SCIE 논문 보유 및 공감각 예술 융합 추천 시스템 등록 특허를 직접 개발한 전문 엔지니어링 역량.",
+        cap_3_title: "RAG & LangGraph 에이전트",
+        cap_3_desc: "대규모 법률·기술 문서 RAG 파이프라인, LangGraph 기반의 자기반성형 결정론적 순환 상태 머신 및 환각 없는 산업용 자율 디스패치 콘솔 구축.",
+        cap_4_title: "CTO / PM 리더십 풀스택",
+        cap_4_desc: "AI 기술을 접목한 스타트업의 초고속 MVP·PoC 개발 다수 리드. 백엔드(FastAPI)부터 프론트엔드, Docker 배포까지 1인 총괄 가능한 프로덕션 풀스택 역량.",
+        sec_credentials: "지식재산권 (등록 특허)",
+        sec_credentials_sub: "독자적인 추천 시스템 알고리즘과 소프트웨어 품질 검증 체계로 공식 등록된 지식재산권입니다.",
         cred_1_tag: "대한민국 등록 특허",
-        cred_1_desc: "빅데이터 예술 융합 추천 시스템 및 STPA 기반 SW 안전성 테스트 케이스 자동 생성 기술.",
-        cred_2_tag: "SCIE 국제 저널",
-        cred_2_desc: "클래식 음악 감정 인식 및 최신 추천 시스템 서베이 관련 동료 평가(Peer-reviewed) 정식 논문 게재.",
-        cred_3_tag: "국가 연구개발(R&D)",
-        cred_3_desc: "스마트 모빌리티, 딥페이크 포렌식 탐지, 의료용 방사선 시뮬레이션 SW 등 국책 R&D 프로젝트 총괄 주도.",
+        patent_title: "빅데이터 기반 예술 융합 추천 시스템 및 서비스 제공 플랫폼",
+        cred_1_desc: "음향 빅데이터 파라미터(MFCC, 음색 등)와 시각 예술 작품 간의 공감각적 다차원 벡터 매핑 알고리즘 및 클러스터링 기반 추천 시스템.",
+        cred_2_tag: "SW 안전성 검증 특허 기술",
+        patent_2_title: "STPA 위험 분석 기반 소프트웨어 안전성 테스트 케이스 자동 생성",
+        cred_2_desc: "의료기기 및 안전 필수(Safety-Critical) 시스템의 비정상 제어 동작(UCA)을 선제 차단하고 테스트 케이스를 자동 구축하는 아키텍처.",
         sec_publications: "공인 논문 및 학술 연구 실적",
         sec_publications_sub: "SCIE급 국제 저널 및 국제 학술 대회에 정식 게재된 연구 논문 목록입니다.",
         paper_1_desc: "현대 산업 분야 전반에 적용되는 협업 필터링, 콘텐츠 기반 모델, 지식 그래프 및 하이브리드 딥러닝 추천 아키텍처를 분석한 종합 분류 및 서베이 논문.",
@@ -1347,9 +1365,9 @@
         view_journal: "저널 원문 보기",
         read_paper: "논문 확인하기",
         conf_proceeding: "국제 학술대회 발표",
-        sec_architectures: "프로덕션 시스템 & 아키텍처 아카이브",
-        sec_architectures_sub: "2026 최신 플래그십 시스템부터 주요 R&D 아키텍처까지의 연대기순 엔지니어링 인덱스입니다.",
-        year_2026: "2026 최신 플래그십 시스템",
+        sec_architectures: "개발 경력 및 포트폴리오",
+        sec_architectures_sub: "실제 프로덕션 배포 및 국가 연구개발을 통해 완성된 엔지니어링 프로젝트 아카이브입니다.",
+        year_2026: "2026 플래그십 시스템",
         active_count_2026: "4개 시스템 가동 중",
         badge_active_sprint: "진행 중 (ACTIVE SPRINT)",
         badge_in_progress: "현재 고도화 진행 중 (Active R&D)",
@@ -1399,7 +1417,7 @@
         proj_12_cat: "12 / 세이프티 크리티컬 SW",
         proj_12_title: "의료용 방사선 치료 시뮬레이션 SW 안전성 및 테스트 자동화",
         proj_12_desc: "의료 방사선 치료 소프트웨어의 안전 아키텍처 구축. 정적 분석 엔진, SonarQube CI/CD 품질 게이트, STPA 위험 분석 체계를 구축하여 연산 무결성을 검증합니다.",
-        sec_archive: "국가 연구개발(R&D) 이력 (2018–2026)",
+        sec_archive: "주요 이력 요약 및 연구개발 타임라인 (2018–2026)",
         rd_2026_1: "단일 CPU 8ms 추론, 2048비트 ECFP6, 폐루프 바이오이소스테레 변이 엔진 개발",
         rd_2026_2: "이벤트 기반 100Hz 텔레메트리 버퍼, MILP 전력 캡핑 및 3대 액추에이터 제어",
         rd_2026_3: "서호주 EPA 및 호주 연방 환경 법령 대응 자기반성형 결정론적 상태 머신",
@@ -1418,39 +1436,37 @@
         rd_2018_1: "방사선 치료 시스템을 위한 소프트웨어 안전 프로세스 엔지니어링",
         rd_2018_2: "의료기기용 세이프티 크리티컬 소프트웨어 품질 고도화 연구 (IITP)",
         rd_2018_3: "IoT 임베디드 센서 시스템 풀스택 설계 및 구현 (IITP)",
-        contact_status: "글로벌 리모트 엔지니어링 협업 가능",
-        contact_title: "고신뢰성 AI 또는 엔터프라이즈 SaaS 구축을 고민 중이신가요?<br/><span class=\"text-accent\">실제 상용화 레벨의 시스템을 개발합니다.</span>",
-        contact_desc: "시니어 AI 기술 자문, 프랙셔널 AI 아키텍트, 프로덕션 풀스택 시스템 개발 계약이 가능합니다.",
+        contact_status: "국내외 기업 협업 및 원격 프로젝트 수주 가능",
+        contact_title: "AI 아키텍처 설계 또는 상용화 풀스택 개발이 필요하신가요?<br/><span class=\"text-accent\">실제 상용화 레벨의 솔루션을 구현합니다.</span>",
+        contact_desc: "시니어 AI 기술 자문, 프랙셔널 AI 아키텍트, 스타트업 MVP·PoC 개발 및 프로덕션 풀스택 시스템 구축 프로젝트 문의를 환영합니다.",
         send_inquiry: "직접 문의하기",
-        footer_copy: "© 2026 SIANO LEE. 깊이 있는 연구(R&D)와 프로덕션 풀스택 구현을 연결합니다."
+        footer_copy: "© 2026 SIANO LEE. 깊이 있는 R&D와 실질적인 프로덕션 풀스택 구현을 연결합니다."
       }
     };
 
-    let currentLang = localStorage.getItem('site_lang') || 'en';
+    let currentLang = localStorage.getItem('site_lang') || 'ko';
 
     function setLanguage(lang) {
       currentLang = lang;
       localStorage.setItem('site_lang', lang);
       document.documentElement.lang = lang;
 
-      // Update Sliding Toggle Knob and Track UI
-      const handle = document.getElementById('toggleHandle');
+      const thumb = document.getElementById('toggleThumb');
       const labelEn = document.getElementById('labelEn');
       const labelKo = document.getElementById('labelKo');
 
-      if (handle && labelEn && labelKo) {
+      if (thumb && labelEn && labelKo) {
         if (lang === 'ko') {
-          handle.style.transform = 'translateX(48px)';
-          labelEn.className = 'text-[10px] font-mono font-bold pl-1 text-slate-400 transition-opacity';
-          labelKo.className = 'text-[10px] font-mono font-bold pr-5 text-white transition-opacity';
+          thumb.style.transform = 'translateX(46px)';
+          labelEn.className = 'text-[11px] font-mono font-bold pl-1 text-slate-500 transition-opacity';
+          labelKo.className = 'text-[11px] font-mono font-bold pr-5 text-white transition-opacity';
         } else {
-          handle.style.transform = 'translateX(0px)';
-          labelEn.className = 'text-[10px] font-mono font-bold pl-5 text-white transition-opacity';
-          labelKo.className = 'text-[10px] font-mono font-bold pr-1 text-slate-400 transition-opacity';
+          thumb.style.transform = 'translateX(0px)';
+          labelEn.className = 'text-[11px] font-mono font-bold pl-5 text-white transition-opacity';
+          labelKo.className = 'text-[11px] font-mono font-bold pr-1 text-slate-500 transition-opacity';
         }
       }
 
-      // Translate all DOM data-i18n elements
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
@@ -1462,13 +1478,12 @@
         }
       });
 
-      // Re-trigger character wave split animation
       initWaveAnimations();
       lucide.createIcons();
     }
 
     function toggleLanguage() {
-      const nextLang = currentLang === 'en' ? 'ko' : 'en';
+      const nextLang = currentLang === 'ko' ? 'en' : 'ko';
       setLanguage(nextLang);
     }
 
@@ -1486,7 +1501,6 @@
       });
     }
 
-    // Initialize on page load
     document.addEventListener('DOMContentLoaded', () => {
       setLanguage(currentLang);
     });
